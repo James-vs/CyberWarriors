@@ -1,15 +1,20 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class WindowManager : MonoBehaviour
 {
-    [SerializeField] private GameObject browserWindow;
+    [SerializeField] private GameObject browserGameWindow;
     [SerializeField] private GameObject windows;
+    public bool browserExists = false;
     
     //function to open a game window
     public void OpenBrowserWindow() {
         //obj.SetActive(true);
-        Instantiate(browserWindow,new Vector2(windows.transform.position.x - 220, windows.transform.position.y + 75),windows.transform.rotation,windows.transform);
+        if (!browserExists) {
+            Instantiate(browserGameWindow,new Vector2(windows.transform.position.x - 220, windows.transform.position.y + 75),windows.transform.rotation,windows.transform);
+            browserExists = true;        
+        }
     }
 
     public void OpenWindow(GameObject window) {
@@ -19,5 +24,9 @@ public class WindowManager : MonoBehaviour
     //function to close a window
     public void CloseWindow(GameObject obj) {
         obj.SetActive(false);
+    }
+
+    public void NextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
