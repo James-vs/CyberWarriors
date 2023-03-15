@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextScene : MonoBehaviour
 {
-    //function to change the game to the next scene
-    public void NextScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    //function to change the game to a different scene
+    public void ChangeScene(int increase) {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + increase);
     }
+
 }

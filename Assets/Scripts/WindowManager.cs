@@ -25,8 +25,4 @@ public class WindowManager : MonoBehaviour
     public void CloseWindow(GameObject obj) {
         obj.SetActive(false);
     }
-
-    public void NextScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
 }

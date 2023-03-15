@@ -5,13 +5,14 @@ using TMPro;
 public class StSTutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject success;
+    [SerializeField] private GameObject fail;
     private bool gameOver = false;
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
-    [SerializeField] private bool match1_1 = false;
-    [SerializeField] private bool match1_2 = false;
-    [SerializeField] private bool match2_1 = false;
-    [SerializeField] private bool match2_2 = false;
+    private bool match1_1 = false;
+    private bool match1_2 = false;
+    private bool match2_1 = false;
+    private bool match2_2 = false;
     [SerializeField] private GameObject button1_1;
     [SerializeField] private GameObject button1_2;
     [SerializeField] private GameObject button2_1;
@@ -24,6 +25,7 @@ public class StSTutorialManager : MonoBehaviour
     private int matches = 0;
     [SerializeField] private TextMeshProUGUI matchesUI;
 
+    [SerializeField] private bool outOfTime = false;
     
 
     // Start is called before the first frame update
@@ -45,6 +47,9 @@ public class StSTutorialManager : MonoBehaviour
                 success.SetActive(true);
                 gameOver = true;
             }
+        } else if (outOfTime) {
+            Debug.Log("Out of Time");
+            fail.SetActive(true);
         }
         matchesUI.text = matches.ToString();
     }
@@ -103,7 +108,7 @@ public class StSTutorialManager : MonoBehaviour
     }
 
     public void Match11() {
-        if (!m1First){
+        if (!m1First && !outOfTime){
             if (!match2_1 && !match1_1) {
                 Debug.Log("Button 1_1 selected");
                 match1_1 = true;
@@ -116,7 +121,7 @@ public class StSTutorialManager : MonoBehaviour
     }
 
     public void Match12() {
-        if (!m1First) {
+        if (!m1First && !outOfTime) {
             if (!match2_2 && !match1_2) {
                 Debug.Log("Button 1_2 selected");
                 match1_2 = true;
@@ -129,7 +134,7 @@ public class StSTutorialManager : MonoBehaviour
     }
 
     public void Match21 () {
-        if (!m2First) {
+        if (!m2First && !outOfTime) {
             if (!match1_1 && !match2_1) {
                 Debug.Log("Button 2_1 selected");
                 match2_1 = true;
@@ -142,7 +147,7 @@ public class StSTutorialManager : MonoBehaviour
     }
 
     public void Match22 () {
-        if (!m2First) {
+        if (!m2First && !outOfTime) {
             if (!match1_2 && !match2_2) {
                 Debug.Log("Button 2_2 selected");
                 match2_2 = true;
@@ -152,6 +157,11 @@ public class StSTutorialManager : MonoBehaviour
                 button2_2.GetComponent<Image>().color = btn2_2Original;
             }
         }
+    }
+
+    public void OutOfTime () {
+        gameOver = true;
+        outOfTime = true;
     }
 
 
