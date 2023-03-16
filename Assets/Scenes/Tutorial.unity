@@ -1995,6 +1995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   success: {fileID: 858328153}
   fail: {fileID: 1139211720}
+  loadNextScene: {fileID: 1287230037}
   m1First: 0
   m2First: 0
   button1_1: {fileID: 103274146}
@@ -2002,7 +2003,6 @@ MonoBehaviour:
   button2_1: {fileID: 519607193}
   button2_2: {fileID: 1974731460}
   matchesUI: {fileID: 1877839628}
-  outOfTime: 0
 --- !u!114 &1287230037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,10 +2099,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287230037}
-        m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
-        m_MethodName: ChangeScene
-        m_Mode: 3
+      - m_Target: {fileID: 1287230036}
+        m_TargetAssemblyTypeName: StSTutorialManager, Assembly-CSharp
+        m_MethodName: Retry
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

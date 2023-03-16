@@ -6,7 +6,8 @@ public class StSTutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject success;
     [SerializeField] private GameObject fail;
-    private bool gameOver = false;
+    [SerializeField] private LoadNextScene loadNextScene;
+    private static bool gameOver = false;
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
     private bool match1_1 = false;
@@ -25,7 +26,7 @@ public class StSTutorialManager : MonoBehaviour
     private int matches = 0;
     [SerializeField] private TextMeshProUGUI matchesUI;
 
-    [SerializeField] private bool outOfTime = false;
+    [SerializeField] private static bool outOfTime = false;
     
 
     // Start is called before the first frame update
@@ -159,9 +160,24 @@ public class StSTutorialManager : MonoBehaviour
         }
     }
 
-    public void OutOfTime () {
+    //function to end the game if the timer runs out
+    public static void OutOfTime () {
         gameOver = true;
         outOfTime = true;
+    }
+
+    //function to reset the game for a retry
+    public void Retry() {
+        fail.SetActive(false);
+        match1_1 = false;
+        match1_2 = false;
+        match2_1 = false;
+        match2_2 = false;
+        m1First = false;
+        m2First = false;
+        gameOver = false;
+        outOfTime = false;
+        loadNextScene.ChangeScene(0);
     }
 
 

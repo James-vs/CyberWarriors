@@ -23,6 +23,8 @@ public class Timer : MonoBehaviour
             countDownTime -= 1 * Time.deltaTime;
             timeElapsed += 1 * Time.deltaTime;
             timerText.text = countDownTime.ToString("0");
+        } else {
+            StSTutorialManager.OutOfTime();
         }
     }
 }

@@ -5,7 +5,13 @@ public class LoadNextScene : MonoBehaviour
 {
     //function to change the game to a different scene
     public void ChangeScene(int increase) {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + increase);
+        if (increase > 0 ) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + increase);
+        } else if (increase == 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        } else {
+            Debug.Log("Error, negative number given as arg");
+        }
     }
 
 }
