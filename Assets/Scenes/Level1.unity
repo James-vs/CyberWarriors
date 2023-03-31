@@ -1990,7 +1990,7 @@ MonoBehaviour:
   button1_2: {fileID: 371224023}
   button2_1: {fileID: 845327851}
   button2_2: {fileID: 845327850}
-  matchesUI: {fileID: 727344441}
+  matchesUI: {fileID: 1877839628}
   outOfTime: 0
   timer: {fileID: 2112690270}
 --- !u!1 &1301634557 stripped
@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
   startTime: 10
-  stSLevel1Manager: {fileID: 0}
+  stSTutorialManager: {fileID: 0}
 --- !u!114 &84476934863653376
 MonoBehaviour:
   m_ObjectHideFlags: 0
