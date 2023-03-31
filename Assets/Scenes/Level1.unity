@@ -1030,7 +1030,7 @@ PrefabInstance:
     - target: {fileID: 1636941568444549293, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1287230036}
+      objectReference: {fileID: 0}
     - target: {fileID: 1636941568444549293, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Match11
@@ -1038,7 +1038,7 @@ PrefabInstance:
     - target: {fileID: 3258410897660833816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1287230036}
+      objectReference: {fileID: 0}
     - target: {fileID: 3258410897660833816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Match12
@@ -1054,7 +1054,7 @@ PrefabInstance:
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1287230036}
+      objectReference: {fileID: 0}
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1094,7 +1094,7 @@ PrefabInstance:
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1287230036}
+      objectReference: {fileID: 0}
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1898,8 +1898,8 @@ GameObject:
   - component: {fileID: 1287230035}
   - component: {fileID: 1287230034}
   - component: {fileID: 1287230033}
-  - component: {fileID: 1287230036}
   - component: {fileID: 1287230037}
+  - component: {fileID: 1287230038}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1957,30 +1957,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1287230036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287230032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2389eb226302e124abc20e3e1cb24820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  success: {fileID: 858328153}
-  fail: {fileID: 1139211720}
-  loadNextScene: {fileID: 1287230037}
-  m1First: 0
-  m2First: 0
-  button1_1: {fileID: 1301634557}
-  button1_2: {fileID: 371224023}
-  button2_1: {fileID: 845327851}
-  button2_2: {fileID: 845327850}
-  matchesUI: {fileID: 1877839628}
-  outOfTime: 0
-  timer: {fileID: 2112690270}
 --- !u!114 &1287230037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,6 +1969,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469164530622f4f40b8c163725413fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1287230038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287230032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2752aafb9ca524f89c49e7f64277b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  success: {fileID: 858328153}
+  fail: {fileID: 1139211720}
+  loadNextScene: {fileID: 1287230037}
+  m1First: 0
+  m2First: 0
+  button1_1: {fileID: 1301634557}
+  button1_2: {fileID: 371224023}
+  button2_1: {fileID: 845327851}
+  button2_2: {fileID: 845327850}
+  matchesUI: {fileID: 727344441}
+  outOfTime: 0
+  timer: {fileID: 2112690270}
 --- !u!1 &1301634557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5897270589269685248, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
@@ -2082,7 +2082,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287230036}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StSTutorialManager, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
@@ -2493,8 +2493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
-  startTime: 60
-  stSTutorialManager: {fileID: 0}
+  startTime: 10
+  stSLevel1Manager: {fileID: 0}
 --- !u!114 &84476934863653376
 MonoBehaviour:
   m_ObjectHideFlags: 0
