@@ -1782,7 +1782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931505, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_Name
-      value: Level1
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931506, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_Pivot.x

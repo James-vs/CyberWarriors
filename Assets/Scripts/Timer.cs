@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     private float countDownTime;
     public float startTime = 60f;
     private float timeElapsed = 0f;
-    [SerializeField] private StSTutorialManager stSTutorialManager;
+    [SerializeField] private StSLevel1Manager stSTutorialManager;
 
     private bool gameOver = false;
 
