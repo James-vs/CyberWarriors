@@ -3,7 +3,7 @@ using TMPro;
 
 public class StSManager : MonoBehaviour
 {
-    //class to be inherited from for game levels
+    //class to be inherited from for game level scripts
 
     [SerializeField] protected GameObject success;
     [SerializeField] protected GameObject fail;

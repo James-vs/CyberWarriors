@@ -1030,18 +1030,26 @@ PrefabInstance:
     - target: {fileID: 1636941568444549293, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1287230038}
     - target: {fileID: 1636941568444549293, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Match11
       objectReference: {fileID: 0}
+    - target: {fileID: 1636941568444549293, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StSLevel1Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3258410897660833816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1287230038}
     - target: {fileID: 3258410897660833816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Match12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258410897660833816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1054,7 +1062,7 @@ PrefabInstance:
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1287230038}
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1065,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StSTutorialManager, Assembly-CSharp
+      value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3780678076209941821, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1094,7 +1102,7 @@ PrefabInstance:
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1287230038}
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1105,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StSTutorialManager, Assembly-CSharp
+      value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5247214239869710920, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1984,15 +1992,15 @@ MonoBehaviour:
   success: {fileID: 858328153}
   fail: {fileID: 1139211720}
   loadNextScene: {fileID: 1287230037}
+  matchesUI: {fileID: 1877839628}
+  timer: {fileID: 2112690270}
+  outOfTime: 0
   m1First: 0
   m2First: 0
   button1_1: {fileID: 1301634557}
   button1_2: {fileID: 371224023}
   button2_1: {fileID: 845327851}
   button2_2: {fileID: 845327850}
-  matchesUI: {fileID: 1877839628}
-  outOfTime: 0
-  timer: {fileID: 2112690270}
 --- !u!1 &1301634557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5897270589269685248, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
@@ -2082,10 +2090,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StSTutorialManager, Assembly-CSharp
-        m_MethodName: Retry
-        m_Mode: 1
+      - m_Target: {fileID: 1287230037}
+        m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2494,7 +2502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
   startTime: 10
-  stSTutorialManager: {fileID: 0}
+  stSManager: {fileID: 1287230038}
 --- !u!114 &84476934863653376
 MonoBehaviour:
   m_ObjectHideFlags: 0

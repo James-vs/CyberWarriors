@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
     private float countDownTime;
     public float startTime = 60f;
     private float timeElapsed = 0f;
-    [SerializeField] private StSTutorialManager stSTutorialManager;
+    [SerializeField] private StSManager stSManager;
 
     private bool gameOver = false;
 
@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
                 timeElapsed += 1 * Time.deltaTime;
                 timerText.text = countDownTime.ToString("0");
             } else {
-                stSTutorialManager.OutOfTime(true);
+                stSManager.OutOfTime(true);
                 StopTimer();
             }
         }

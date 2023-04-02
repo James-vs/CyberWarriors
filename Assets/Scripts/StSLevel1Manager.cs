@@ -1,13 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
-public class StSLevel1Manager : MonoBehaviour
+public class StSLevel1Manager : StSManager
 {
-    [SerializeField] private GameObject success;
-    [SerializeField] private GameObject fail;
-    [SerializeField] private LoadNextScene loadNextScene;
-    private bool gameOver = false;
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
     private bool match1_1 = false;
@@ -23,12 +18,8 @@ public class StSLevel1Manager : MonoBehaviour
     private Color btn2_1Original;
     private Color btn2_2Original;
 
-    private int matches = 0;
-    [SerializeField] private TextMeshProUGUI matchesUI;
-
-    [SerializeField] private bool outOfTime = false;
-    [SerializeField] private Timer timer;
     
+
 
     // Start is called before the first frame update
     void Start()
@@ -166,28 +157,6 @@ public class StSLevel1Manager : MonoBehaviour
             match2_2 = false;
             button2_2.GetComponent<Image>().color = btn2_2Original;
         }
-    }
-
-    //function to handle logic for matching and selecting of buttons
-    public float Match(bool firstMatch, bool pair1, bool match1) {
-        if (!firstMatch && !outOfTime) {
-            if (!pair1 && !match1) {
-                return 1; //if button selected
-            } else {
-                return 2; //if button deselected
-            }
-        }
-        return 3; //do nothing
-    }
-
-
-
-
-    //function to end the game if the timer runs out
-    public void OutOfTime (bool value) {
-        Debug.Log("OutOfTime called");
-        gameOver = value;
-        outOfTime = value;
     }
 
 
