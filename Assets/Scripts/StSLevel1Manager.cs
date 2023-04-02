@@ -5,18 +5,26 @@ public class StSLevel1Manager : StSManager
 {
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
+    [SerializeField] private bool m3First = false;
+    private bool[] matchList;
     private bool match1_1 = false;
     private bool match1_2 = false;
     private bool match2_1 = false;
     private bool match2_2 = false;
+    private bool match3_1 = false;
+    private bool match3_2 = false;
     [SerializeField] private GameObject button1_1;
     [SerializeField] private GameObject button1_2;
     [SerializeField] private GameObject button2_1;
     [SerializeField] private GameObject button2_2;
+    [SerializeField] private GameObject button3_1;
+    [SerializeField] private GameObject button3_2;
     private Color btn1_1Original;
     private Color btn1_2Original;
     private Color btn2_1Original;
     private Color btn2_2Original;
+    private Color btn3_1Original;
+    private Color btn3_2Original;
 
     
 
@@ -29,6 +37,9 @@ public class StSLevel1Manager : StSManager
         btn1_2Original = button1_2.GetComponent<Image>().color;
         btn2_1Original = button2_1.GetComponent<Image>().color;
         btn2_2Original = button2_2.GetComponent<Image>().color;
+        btn3_1Original = button3_1.GetComponent<Image>().color;
+        btn3_2Original = button3_2.GetComponent<Image>().color;
+        matchList = new bool[]{m1First,m2First,m3First};
     }
 
     // Update is called once per frame
@@ -53,19 +64,11 @@ public class StSLevel1Manager : StSManager
     //function to handle when all matches have been found 
     public bool CheckComplete() {
         //check for m1&m2 in all cases 
-        if (m1First && m2First) {
-            return true;
-        } else if (m1First && !m2First){
-            Match2Found();
-            return false;
-        } else if (!m1First && m2First) {
-            Match1Found();
-            return false;
-        } else {
-            Match1Found();
-            Match2Found();
+        if (!Match1Found() || !Match2Found() || !Match3Found())
+        {
             return false;
         }
+        return true;
     }
 
 
@@ -77,12 +80,12 @@ public class StSLevel1Manager : StSManager
             if (!m1First) {
                 Debug.Log("First pair matched");
                 matches += 1;
+                m1First = true;
+                match1_1 = false;
+                match1_2 = false;
+                button1_1.GetComponent<Image>().color = Color.green;
+                button1_2.GetComponent<Image>().color = Color.green;
             }
-            m1First = true;
-            match1_1 = false;
-            match1_2 = false;
-            button1_1.GetComponent<Image>().color = Color.green;
-            button1_2.GetComponent<Image>().color = Color.green;
             return true;
         } else {
             return false;
@@ -107,56 +110,79 @@ public class StSLevel1Manager : StSManager
         }
     }
 
+    public bool Match3Found() {
+        if (match3_1 && match3_2) {
+            if (!m3First) {
+                Debug.Log("Third pair matched");
+                matches += 1;
+            }
+            //match?_? added
+            match3_1 = false;
+            match3_2 = false;
+            button3_1.GetComponent<Image>().color = Color.green;
+            button3_2.GetComponent<Image>().color = Color.green;
+            m3First = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 
 
     //functions to handle button colour changing + boolean value changing
     public void Match11() {
-        float isMatch = Match(m1First,match2_1,match1_1);
-        if (isMatch == 1) {
-            Debug.Log("Button 1_1 selected");
+        float select = MatchItem(m1First,match2_1,match1_1,button1_1,btn1_1Original);
+        if (select == 1) {
             match1_1 = true;
-            button1_1.GetComponent<Image>().color = Color.yellow;
-        } else if (isMatch == 2) {
+        } else if (select == 2) {
             match1_1 = false;
-            button1_1.GetComponent<Image>().color = btn1_1Original;
         }
     }
 
     public void Match12() {
-        float isMatch = Match(m1First,match2_2,match1_2);
-        if (isMatch == 1) {
-            Debug.Log("Button 1_2 selected");
+        float select = MatchItem(m1First,match2_2,match1_2,button1_2,btn1_2Original);
+        if (select == 1) {
             match1_2 = true;
-            button1_2.GetComponent<Image>().color = Color.yellow;
-        } else if (isMatch == 2) {
+        } else if (select == 2) {
             match1_2 = false;
-            button1_2.GetComponent<Image>().color = btn1_2Original;
         }
     }
 
     public void Match21 () {
-        float isMatch = Match(m2First,match1_1,match2_1);
-        if (isMatch == 1) {
-            Debug.Log("Button 2_1 selected");
+        float select = MatchItem(m2First,match1_1,match2_1,button2_1,btn2_1Original);
+        if (select == 1) {
             match2_1 = true;
-            button2_1.GetComponent<Image>().color = Color.yellow;
-        } else if (isMatch == 2) {
+        } else if (select == 2) {
             match2_1 = false;
-            button2_1.GetComponent<Image>().color = btn2_1Original;
         }
     }
 
     public void Match22 () {
-        float isMatch = Match(m2First,match1_2,match2_2);
-        if (isMatch == 1) {
-            Debug.Log("Button 2_2 selected");
+        float select = MatchItem(m2First,match1_2,match2_2,button2_2,btn2_2Original);
+        if (select == 1) {
             match2_2 = true;
-            button2_2.GetComponent<Image>().color = Color.yellow;
-        } else if (isMatch == 2) {
+        } else if (select == 2) {
             match2_2 = false;
-            button2_2.GetComponent<Image>().color = btn2_2Original;
         }
+    }
+
+
+
+
+    //function to select a given button
+    public float MatchItem(bool mFirst, bool match1, bool match2, GameObject button, Color btnOriginal) {
+        float isMatch = Match(mFirst,match1,match2);
+        if (isMatch == 1) { 
+            Debug.Log("Button selected");
+            button.GetComponent<Image>().color = Color.yellow;
+            return 1;
+        } else if (isMatch == 2) {
+            button.GetComponent<Image>().color = btnOriginal;
+            return 2;
+        }
+        return 3;
     }
 
 
