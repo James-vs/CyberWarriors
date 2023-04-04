@@ -6,7 +6,8 @@ public class StSLevel1Manager : StSManager
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
     [SerializeField] private bool m3First = false;
-    private bool[] matchList;
+    private bool[] elemHalf1;
+    private bool[] elemHalf2;
     private bool match1_1 = false;
     private bool match1_2 = false;
     private bool match2_1 = false;
@@ -39,7 +40,9 @@ public class StSLevel1Manager : StSManager
         btn2_2Original = button2_2.GetComponent<Image>().color;
         btn3_1Original = button3_1.GetComponent<Image>().color;
         btn3_2Original = button3_2.GetComponent<Image>().color;
-        matchList = new bool[]{m1First,m2First,m3First};
+        elemHalf1 = new bool[]{this.match1_1,this.match2_1,this.match3_1};
+        elemHalf2 = new bool[]{this.match1_2,this.match2_2,this.match3_2};
+        //matchList = new bool[]{m1First,m2First,m3First};
     }
 
     // Update is called once per frame
@@ -168,6 +171,24 @@ public class StSLevel1Manager : StSManager
         }
     }
 
+    public void Match31 () {
+        float select = MatchItemList(m3First,elemHalf1,match2_2,button2_2,btn2_2Original);
+        if (select == 1) {
+            match2_2 = true;
+        } else if (select == 2) {
+            match2_2 = false;
+        }
+    }
+
+    public void Match32 () {
+        float select = MatchItemList(m3First,elemHalf2,match2_2,button2_2,btn2_2Original);
+        if (select == 1) {
+            match2_2 = true;
+        } else if (select == 2) {
+            match2_2 = false;
+        }
+    }
+
 
 
 
@@ -185,6 +206,40 @@ public class StSLevel1Manager : StSManager
         return 3;
     }
 
+    public float MatchItemList(bool mFirst, bool[] match1, bool match2, GameObject button, Color btnOriginal) {
+        float isMatch = MatchMulti(mFirst,PairSelected(match1),match2);
+        if (isMatch == 1) { 
+            Debug.Log("Button selected");
+            button.GetComponent<Image>().color = Color.yellow;
+            return 1;
+        } else if (isMatch == 2) {
+            button.GetComponent<Image>().color = btnOriginal;
+            return 2;
+        }
+        return 3;
+    }
+
+    //function to handle logic for matching and selecting of buttons
+    public float MatchMulti(bool firstMatch, bool pair1, bool match1) {
+        if (!firstMatch && !outOfTime) {
+            if (!pair1 && !match1) {
+                return 1; //if button selected
+            } else {
+                return 2; //if button deselected
+            }
+        }
+        return 3; //do nothing
+    }
+
+    //function to check if any items are true in a list
+    public bool PairSelected(bool[] pairs) {
+        bool result = true;
+        foreach (var item in pairs) {
+            result &= item;
+        }
+        return result;
+    }
+
 
 
 
@@ -194,8 +249,11 @@ public class StSLevel1Manager : StSManager
         match1_2 = false;
         match2_1 = false;
         match2_2 = false;
+        match3_1 = false;
+        match3_2 = false;
         m1First = false;
         m2First = false;
+        m3First = false;
         OutOfTime(false);
         fail.SetActive(false);
         loadNextScene.ChangeScene(0);
