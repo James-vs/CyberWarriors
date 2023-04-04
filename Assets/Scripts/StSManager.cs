@@ -8,7 +8,7 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected GameObject success;
     [SerializeField] protected GameObject fail;
     [SerializeField] protected LoadNextScene loadNextScene;
-    protected bool gameOver = false;
+    [SerializeField] protected bool gameOver = false;
     protected int matches = 0;
     [SerializeField] protected TextMeshProUGUI matchesUI;
     [SerializeField] protected Timer timer;

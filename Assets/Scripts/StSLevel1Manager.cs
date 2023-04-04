@@ -46,11 +46,11 @@ public class StSLevel1Manager : StSManager
     // Update is called once per frame
     void Update()
     {
-        if (!gameOver) {
+        if (!this.gameOver) {
             if (CheckComplete()) {
-                Debug.Log("Both pairs matched");
+                Debug.Log("All pairs matched");
                 success.SetActive(true);
-                gameOver = true;
+                this.gameOver = true;
                 timer.StopTimer();
             }
         } else if (outOfTime) {
@@ -64,12 +64,16 @@ public class StSLevel1Manager : StSManager
 
     //function to handle when all matches have been found 
     public bool CheckComplete() {
-        //check for m1&m2 in all cases 
-        if (!Match1Found() || !Match2Found() || !Match3Found())
-        {
+        //check for m1&m2 in all cases
+        Match1Found();
+        Match2Found();
+        Match3Found();
+        if (m1First && m2First && m3First) {
+            Debug.Log("CheckComplete return true");
+            return true;
+        } else {
             return false;
         }
-        return true;
     }
 
 
@@ -134,7 +138,7 @@ public class StSLevel1Manager : StSManager
 
     //functions to handle button colour changing + boolean value changing
     public void Match11() {
-        float select = MatchItem(m1First,match2_1,match1_1,button1_1,btn1_1Original);
+        float select = MatchItemList(m1First,1,match1_1,button1_1,btn1_1Original);
         if (select == 1) {
             match1_1 = true;
         } else if (select == 2) {
@@ -143,7 +147,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match12() {
-        float select = MatchItem(m1First,match2_2,match1_2,button1_2,btn1_2Original);
+        float select = MatchItemList(m1First,2,match1_2,button1_2,btn1_2Original);
         if (select == 1) {
             match1_2 = true;
         } else if (select == 2) {
@@ -152,7 +156,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match21 () {
-        float select = MatchItem(m2First,match1_1,match2_1,button2_1,btn2_1Original);
+        float select = MatchItemList(m2First,1,match2_1,button2_1,btn2_1Original);
         if (select == 1) {
             match2_1 = true;
         } else if (select == 2) {
@@ -161,7 +165,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match22 () {
-        float select = MatchItem(m2First,match1_2,match2_2,button2_2,btn2_2Original);
+        float select = MatchItemList(m2First,2,match2_2,button2_2,btn2_2Original);
         if (select == 1) {
             match2_2 = true;
         } else if (select == 2) {
@@ -205,6 +209,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public float MatchItemList(bool mFirst, float half, bool match2, GameObject button, Color btnOriginal) {
+        // create bool that is true if a button has been selected
         bool[] match1;
         if (half == 1) {
             match1 = new bool[]{this.match1_1,this.match2_1,this.match3_1};
@@ -212,7 +217,7 @@ public class StSLevel1Manager : StSManager
             match1 = new bool[]{this.match1_2,this.match2_2,this.match3_2};
         }
 
-        float isMatch = MatchMulti(mFirst,ItemsTrue(match1),match2);
+        float isMatch = Match(mFirst,ItemsTrue(match1),match2);
         if (isMatch == 1) { 
             Debug.Log("Button selected");
             button.GetComponent<Image>().color = Color.yellow;
@@ -224,17 +229,8 @@ public class StSLevel1Manager : StSManager
         return 3;
     }
 
-    //function to handle logic for matching and selecting of buttons
-    public float MatchMulti(bool firstMatch, bool pair1, bool match1) {
-        if (!firstMatch && !outOfTime) {
-            if (!pair1 && !match1) {
-                return 1; //if button selected
-            } else {
-                return 2; //if button deselected
-            }
-        }
-        return 3; //do nothing
-    }
+
+
 
     //function to check if any items are true in a list
     public bool ItemsTrue(bool[] pairs) {
