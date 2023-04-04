@@ -40,8 +40,6 @@ public class StSLevel1Manager : StSManager
         btn2_2Original = button2_2.GetComponent<Image>().color;
         btn3_1Original = button3_1.GetComponent<Image>().color;
         btn3_2Original = button3_2.GetComponent<Image>().color;
-        elemHalf1 = new bool[]{this.match1_1,this.match2_1,this.match3_1};
-        elemHalf2 = new bool[]{this.match1_2,this.match2_2,this.match3_2};
         //matchList = new bool[]{m1First,m2First,m3First};
     }
 
@@ -172,20 +170,20 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match31 () {
-        float select = MatchItemList(m3First,elemHalf1,match2_2,button2_2,btn2_2Original);
+        float select = MatchItemList(m3First,1,match3_1,button3_1,btn3_1Original);
         if (select == 1) {
-            match2_2 = true;
+            match3_1 = true;
         } else if (select == 2) {
-            match2_2 = false;
+            match3_1 = false;
         }
     }
 
     public void Match32 () {
-        float select = MatchItemList(m3First,elemHalf2,match2_2,button2_2,btn2_2Original);
+        float select = MatchItemList(m3First,2,match3_2,button3_2,btn3_2Original);
         if (select == 1) {
-            match2_2 = true;
+            match3_2 = true;
         } else if (select == 2) {
-            match2_2 = false;
+            match3_2 = false;
         }
     }
 
@@ -206,8 +204,15 @@ public class StSLevel1Manager : StSManager
         return 3;
     }
 
-    public float MatchItemList(bool mFirst, bool[] match1, bool match2, GameObject button, Color btnOriginal) {
-        float isMatch = MatchMulti(mFirst,PairSelected(match1),match2);
+    public float MatchItemList(bool mFirst, float half, bool match2, GameObject button, Color btnOriginal) {
+        bool[] match1;
+        if (half == 1) {
+            match1 = new bool[]{this.match1_1,this.match2_1,this.match3_1};
+        } else {
+            match1 = new bool[]{this.match1_2,this.match2_2,this.match3_2};
+        }
+
+        float isMatch = MatchMulti(mFirst,ItemsTrue(match1),match2);
         if (isMatch == 1) { 
             Debug.Log("Button selected");
             button.GetComponent<Image>().color = Color.yellow;
@@ -232,12 +237,12 @@ public class StSLevel1Manager : StSManager
     }
 
     //function to check if any items are true in a list
-    public bool PairSelected(bool[] pairs) {
-        bool result = true;
+    public bool ItemsTrue(bool[] pairs) {
+        //bool result = true;
         foreach (var item in pairs) {
-            result &= item;
+            if (item == true) return true;
         }
-        return result;
+        return false;
     }
 
 

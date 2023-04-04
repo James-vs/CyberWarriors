@@ -1023,6 +1023,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 929476124}
     m_Modifications:
+    - target: {fileID: 293693535868329340, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_Name
+      value: click c2
+      objectReference: {fileID: 0}
     - target: {fileID: 738669343043666757, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1158,6 +1162,10 @@ PrefabInstance:
     - target: {fileID: 5681236290528254008, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351324618906697718, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_Name
+      value: click d2
       objectReference: {fileID: 0}
     - target: {fileID: 6719934856994857371, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
