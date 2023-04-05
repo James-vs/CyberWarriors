@@ -721,7 +721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: / 3
+  m_text: / 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1043,6 +1043,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1992348029666949690, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1287230038}
+    - target: {fileID: 1992348029666949690, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Match42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992348029666949690, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StSLevel1Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992348029666949690, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2629821453907622696, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1215,6 +1231,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7311558130732525592, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1287230038}
+    - target: {fileID: 7311558130732525592, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Match41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311558130732525592, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StSLevel1Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311558130732525592, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7950677850270773322, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1322,6 +1354,11 @@ GameObject:
 --- !u!1 &845327851 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 160108313411719396, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+  m_PrefabInstance: {fileID: 845327848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &845327852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3209838629956282667, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
   m_PrefabInstance: {fileID: 845327848}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &858328153
@@ -1484,6 +1521,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895341737}
   m_CullTransparentMesh: 1
+--- !u!1 &921602200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8857406179684119044, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+  m_PrefabInstance: {fileID: 845327848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929476120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,12 +2130,15 @@ MonoBehaviour:
   m1First: 0
   m2First: 0
   m3First: 0
+  m4First: 0
   button1_1: {fileID: 1301634557}
   button1_2: {fileID: 371224023}
   button2_1: {fileID: 845327851}
   button2_2: {fileID: 845327850}
   button3_1: {fileID: 2083997874}
   button3_2: {fileID: 1258258633}
+  button4_1: {fileID: 921602200}
+  button4_2: {fileID: 845327852}
 --- !u!1 &1301634557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5897270589269685248, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
@@ -2599,7 +2644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
-  startTime: 60
+  startTime: 10
   stSManager: {fileID: 1287230038}
 --- !u!114 &84476934863653376
 MonoBehaviour:

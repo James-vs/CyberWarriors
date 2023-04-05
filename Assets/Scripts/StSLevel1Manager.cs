@@ -6,26 +6,31 @@ public class StSLevel1Manager : StSManager
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
     [SerializeField] private bool m3First = false;
-    private bool[] elemHalf1;
-    private bool[] elemHalf2;
+    [SerializeField] private bool m4First = false;
     private bool match1_1 = false;
     private bool match1_2 = false;
     private bool match2_1 = false;
     private bool match2_2 = false;
     private bool match3_1 = false;
     private bool match3_2 = false;
+    private bool match4_1 = false;
+    private bool match4_2 = false;
     [SerializeField] private GameObject button1_1;
     [SerializeField] private GameObject button1_2;
     [SerializeField] private GameObject button2_1;
     [SerializeField] private GameObject button2_2;
     [SerializeField] private GameObject button3_1;
     [SerializeField] private GameObject button3_2;
+    [SerializeField] private GameObject button4_1;
+    [SerializeField] private GameObject button4_2;
     private Color btn1_1Original;
     private Color btn1_2Original;
     private Color btn2_1Original;
     private Color btn2_2Original;
     private Color btn3_1Original;
     private Color btn3_2Original;
+    private Color btn4_1Original;
+    private Color btn4_2Original;
 
     
 
@@ -34,14 +39,13 @@ public class StSLevel1Manager : StSManager
     void Start()
     {
         Debug.Log("StSLevel1Manager running");
-        btn1_1Original = button1_1.GetComponent<Image>().color;
-        btn1_2Original = button1_2.GetComponent<Image>().color;
-        btn2_1Original = button2_1.GetComponent<Image>().color;
-        btn2_2Original = button2_2.GetComponent<Image>().color;
-        btn3_1Original = button3_1.GetComponent<Image>().color;
-        btn3_2Original = button3_2.GetComponent<Image>().color;
+        //get the buttons' original colors
+        GetButtonOriginColours();
         //matchList = new bool[]{m1First,m2First,m3First};
     }
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -62,18 +66,41 @@ public class StSLevel1Manager : StSManager
 
 
 
+    //function to get the colors of all buttons
+    public void GetButtonOriginColours(){
+        btn1_1Original = button1_1.GetComponent<Image>().color;
+        btn1_2Original = button1_2.GetComponent<Image>().color;
+        btn2_1Original = button2_1.GetComponent<Image>().color;
+        btn2_2Original = button2_2.GetComponent<Image>().color;
+        btn3_1Original = button3_1.GetComponent<Image>().color;
+        btn3_2Original = button3_2.GetComponent<Image>().color;
+        btn4_1Original = button4_1.GetComponent<Image>().color;
+        btn4_2Original = button4_2.GetComponent<Image>().color;
+    }
+
+
+
+
     //function to handle when all matches have been found 
     public bool CheckComplete() {
-        //check for m1&m2 in all cases
-        Match1Found();
-        Match2Found();
-        Match3Found();
-        if (m1First && m2First && m3First) {
+        AllMatched();
+        if (m1First && m2First && m3First && m4First) {
             Debug.Log("CheckComplete return true");
             return true;
         } else {
             return false;
         }
+    }
+
+
+
+
+    //function to check for matches for all pairs
+    public void AllMatched() {    
+        Match1Found();
+        Match2Found();
+        Match3Found();
+        Match4Found();
     }
 
 
@@ -127,6 +154,24 @@ public class StSLevel1Manager : StSManager
             button3_1.GetComponent<Image>().color = Color.green;
             button3_2.GetComponent<Image>().color = Color.green;
             m3First = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public bool Match4Found() {
+        if (match4_1 && match4_2) {
+            if (!m4First) {
+                Debug.Log("Fourth pair matched");
+                matches += 1;
+            }
+            //match?_? added
+            match4_1 = false;
+            match4_2 = false;
+            button4_1.GetComponent<Image>().color = Color.green;
+            button4_2.GetComponent<Image>().color = Color.green;
+            m4First = true;
             return true;
         } else {
             return false;
@@ -191,12 +236,30 @@ public class StSLevel1Manager : StSManager
         }
     }
 
+    public void Match41 () {
+        float select = MatchItemList(m4First,1,match4_1,button4_1,btn4_1Original);
+        if (select == 1) {
+            match4_1 = true;
+        } else if (select == 2) {
+            match4_1 = false;
+        }
+    }
+
+    public void Match42 () {
+        float select = MatchItemList(m4First,2,match4_2,button4_2,btn4_2Original);
+        if (select == 1) {
+            match4_2 = true;
+        } else if (select == 2) {
+            match4_2 = false;
+        }
+    }
 
 
 
-    //function to select a given button
-    public float MatchItem(bool mFirst, bool match1, bool match2, GameObject button, Color btnOriginal) {
-        float isMatch = Match(mFirst,match1,match2);
+    // function to select or deselect a given button
+    public float MatchItemList(bool mFirst, float page, bool match2, GameObject button, Color btnOriginal) {
+        bool[] itemList = getItemPageList(page);
+        float isMatch = Match(mFirst,ItemsTrue(itemList),match2);
         if (isMatch == 1) { 
             Debug.Log("Button selected");
             button.GetComponent<Image>().color = Color.yellow;
@@ -208,25 +271,16 @@ public class StSLevel1Manager : StSManager
         return 3;
     }
 
-    public float MatchItemList(bool mFirst, float half, bool match2, GameObject button, Color btnOriginal) {
-        // create bool that is true if a button has been selected
-        bool[] match1;
-        if (half == 1) {
-            match1 = new bool[]{this.match1_1,this.match2_1,this.match3_1};
-        } else {
-            match1 = new bool[]{this.match1_2,this.match2_2,this.match3_2};
-        }
 
-        float isMatch = Match(mFirst,ItemsTrue(match1),match2);
-        if (isMatch == 1) { 
-            Debug.Log("Button selected");
-            button.GetComponent<Image>().color = Color.yellow;
-            return 1;
-        } else if (isMatch == 2) {
-            button.GetComponent<Image>().color = btnOriginal;
-            return 2;
+
+
+    // function to return bool list of all elements from relative page number
+    public bool[] getItemPageList(float page) {
+        if (page == 1) {
+            return new bool[]{this.match1_1,this.match2_1,this.match3_1,this.match4_1};
+        } else {
+            return new bool[]{this.match1_2,this.match2_2,this.match3_2,this.match4_2};
         }
-        return 3;
     }
 
 
@@ -252,9 +306,12 @@ public class StSLevel1Manager : StSManager
         match2_2 = false;
         match3_1 = false;
         match3_2 = false;
+        match4_1 = false;
+        match4_2 = false;
         m1First = false;
         m2First = false;
         m3First = false;
+        m4First = false;
         OutOfTime(false);
         fail.SetActive(false);
         loadNextScene.ChangeScene(0);
