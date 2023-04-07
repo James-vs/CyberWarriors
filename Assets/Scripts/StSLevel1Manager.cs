@@ -115,7 +115,7 @@ public class StSLevel1Manager : StSManager
 
 
 
-    //functions to handle matches
+    //functions to handle matches of pairs 
     public bool Match1Found() {
         if (match1_1 && match1_2) {
             if (!m1First) {
