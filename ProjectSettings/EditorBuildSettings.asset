@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1 Debrief.unity
     guid: e9003ef00d971454ca0ffcc1ed0a2bbd
+  - enabled: 1
+    path: Assets/Scenes/FirstGameQuiz.unity
+    guid: dc895f06fee393f4e97334206df25b8e
   m_configObjects: {}

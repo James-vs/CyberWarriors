@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
 
@@ -10,6 +11,9 @@ public class FirstGameQuizManager : MonoBehaviour
     [SerializeField] private GameObject question_1;
     [SerializeField] private GameObject question_2;
     [SerializeField] private GameObject question_3;
+    [SerializeField] private GameObject q1invalid;
+    [SerializeField] private GameObject q2invalid;
+    [SerializeField] private GameObject q3invalid;
     [SerializeField] private GameObject results;
     [SerializeField] private GameObject yourAns1;
     [SerializeField] private GameObject yourAns2;
@@ -57,28 +61,34 @@ public class FirstGameQuizManager : MonoBehaviour
             // go to the next question
             question_1.SetActive(false);
             question_2.SetActive(true);
+            //q2invalid.SetActive(false);
         } else if (questNum == 2 && answer2.Length < 2 && Regex.IsMatch(answer2, @"^[a-cA-C]+$")) {
             // go to the next question
             question_2.SetActive(false);
             question_3.SetActive(true);
+            //q3invalid.SetActive(false);
         } else if (questNum == 3 && answer3.Length < 2 && Regex.IsMatch(answer3, @"^[a-cA-C]+$")) {
             // mark the answers
             // display results
             question_3.SetActive(false);
             results.SetActive(true);
             CheckAnswers();
+        } else if (questNum == 1){ //invalid input cases
+            q1invalid.SetActive(true);
+        }else if (questNum == 2){
+            q2invalid.SetActive(true);
+        }else if (questNum == 3){
+            q3invalid.SetActive(true);
         } else {
-            Debug.Log("Invlaid input or question number");
+            Debug.Log("Invalid question number");
         }
     }
 
     
     /// <summary>
-    /// function to mark a given question
+    /// function to mark the questions
     /// </summary>
-    /// <param name="questNum">question number</param>
     public void CheckAnswers() {
-        
         if (answer1.ToLower().Equals("c")) {
             Debug.Log("answer1 correct");
             ans1correct = true;
@@ -86,14 +96,12 @@ public class FirstGameQuizManager : MonoBehaviour
             ans1correct = false;
         }
     
-    
         if (answer2.ToLower().Equals("c")) {
             Debug.Log("answer2 correct");
             ans2correct = true;
         } else {
             ans2correct = false;
         }
-    
 
         if (answer3.ToLower().Equals("b")) {
             Debug.Log("answer3 correct");
@@ -102,14 +110,38 @@ public class FirstGameQuizManager : MonoBehaviour
             ans3correct = false;
         }
 
-        //yourAns1.text = "Your Answer: " + answer1.ToUpper();
-        //yourAns2.text = "Your Answer: " + answer2.ToUpper();
-        TextMeshProUGUI yourAns3Text = yourAns3.GetComponent<TextMeshProUGUI>();
-        yourAns3Text.text = "Your Answer: " + answer3.ToUpper();
-        
-        //change background colour to green for answers
+        DisplayResults();
 
-            
+    }
+
+
+
+    /// <summary>
+    /// Displays the answers to the user in a human readable and obvious format
+    /// </summary>
+    private void DisplayResults() {
+        TextMeshProUGUI yourAns1Text = yourAns1.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        yourAns1Text.text = "Your Answer: " + answer1.ToUpper();
+        if (ans1correct) {
+            yourAns1.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+        } else {
+            yourAns1.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+        }
+        TextMeshProUGUI yourAns2Text = yourAns2.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        yourAns2Text.text = "Your Answer: " + answer2.ToUpper();
+        if (ans2correct) {
+            yourAns2.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+        } else {
+            yourAns2.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+        }
+        TextMeshProUGUI yourAns3Text = yourAns3.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        yourAns3Text.text = "Your Answer: " + answer3.ToUpper();
+        if (ans3correct) {
+            yourAns3.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+        } else {
+            yourAns3.transform.GetChild(0).GetComponent<Image>().color = Color.red;
+
+        }
     }
         
 }
