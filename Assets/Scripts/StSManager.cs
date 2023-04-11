@@ -33,4 +33,24 @@ public class StSManager : MonoBehaviour
         }
         return 3; //do nothing
     }
+
+
+    // #### FUNCTIONS TO HANDLE NoSQL DATABASE QUERIES
+
+    // function to save the score + append the highscore
+    protected void SaveScore(string scoreKey, string highScoreKey){
+        float score = matches * (1000 + (timer.GetValue() * 10));
+        PlayerPrefs.SetFloat(scoreKey,score);
+
+        if (PlayerPrefs.GetFloat(highScoreKey) < score) {
+            PlayerPrefs.SetFloat(highScoreKey,score);
+        }
+    }
+
+    // function to check if a highscore PlayerPrefs key exists, creates one if not
+    protected void CheckForHighscore(string highScoreKey) {
+        if (!PlayerPrefs.HasKey(highScoreKey)) {
+            PlayerPrefs.SetFloat(highScoreKey,0f);
+        }
+    }
 }

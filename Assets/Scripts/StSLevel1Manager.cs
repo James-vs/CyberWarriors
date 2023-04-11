@@ -47,7 +47,7 @@ public class StSLevel1Manager : StSManager
         Debug.Log("StSLevel1Manager running");
         //get the buttons' original colors
         GetButtonOriginColours();
-        //matchList = new bool[]{m1First,m2First,m3First};
+        CheckForHighscore("stslevel1highscore");
     }
 
 
@@ -62,6 +62,7 @@ public class StSLevel1Manager : StSManager
                 success.SetActive(true);
                 this.gameOver = true;
                 timer.StopTimer();
+                SaveScore("stslevel1score","stslevel1highscore");
             }
         } else if (outOfTime) {
             fail.SetActive(true);
@@ -291,7 +292,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match52 () {
-        float select = MatchItemList(m4First,2,match5_2,button5_2,btn5_2Original);
+        float select = MatchItemList(m5First,2,match5_2,button5_2,btn5_2Original);
         if (select == 1) {
             match5_2 = true;
         } else if (select == 2) {

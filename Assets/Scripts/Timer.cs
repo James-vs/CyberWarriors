@@ -33,7 +33,18 @@ public class Timer : MonoBehaviour
         }
     }
 
+    // function to stop the timer
     public void StopTimer() {
         gameOver = true;
+    }
+
+    // function to return the current countdown time
+    public float GetValue(){
+        return countDownTime;
+    }
+
+    // function to return the time elapsed
+    public float GetTimeElapsed() {
+        return timeElapsed;
     }
 }

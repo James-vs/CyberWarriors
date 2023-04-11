@@ -3,10 +3,6 @@ using UnityEngine.UI;
 
 public class StSTutorialManager : StSManager
 {
-    /*[SerializeField] private GameObject success;
-    [SerializeField] private GameObject fail;
-    [SerializeField] private LoadNextScene loadNextScene;
-    private bool gameOver = false;*/
     [SerializeField] private bool m1First = false;
     [SerializeField] private bool m2First = false;
     private bool match1_1 = false;
@@ -21,12 +17,6 @@ public class StSTutorialManager : StSManager
     private Color btn1_2Original;
     private Color btn2_1Original;
     private Color btn2_2Original;
-
-   /* private int matches = 0;
-    [SerializeField] private TextMeshProUGUI matchesUI;
-
-    [SerializeField] private bool outOfTime = false;
-    [SerializeField] private Timer timer;*/
     
 
     // Start is called before the first frame update
@@ -37,6 +27,7 @@ public class StSTutorialManager : StSManager
         btn1_2Original = button1_2.GetComponent<Image>().color;
         btn2_1Original = button2_1.GetComponent<Image>().color;
         btn2_2Original = button2_2.GetComponent<Image>().color;
+        CheckForHighscore("ststutorialhighscore");
     }
 
     // Update is called once per frame
@@ -48,6 +39,7 @@ public class StSTutorialManager : StSManager
                 success.SetActive(true);
                 gameOver = true;
                 timer.StopTimer();
+                SaveScore("ststutorialscore","ststutorialhighscore");
             }
         } else if (outOfTime) {
             fail.SetActive(true);
@@ -182,5 +174,5 @@ public class StSTutorialManager : StSManager
         fail.SetActive(false);
         loadNextScene.ChangeScene(0);
     }
-
+    
 }
