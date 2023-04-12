@@ -4639,6 +4639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tab1: {fileID: 6648139337142559556}
   tab2: {fileID: 4059101415561007179}
+  tab1Button: {fileID: 5595506718260312060}
+  tab2Button: {fileID: 3032748562764086331}
 --- !u!1 &6648139337102347569
 GameObject:
   m_ObjectHideFlags: 0

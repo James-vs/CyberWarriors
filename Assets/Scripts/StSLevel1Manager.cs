@@ -24,20 +24,20 @@ public class StSLevel1Manager : StSManager
     [SerializeField] private GameObject button2_2;
     [SerializeField] private GameObject button3_1;
     [SerializeField] private GameObject button3_2;
-    [SerializeField] private GameObject button4_1;
-    [SerializeField] private GameObject button4_2;
-    [SerializeField] private GameObject button5_1;
-    [SerializeField] private GameObject button5_2;
+    [SerializeField] private GameObject object4_1;
+    [SerializeField] private GameObject object4_2;
+    [SerializeField] private GameObject object5_1;
+    [SerializeField] private GameObject object5_2;
     private Color btn1_1Original;
     private Color btn1_2Original;
     private Color btn2_1Original;
     private Color btn2_2Original;
     private Color btn3_1Original;
     private Color btn3_2Original;
-    private Color btn4_1Original;
-    private Color btn4_2Original;
-    private Color btn5_1Original;
-    private Color btn5_2Original;
+    private Color img4_1Original;
+    private Color img4_2Original;
+    private Color img5_1Original;
+    private Color img5_2Original;
     
 
 
@@ -81,10 +81,10 @@ public class StSLevel1Manager : StSManager
         btn2_2Original = button2_2.GetComponent<Image>().color;
         btn3_1Original = button3_1.GetComponent<Image>().color;
         btn3_2Original = button3_2.GetComponent<Image>().color;
-        btn4_1Original = button4_1.GetComponent<Image>().color;
-        btn4_2Original = button4_2.GetComponent<Image>().color;
-        btn5_1Original = button5_1.GetComponent<Image>().color;
-        btn5_2Original = button5_2.GetComponent<Image>().color;
+        img4_1Original = object4_1.transform.GetChild(0).GetComponent<Image>().color;
+        img4_2Original = object4_2.transform.GetChild(0).GetComponent<Image>().color;
+        img5_1Original = object5_1.transform.GetChild(0).GetComponent<Image>().color;
+        img5_2Original = object5_2.transform.GetChild(0).GetComponent<Image>().color;
     }
 
 
@@ -179,8 +179,8 @@ public class StSLevel1Manager : StSManager
             //match?_? added
             match4_1 = false;
             match4_2 = false;
-            button4_1.GetComponent<Image>().color = Color.green;
-            button4_2.GetComponent<Image>().color = Color.green;
+            object4_1.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+            object4_2.transform.GetChild(0).GetComponent<Image>().color = Color.green;
             m4First = true;
             return true;
         } else {
@@ -197,8 +197,8 @@ public class StSLevel1Manager : StSManager
             //match?_? added
             match5_1 = false;
             match5_2 = false;
-            button5_1.GetComponent<Image>().color = Color.green;
-            button5_2.GetComponent<Image>().color = Color.green;
+            object5_1.transform.GetChild(0).GetComponent<Image>().color = Color.green;
+            object5_2.transform.GetChild(0).GetComponent<Image>().color = Color.green;
             m5First = true;
             return true;
         } else {
@@ -265,7 +265,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match41 () {
-        float select = MatchItemList(m4First,1,match4_1,button4_1,btn4_1Original);
+        float select = MatchItemList(m4First,1,match4_1,object4_1.transform.GetChild(0).gameObject,img4_1Original);
         if (select == 1) {
             match4_1 = true;
         } else if (select == 2) {
@@ -274,7 +274,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match42 () {
-        float select = MatchItemList(m4First,2,match4_2,button4_2,btn4_2Original);
+        float select = MatchItemList(m4First,2,match4_2,object4_2.transform.GetChild(0).gameObject,img4_2Original);
         if (select == 1) {
             match4_2 = true;
         } else if (select == 2) {
@@ -283,7 +283,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match51 () {
-        float select = MatchItemList(m5First,1,match5_1,button5_1,btn5_1Original);
+        float select = MatchItemList(m5First,1,match5_1,object5_1.transform.GetChild(0).gameObject,img5_1Original);
         if (select == 1) {
             match5_1 = true;
         } else if (select == 2) {
@@ -292,7 +292,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match52 () {
-        float select = MatchItemList(m5First,2,match5_2,button5_2,btn5_2Original);
+        float select = MatchItemList(m5First,2,match5_2,object5_2.transform.GetChild(0).gameObject,img5_2Original);
         if (select == 1) {
             match5_2 = true;
         } else if (select == 2) {
@@ -303,15 +303,15 @@ public class StSLevel1Manager : StSManager
 
 
     // function to select or deselect a given button
-    public float MatchItemList(bool mFirst, float page, bool match2, GameObject button, Color btnOriginal) {
+    public float MatchItemList(bool mFirst, float page, bool match2, GameObject imageObject, Color btnOriginal) {
         bool[] itemList = getItemPageList(page);
         float isMatch = Match(mFirst,ItemsTrue(itemList),match2);
         if (isMatch == 1) { 
             Debug.Log("Button selected");
-            button.GetComponent<Image>().color = Color.yellow;
+            imageObject.GetComponent<Image>().color = Color.yellow;
             return 1;
         } else if (isMatch == 2) {
-            button.GetComponent<Image>().color = btnOriginal;
+            imageObject.GetComponent<Image>().color = btnOriginal;
             return 2;
         }
         return 3;
