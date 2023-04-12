@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
             if (countDownTime > 0) {
                 countDownTime -= 1 * Time.deltaTime;
                 timeElapsed += 1 * Time.deltaTime;
-                timerText.text = countDownTime.ToString("0");
+                timerText.text = countDownTime.ToString("0") + "s";
             } else {
                 stSManager.OutOfTime(true);
                 StopTimer();
