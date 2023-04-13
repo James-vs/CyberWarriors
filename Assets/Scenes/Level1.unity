@@ -1199,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: click d2
       objectReference: {fileID: 0}
+    - target: {fileID: 6499534506732112030, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6601556000759806545, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_Enabled
       value: 1
