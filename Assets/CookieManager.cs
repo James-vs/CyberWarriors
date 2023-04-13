@@ -52,7 +52,7 @@ public class CookieManager : MonoBehaviour
             strictlyNec.GetComponent<Toggle>().interactable = false;
             rejectAll.GetComponent<Toggle>().interactable = false;
             doneBtn.gameObject.SetActive(true);
-            option = 3;
+            option = 0;
         } else {
             strictlyNec.GetComponent<Toggle>().interactable = true;
             rejectAll.GetComponent<Toggle>().interactable = true;
