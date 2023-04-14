@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StSLevel2Manager : StSLevel1Manager
 {
@@ -84,7 +83,9 @@ public class StSLevel2Manager : StSLevel1Manager
 
 
 
-
+    /// <summary>
+    /// function to check if the best cookie setting has been selected and adjust settings and ui accordingly
+    /// </summary>
     protected void CheckGoodCookie() {
         if (PlayerPrefs.GetInt(cookie1) == 2 && PlayerPrefs.GetInt(cookie2) == 2) {
             button2_1.transform.parent.gameObject.SetActive(false);
