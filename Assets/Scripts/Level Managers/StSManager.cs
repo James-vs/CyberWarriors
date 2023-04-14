@@ -13,6 +13,8 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI matchesUI;
     [SerializeField] protected Timer timer;
     [SerializeField] protected bool outOfTime = false;
+    [SerializeField] protected string scoreKey;
+    [SerializeField] protected string highScoreKey;
     
 
     //function to end the game if the timer runs out
@@ -38,7 +40,7 @@ public class StSManager : MonoBehaviour
     // #### FUNCTIONS TO HANDLE NoSQL DATABASE QUERIES
 
     // function to save the score + append the highscore
-    protected void SaveScore(string scoreKey, string highScoreKey){
+    protected void SaveScore(string scoreKey, string highScoreKey, int matches){
         float score = matches * (1000 + (timer.GetValue() * 10));
         PlayerPrefs.SetFloat(scoreKey,score);
 
@@ -52,5 +54,10 @@ public class StSManager : MonoBehaviour
         if (!PlayerPrefs.HasKey(highScoreKey)) {
             PlayerPrefs.SetFloat(highScoreKey,0f);
         }
+    }
+
+    // function to reset the saved score
+    protected void ResetScore() {
+        PlayerPrefs.SetFloat(scoreKey,0f);
     }
 }

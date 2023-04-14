@@ -1190,10 +1190,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 929476124}
     m_Modifications:
-    - target: {fileID: 514531018126410532, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 572412949142410101, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1222,9 +1218,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 1051951068436148601, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 251
+    - target: {fileID: 1245049686291305297, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
+      propertyPath: m_Size
+      value: 0.2587848
+      objectReference: {fileID: 0}
+    - target: {fileID: 1245049686291305297, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
+      propertyPath: m_Value
+      value: 0.9992978
       objectReference: {fileID: 0}
     - target: {fileID: 1425047612105397122, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1237,14 +1237,6 @@ PrefabInstance:
     - target: {fileID: 1425047612105397122, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690431690780164888, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1690431690780164888, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1293
       objectReference: {fileID: 0}
     - target: {fileID: 2089778732336138407, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1410,10 +1402,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5628687950085188968, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -358
-      objectReference: {fileID: 0}
     - target: {fileID: 6209990056479582397, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1493,10 +1481,6 @@ PrefabInstance:
     - target: {fileID: 7594421388973575996, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1131.142
-      objectReference: {fileID: 0}
-    - target: {fileID: 7943219420370805461, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -49
       objectReference: {fileID: 0}
     - target: {fileID: 8192733348686886688, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1856,7 +1840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Match the pairs of data in the websites
+  m_text: Match the pairs of data across the websites
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2169,6 +2153,8 @@ MonoBehaviour:
   matchesUI: {fileID: 1877839628}
   timer: {fileID: 2112690270}
   outOfTime: 0
+  scoreKey: stslevel2score
+  highScoreKey: stslevel2highscore
   m1First: 0
   m2First: 0
   m3First: 0
@@ -2185,6 +2171,8 @@ MonoBehaviour:
   object5_1: {fileID: 1574020387}
   object5_2: {fileID: 1805066901}
   totalMatches: 4
+  cookie1: l2Cookie1
+  cookie2: l2Cookie2
 --- !u!1 &1522583054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6021542564744890371, guid: 8bf068524413f484ea547eaa8977d6b8, type: 3}
@@ -2722,7 +2710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Click matching elements across both websites to score points!
+  m_text: Setting cookies in a safe way can help protect our data!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2835,7 +2823,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We know that location can be shared across websites, what else?
+  m_text: We've seen that free apps and services (like websites) can access our private
+    information.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2921,7 +2910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 407}
+  m_AnchoredPosition: {x: 0, y: 380}
   m_SizeDelta: {x: 340.2563, y: 162.5655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2221894536734180055
@@ -3119,7 +3108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8903, y: 216}
+  m_AnchoredPosition: {x: -2.8903, y: 188}
   m_SizeDelta: {x: 361.4189, y: 162.5655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8372554499481721645

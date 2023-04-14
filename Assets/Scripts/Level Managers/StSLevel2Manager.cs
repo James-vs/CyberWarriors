@@ -4,6 +4,12 @@ using UnityEngine.UI;
 public class StSLevel2Manager : StSLevel1Manager
 {
     [SerializeField] protected float totalMatches = 4;
+    protected bool goodCookieChoice = false;
+    protected bool checkedGoodCookie = false;
+    [SerializeField] protected string cookie1;
+    [SerializeField] protected string cookie2;
+
+
 
 
     // Start is called before the first frame update
@@ -15,7 +21,9 @@ public class StSLevel2Manager : StSLevel1Manager
         button3_1 = button1_1;
         button3_2 = button1_1;
         GetButtonOriginColours();
-        CheckForHighscore("stslevel2highscore");
+        CheckForHighscore(highScoreKey);
+        ResetCookies();
+        ResetScore();
     }
 
 
@@ -30,12 +38,25 @@ public class StSLevel2Manager : StSLevel1Manager
                 success.SetActive(true);
                 this.gameOver = true;
                 timer.StopTimer();
-                SaveScore("stslevel2score","stslevel2highscore");
+                SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {
             fail.SetActive(true);
         }
         matchesUI.text = matches.ToString() + " / " + totalMatches.ToString();
+        
+        if (!checkedGoodCookie) CheckGoodCookie();
+    }
+
+
+
+
+    /// <summary>
+    /// function to reset the saved cookies for the level
+    /// </summary>
+    protected void ResetCookies() {
+        PlayerPrefs.SetInt(cookie1,0);
+        PlayerPrefs.SetInt(cookie2,0);
     }
 
 
@@ -44,23 +65,51 @@ public class StSLevel2Manager : StSLevel1Manager
     //function to handle when all matches have been found 
     public new bool CheckComplete() {
         AllMatched();
-        if (m1First && m2First && m4First && m5First) { // && m3First
-            Debug.Log("CheckComplete return true");
-            return true;
+        if (goodCookieChoice) {
+            if (m1First && m4First && m5First) { // && m3First
+                Debug.Log("CheckComplete return true");
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            return false;
+            if (m1First && m2First && m4First && m5First) { // && m3First
+                Debug.Log("CheckComplete return true");
+                return true;
+            } else {
+                return false;
+            }
+        }   
+    }
+
+
+
+
+    protected void CheckGoodCookie() {
+        if (PlayerPrefs.GetInt(cookie1) == 2 && PlayerPrefs.GetInt(cookie2) == 2) {
+            button2_1.transform.parent.gameObject.SetActive(false);
+            button2_2.transform.parent.gameObject.SetActive(false);
+            totalMatches = 3f;
+            goodCookieChoice = true;
+            checkedGoodCookie = true;
         }
     }
 
 
 
 
-    //function to check for matches for all pairs
-    public new void AllMatched() {    
-        Match1Found();
-        Match2Found();
-        Match4Found();
-        Match5Found();
+    //function to check for matches for all visible pairs
+    public new void AllMatched() {
+        if (goodCookieChoice) {
+            Match1Found();
+            Match4Found();
+            Match5Found();
+        } else {
+            Match1Found();
+            Match2Found();
+            Match4Found();
+            Match5Found();
+        }
     }
 
 
@@ -68,11 +117,20 @@ public class StSLevel2Manager : StSLevel1Manager
 
     // function to return bool list of all elements from relative page number
     public new bool[] getItemPageList(float page) {
-        if (page == 1) {
-            return new bool[]{this.match1_1,this.match2_1,this.match4_1,this.match5_1};
+        if (goodCookieChoice) {
+            if (page == 1) {
+                return new bool[]{this.match1_1,this.match4_1,this.match5_1};
+            } else {
+                return new bool[]{this.match1_2,this.match4_2,this.match5_2};
+            }
         } else {
-            return new bool[]{this.match1_2,this.match2_2,this.match4_2,this.match5_2};
+            if (page == 1) {
+                return new bool[]{this.match1_1,this.match2_1,this.match4_1,this.match5_1};
+            } else {
+                return new bool[]{this.match1_2,this.match2_2,this.match4_2,this.match5_2};
+            }
         }
+        
     }
 
 
@@ -101,8 +159,9 @@ public class StSLevel2Manager : StSLevel1Manager
 
 
     // function to save the score + append the highscore
-    protected new void SaveScore(string scoreKey, string highScoreKey){
-        float cookieScore = PlayerPrefs.GetInt("cookieOptions") * 1000;
+    protected new void SaveScore(string scoreKey, string highScoreKey, int matches){
+        matches = 4;
+        float cookieScore = (PlayerPrefs.GetInt(cookie1) * 1000) + (PlayerPrefs.GetInt(cookie2) * 1000);
         float score = matches * (1000 + (timer.GetValue() * 10)) + cookieScore;
         PlayerPrefs.SetFloat(scoreKey,score);
 

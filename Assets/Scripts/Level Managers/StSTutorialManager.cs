@@ -27,7 +27,8 @@ public class StSTutorialManager : StSManager
         btn1_2Original = button1_2.GetComponent<Image>().color;
         btn2_1Original = button2_1.GetComponent<Image>().color;
         btn2_2Original = button2_2.GetComponent<Image>().color;
-        CheckForHighscore("ststutorialhighscore");
+        CheckForHighscore(highScoreKey);
+        ResetScore();
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class StSTutorialManager : StSManager
                 success.SetActive(true);
                 gameOver = true;
                 timer.StopTimer();
-                SaveScore("ststutorialscore","ststutorialhighscore");
+                SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {
             fail.SetActive(true);

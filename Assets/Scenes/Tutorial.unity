@@ -2148,6 +2148,8 @@ MonoBehaviour:
   matchesUI: {fileID: 1877839628}
   timer: {fileID: 2112690270}
   outOfTime: 0
+  scoreKey: ststutorialscore
+  highScoreKey: ststutorialhighscore
   m1First: 0
   m2First: 0
   button1_1: {fileID: 103274146}

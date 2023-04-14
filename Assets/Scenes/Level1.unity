@@ -2174,6 +2174,8 @@ MonoBehaviour:
   matchesUI: {fileID: 1877839628}
   timer: {fileID: 2112690270}
   outOfTime: 0
+  scoreKey: stslevel1score
+  highScoreKey: stslevel1highscore
   m1First: 0
   m2First: 0
   m3First: 0

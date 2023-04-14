@@ -47,7 +47,8 @@ public class StSLevel1Manager : StSManager
         Debug.Log("StSLevel1Manager running");
         //get the buttons' original colors
         GetButtonOriginColours();
-        CheckForHighscore("stslevel1highscore");
+        CheckForHighscore(highScoreKey);
+        ResetScore();
     }
 
 
@@ -62,7 +63,7 @@ public class StSLevel1Manager : StSManager
                 success.SetActive(true);
                 this.gameOver = true;
                 timer.StopTimer();
-                SaveScore("stslevel1score","stslevel1highscore");
+                SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {
             fail.SetActive(true);

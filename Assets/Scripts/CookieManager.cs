@@ -8,6 +8,7 @@ public class CookieManager : MonoBehaviour
     [SerializeField] private GameObject rejectAll;
     [SerializeField] private GameObject strictlyNec;
     [SerializeField] private Button doneBtn;
+    [SerializeField] private string playerPrefsVarName;
     private int option;
 
     // Start is called before the first frame update
@@ -61,8 +62,8 @@ public class CookieManager : MonoBehaviour
     }
 
     public void SaveAndExit() {
-        PlayerPrefs.SetInt("cookieOptions",option);
-        Debug.Log("Cookie option selected: " + PlayerPrefs.GetInt("cookieOptions"));
+        PlayerPrefs.SetInt(playerPrefsVarName,option);
+        Debug.Log(playerPrefsVarName + " option selected: " + PlayerPrefs.GetInt(playerPrefsVarName));
         cookieOptions.SetActive(false);
     }
 }
