@@ -7,6 +7,8 @@ public class StSLevel3Manager : StSLevel2Manager
     protected bool checkedGoodCookie = false;
     [SerializeField] protected string cookie1;
     [SerializeField] protected string cookie2;*/
+    [SerializeField] protected GameObject shareWithFriends1;
+    [SerializeField] protected GameObject shareWithFriends2;
 
 
 
@@ -86,15 +88,15 @@ public class StSLevel3Manager : StSLevel2Manager
     /// <summary>
     /// function to check if the best cookie setting has been selected and adjust settings and ui accordingly
     /// </summary>
-    /*protected void CheckGoodCookie() {
+    protected new void CheckGoodCookie() {
         if (PlayerPrefs.GetInt(cookie1) == 2 && PlayerPrefs.GetInt(cookie2) == 2) {
-            button2_1.transform.parent.gameObject.SetActive(false);
-            button2_2.transform.parent.gameObject.SetActive(false);
+            shareWithFriends1.SetActive(false);
+            shareWithFriends2.SetActive(false);
             totalMatches = 3f;
             goodCookieChoice = true;
             checkedGoodCookie = true;
         }
-    }*/
+    }
 
 
 
@@ -162,8 +164,9 @@ public class StSLevel3Manager : StSLevel2Manager
     // function to save the score + append the highscore
     protected new void SaveScore(string scoreKey, string highScoreKey, int matches){
         matches = 4;
+        float settingsScore = (PlayerPrefs.GetInt("l3DNT") * 1000) + (PlayerPrefs.GetInt("l3Inc") * 1000) + (PlayerPrefs.GetInt("l3PS") * 1000);
         float cookieScore = (PlayerPrefs.GetInt(cookie1) * 1000) + (PlayerPrefs.GetInt(cookie2) * 1000);
-        float score = matches * (1000 + (timer.GetValue() * 10)) + cookieScore;
+        float score = matches * (1000 + (timer.GetValue() * 10)) + cookieScore + settingsScore;
         PlayerPrefs.SetFloat(scoreKey,score);
 
         if (PlayerPrefs.GetFloat(highScoreKey) < score) {
