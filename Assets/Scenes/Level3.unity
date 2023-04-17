@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
-  startTime: 90
+  startTime: 120
   stSManager: {fileID: 1287230038}
 --- !u!1 &2146996694 stripped
 GameObject:
