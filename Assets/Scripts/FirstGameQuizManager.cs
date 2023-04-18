@@ -89,14 +89,14 @@ public class FirstGameQuizManager : MonoBehaviour
     /// function to mark the questions
     /// </summary>
     public void CheckAnswers() {
-        if (answer1.ToLower().Equals("c")) {
+        if (answer1.ToLower().Equals("a")) {
             Debug.Log("answer1 correct");
             ans1correct = true;
         } else {
             ans1correct = false;
         }
     
-        if (answer2.ToLower().Equals("c")) {
+        if (answer2.ToLower().Equals("b")) {
             Debug.Log("answer2 correct");
             ans2correct = true;
         } else {
