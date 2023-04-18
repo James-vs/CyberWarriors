@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class StSLevel3Manager : StSLevel2Manager
 {
-    /*[SerializeField] protected float totalMatches = 4;
-    protected bool goodCookieChoice = false;
-    protected bool checkedGoodCookie = false;
-    [SerializeField] protected string cookie1;
-    [SerializeField] protected string cookie2;*/
     [SerializeField] protected GameObject shareWithFriends1;
     [SerializeField] protected GameObject shareWithFriends2;
 
@@ -19,11 +14,12 @@ public class StSLevel3Manager : StSLevel2Manager
         Debug.Log("StSLevel3Manager running");
         //get the buttons' original colors
         //assigning btn1 to btn3 to get rid of unassignedReferenceException for it
+        //resetting the cookies and score
         button3_1 = button1_1;
         button3_2 = button1_1;
         GetButtonOriginColours();
         CheckForHighscore(highScoreKey);
-        ResetCookies();
+        ResetCookiesAndSettings();
         ResetScore();
     }
 
@@ -53,12 +49,15 @@ public class StSLevel3Manager : StSLevel2Manager
 
 
     /// <summary>
-    /// function to reset the saved cookies for the level
+    /// function to reset the saved cookies and browser settings for the level
     /// </summary>
-    /*protected void ResetCookies() {
+    protected void ResetCookiesAndSettings() {
         PlayerPrefs.SetInt(cookie1,0);
         PlayerPrefs.SetInt(cookie2,0);
-    }*/
+        PlayerPrefs.SetInt("l3DNT",0);
+        PlayerPrefs.SetInt("l3Inc",0);
+        PlayerPrefs.SetInt("l3PS",0);
+    }
 
 
 
@@ -67,14 +66,14 @@ public class StSLevel3Manager : StSLevel2Manager
     public new bool CheckComplete() {
         AllMatched();
         if (goodCookieChoice) {
-            if (m1First && m4First && m5First) { // && m3First
+            if (m1First && m4First && m5First) {
                 Debug.Log("CheckComplete return true");
                 return true;
             } else {
                 return false;
             }
         } else {
-            if (m1First && m2First && m4First && m5First) { // && m3First
+            if (m1First && m2First && m4First && m5First) {
                 Debug.Log("CheckComplete return true");
                 return true;
             } else {

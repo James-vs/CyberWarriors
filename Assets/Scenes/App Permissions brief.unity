@@ -1066,8 +1066,6 @@ GameObject:
   - component: {fileID: 1921765273}
   - component: {fileID: 1921765272}
   - component: {fileID: 1921765271}
-  - component: {fileID: 1921765274}
-  - component: {fileID: 1921765275}
   - component: {fileID: 1921765276}
   m_Layer: 0
   m_Name: EventSystem
@@ -1126,37 +1124,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1921765274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921765270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d0ccb7308c41b4a8b8ddfc7c48b8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  highScoreText: {fileID: 0}
-  scoreKey: stslevel3score
-  highScoreKey: stslevel3highscore
---- !u!114 &1921765275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921765270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b431d5d188b1aa47bb0c0136d29fc5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newHighScore: {fileID: 0}
-  scoreKey: stslevel3score
-  highScoreKey: stslevel3highscore
 --- !u!114 &1921765276
 MonoBehaviour:
   m_ObjectHideFlags: 0
