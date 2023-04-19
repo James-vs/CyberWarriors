@@ -1,6 +1,4 @@
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
 
 public class WindowManager : MonoBehaviour
 {
