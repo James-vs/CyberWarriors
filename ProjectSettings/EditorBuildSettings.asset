@@ -54,6 +54,9 @@ EditorBuildSettings:
     path: Assets/Scenes/G2Level1.unity
     guid: 54cd863e52fd3fe4eb4b47cb47b16bb5
   - enabled: 1
+    path: Assets/Scenes/G2Level1 Debrief.unity
+    guid: 0cb20a3408be32d4b8c33f6202c693ca
+  - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 5d28431e7ecee1441837e27b838b6b7b
   m_configObjects: {}

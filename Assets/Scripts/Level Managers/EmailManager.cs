@@ -18,8 +18,8 @@ public class EmailManager : MonoBehaviour
     [SerializeField] private bool email2Scam = false;
     [SerializeField] private bool email3Scam = false;
     [SerializeField] private bool done = false;
-    [SerializeField] private GameObject sus;
-    [SerializeField] private GameObject sus1;
+    //[SerializeField] private GameObject sus;
+    //[SerializeField] private GameObject sus1;
     [SerializeField] private GameObject sus2;
     [SerializeField] private GameObject sus3;
     [SerializeField] private GameObject sus4;
@@ -43,8 +43,8 @@ public class EmailManager : MonoBehaviour
         if (!email1Scam && email2Scam && email3Scam) {
             success.SetActive(true);
             doneButton.SetActive(false);
-            sus.SetActive(true);
-            sus1.SetActive(true);
+            //sus.SetActive(true);
+            //sus1.SetActive(true);
             sus2.SetActive(true);
             sus3.SetActive(true);
             sus4.SetActive(true);
@@ -126,6 +126,7 @@ public class EmailManager : MonoBehaviour
             instruction.SetActive(false);
         }
     }
+
 
 
 

@@ -566,7 +566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 175}
+  m_AnchoredPosition: {x: 6, y: 143}
   m_SizeDelta: {x: 212.4443, y: 50.1708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89501254
@@ -1602,6 +1602,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1277154608}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &234932941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1942,6 +1954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 239401241}
+  - component: {fileID: 239401242}
   m_Layer: 5
   m_Name: Email2
   m_TagString: Untagged
@@ -1972,6 +1985,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &239401242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239401240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fa82b92a898b74b92fffa3842321cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yesButton: {fileID: 1055409574}
+  noButton: {fileID: 1567739963}
 --- !u!1 &248654868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397935481}
+  - component: {fileID: 397935482}
   m_Layer: 5
   m_Name: Email1
   m_TagString: Untagged
@@ -2651,6 +2679,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &397935482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397935480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fa82b92a898b74b92fffa3842321cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yesButton: {fileID: 731343355}
+  noButton: {fileID: 1243563854}
 --- !u!1 &422705940
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,6 +4668,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 397935482}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &731343356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5110,7 +5164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805588528
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6269,6 +6323,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 239401242}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1055409575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6690,7 +6756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hint Please
+  m_text: Hint Page
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8055,6 +8121,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 397935482}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1243563855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8178,6 +8256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1277154607}
+  - component: {fileID: 1277154608}
   m_Layer: 5
   m_Name: Email3
   m_TagString: Untagged
@@ -8208,6 +8287,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1277154608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277154606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fa82b92a898b74b92fffa3842321cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yesButton: {fileID: 1716021387}
+  noButton: {fileID: 234932940}
 --- !u!1 &1326999666
 GameObject:
   m_ObjectHideFlags: 0
@@ -8406,15 +8499,17 @@ MonoBehaviour:
 
 
     2. Email address or phone number doesn''t
-    match the company/person who the message is claiming to be from
+    match the company/person who the message is claiming to be from OR is from a
+    public email address, not a company specific one (e.g. an email from company1
+    should end in an ...@company1.-something)
 
 
-    3. Urgent
-    / time-sensitive language is used in the email or message
+    3. Urgent / time-sensitive language
+    is used in the email or message
 
 
-    4. The email
-    or message contains suspicious links and/or attachments
+    4. The email or message contains suspicious
+    links and/or attachments
 
 '
   m_isRightToLeft: 0
@@ -8479,7 +8574,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 44.44397, z: 0, w: 0}
+  m_margin: {x: 0, y: 33.71692, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8913,7 +9008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1428418414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9961,6 +10056,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 239401242}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1567739964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10112,7 +10219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -332}
+  m_AnchoredPosition: {x: 0, y: -411}
   m_SizeDelta: {x: 370.4409, y: 105.1576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569809138
@@ -10228,7 +10335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1595800797
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10327,7 +10434,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1595800798}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -11342,6 +11449,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1921765277}
         m_TargetAssemblyTypeName: EmailManager, Assembly-CSharp
         m_MethodName: scamEmail3
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1277154608}
+        m_TargetAssemblyTypeName: ScamButtonManager, Assembly-CSharp
+        m_MethodName: SelectButton
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12463,8 +12582,6 @@ MonoBehaviour:
   email2Scam: 0
   email3Scam: 0
   done: 0
-  sus: {fileID: 727564431}
-  sus1: {fileID: 1099734663}
   sus2: {fileID: 1245006421}
   sus3: {fileID: 2098298913}
   sus4: {fileID: 58394699}
@@ -14464,7 +14581,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 361.4189, y: 162.5655}
+  m_SizeDelta: {x: 361.4189, y: 224.8561}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1915628418124736802
 GameObject:
@@ -14514,7 +14631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -9}
+  m_AnchoredPosition: {x: 0, y: -88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4082943082954811912
@@ -15000,7 +15117,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Have a look at the emails and click on any suspicious parts of them
+  m_text: Look at the emails, click on any suspicious parts of them and decide if
+    they are a scam or not
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15265,7 +15383,7 @@ MonoBehaviour:
   m_text: 'Well Done!!
 
     Have a look through the emails to see if you missed anything
-    suspicious'
+    suspicious highlighted in red then click next to move on'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15455,7 +15573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -404.1433}
+  m_AnchoredPosition: {x: 0, y: -522}
   m_SizeDelta: {x: 174.7009, y: 69.2026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7313616055505565799
@@ -15617,11 +15735,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Oops, you didn''t guess correctly if the emails were scam or not!
+  m_text: 'Oops, you didn''t guess correctly if some of emails were scam or not!
 
 
-    Have
-    a look back through them to see where you went wrong'
+    Look
+    back through them and decide whether or not they are scams'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
