@@ -5,37 +5,25 @@ using System.Text.RegularExpressions;
 
 public class FirstGameQuizManager : MonoBehaviour
 {
-    private string answer1;
-    private string answer2;
-    private string answer3;
-    [SerializeField] private GameObject question_1;
-    [SerializeField] private GameObject question_2;
-    [SerializeField] private GameObject question_3;
-    [SerializeField] private GameObject q1invalid;
-    [SerializeField] private GameObject q2invalid;
-    [SerializeField] private GameObject q3invalid;
-    [SerializeField] private GameObject results;
-    [SerializeField] private GameObject yourAns1;
-    [SerializeField] private GameObject yourAns2;
-    [SerializeField] private GameObject yourAns3;
-    private bool ans1correct;
-    private bool ans2correct;
-    private bool ans3correct;
+    protected string answer1;
+    protected string answer2;
+    protected string answer3;
+    [SerializeField] protected GameObject question_1;
+    [SerializeField] protected GameObject question_2;
+    [SerializeField] protected GameObject question_3;
+    [SerializeField] protected GameObject q1invalid;
+    [SerializeField] protected GameObject q2invalid;
+    [SerializeField] protected GameObject q3invalid;
+    [SerializeField] protected GameObject results;
+    [SerializeField] protected GameObject yourAns1;
+    [SerializeField] protected GameObject yourAns2;
+    [SerializeField] protected GameObject yourAns3;
+    protected bool ans1correct;
+    protected bool ans2correct;
+    protected bool ans3correct;
 
     
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // function to pass the answer into this script from the input field
     public void ReadAnswer1(string answer) {
@@ -88,7 +76,7 @@ public class FirstGameQuizManager : MonoBehaviour
     /// <summary>
     /// function to mark the questions
     /// </summary>
-    public void CheckAnswers() {
+    public virtual void CheckAnswers() {
         if (answer1.ToLower().Equals("a")) {
             Debug.Log("answer1 correct");
             ans1correct = true;
@@ -119,7 +107,7 @@ public class FirstGameQuizManager : MonoBehaviour
     /// <summary>
     /// Displays the answers to the user in a human readable and obvious format
     /// </summary>
-    private void DisplayResults() {
+    protected void DisplayResults() {
         TextMeshProUGUI yourAns1Text = yourAns1.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         yourAns1Text.text = "Your Answer: " + answer1.ToUpper();
         if (ans1correct) {
