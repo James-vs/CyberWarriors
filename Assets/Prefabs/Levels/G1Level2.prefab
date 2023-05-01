@@ -7965,7 +7965,7 @@ GameObject:
   - component: {fileID: 3695058839320706502}
   - component: {fileID: 2557484465405027235}
   m_Layer: 5
-  m_Name: Level2
+  m_Name: G1Level2
   m_TagString: Browser Window
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
