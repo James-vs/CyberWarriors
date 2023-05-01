@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/GameSelect.unity
+    guid: c7fe8937108386b4aa6e93eb3658b5cf
+  - enabled: 1
     path: Assets/Scenes/SecuremeWelcome.unity
     guid: f13886b2beb46e14498e5b0234e6f071
   - enabled: 1
@@ -68,4 +71,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecuremeEnd.unity
     guid: 5d28431e7ecee1441837e27b838b6b7b
+  - enabled: 1
+    path: Assets/Scenes/PBWelcome.unity
+    guid: f79bd18567b95de40b39f3d60528f4e5
+  - enabled: 1
+    path: Assets/Scenes/PBLevel01Info.unity
+    guid: 49a203053d37ba743a15d8b5707ed4a3
+  - enabled: 1
+    path: Assets/Scenes/PBLevel01.unity
+    guid: 021f09fd2bd91c1489e9444ccb5108c8
+  - enabled: 1
+    path: Assets/Scenes/PBLevel02Info.unity
+    guid: e26c2ef87cac2514eaf7a06bc4b0bf3d
+  - enabled: 1
+    path: Assets/Scenes/PBLevel02.unity
+    guid: f5020d878e030a548afc055b6f874544
+  - enabled: 1
+    path: Assets/Scenes/PBLevel03Info.unity
+    guid: d026b478d106fda439b6539b7303fcd2
+  - enabled: 1
+    path: Assets/Scenes/PBLevel03.unity
+    guid: 00df26c3d66add24c8653b4d5283285f
+  - enabled: 1
+    path: Assets/Scenes/PBLevel04Info.unity
+    guid: 4bd48bb5479711744b11daa614ef4a0b
+  - enabled: 1
+    path: Assets/Scenes/PBLevel04.unity
+    guid: 8c4ec1da3df7d1f47ba071e99dbbee83
+  - enabled: 1
+    path: Assets/Scenes/PBLevel05Info.unity
+    guid: 430ec29ca43484f4189756b9b6d4a64b
+  - enabled: 1
+    path: Assets/Scenes/PBLevel05.unity
+    guid: 3fa938704da008749ad251e777252e2b
+  - enabled: 1
+    path: Assets/Scenes/PBEndScreen.unity
+    guid: 92f50f9bbeabd69488b4c50d477457bd
   m_configObjects: {}
