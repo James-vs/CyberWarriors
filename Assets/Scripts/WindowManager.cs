@@ -8,7 +8,6 @@ public class WindowManager : MonoBehaviour
     
     //function to open a game window
     public void OpenBrowserWindow() {
-        //obj.SetActive(true);
         if (!browserExists) {
             Instantiate(browserGameWindow,new Vector2(windows.transform.position.x - 220, windows.transform.position.y + 75),windows.transform.rotation,windows.transform);
             browserExists = true;        

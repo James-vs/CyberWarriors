@@ -11,7 +11,6 @@ public class ResetBrowser : MonoBehaviour
     public void Reset(){
         typedText.text = null;
         placeholder.text = "Type a URL...";
-        //placeholder.text = null;
         Debug.Log("browser reset");
     }
 }

@@ -19,7 +19,6 @@ public class SimplePassDestroyer : MonoBehaviour
         if (!other.gameObject.CompareTag("Ball")) return;
         eventSystem.GetComponent<LevelEnd>().IncreaseBlockCount();
         Destroy(gameObject);
-        //other.gameObject.GetComponent<BallInitialiser>().IncreaseSpeed();
     }
 
     //method to generate random number 0<=x<10

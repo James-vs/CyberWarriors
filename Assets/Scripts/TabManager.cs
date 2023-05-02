@@ -3,8 +3,6 @@ using UnityEngine;
 public class TabManager : MonoBehaviour
 {
     private int tabCount;
-    //private int windowWidth = 1500;
-    //private CloseWindow closeWindow;
     
     // Start is called before the first frame update
     void Start()
@@ -17,8 +15,4 @@ public class TabManager : MonoBehaviour
         tabCount += 1;
     }
 
-    /* function to close the current tab
-    public void Close() {
-        closeWindow.Close();
-    } */
 }

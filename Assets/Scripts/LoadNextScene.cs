@@ -10,7 +10,6 @@ public class LoadNextScene : MonoBehaviour
         } else if (increase == 0) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         } else {
-            //Debug.Log("Error, negative number given as arg");
             if ((SceneManager.GetActiveScene().buildIndex + increase) < 0) {
                 SceneManager.LoadScene(0);
             } else {

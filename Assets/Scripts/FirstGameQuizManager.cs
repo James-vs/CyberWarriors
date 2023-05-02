@@ -49,12 +49,10 @@ public class FirstGameQuizManager : MonoBehaviour
             // go to the next question
             question_1.SetActive(false);
             question_2.SetActive(true);
-            //q2invalid.SetActive(false);
         } else if (questNum == 2 && answer2.Length < 2 && Regex.IsMatch(answer2, @"^[a-cA-C]+$")) {
             // go to the next question
             question_2.SetActive(false);
             question_3.SetActive(true);
-            //q3invalid.SetActive(false);
         } else if (questNum == 3 && answer3.Length < 2 && Regex.IsMatch(answer3, @"^[a-cA-C]+$")) {
             // mark the answers
             // display results
