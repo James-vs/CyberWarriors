@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 116456467}
   startTime: 75
-  stSManager: {fileID: 0}
+  stSManager: {fileID: 1287230036}
 --- !u!114 &84476934863653376
 MonoBehaviour:
   m_ObjectHideFlags: 0
