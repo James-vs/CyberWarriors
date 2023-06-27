@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InstructionsPane : MonoBehaviour
 {
+    // Don't know if this script is actually ever used
 
     [SerializeField] GameObject windows;
     // Start is called before the first frame update
