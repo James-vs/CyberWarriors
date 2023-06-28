@@ -8,7 +8,7 @@ public class BallInitialiser : MonoBehaviour
     [SerializeField] private float speed = 7f;
 
     
-    [Header("Trajectory")]
+    [Header("Initial Trajectory")]
     // variables for testing ball-wall ricochet angle 
     [SerializeField] private bool randomTrajectory = true;
     [SerializeField] private float xTrajectory = 1f;
