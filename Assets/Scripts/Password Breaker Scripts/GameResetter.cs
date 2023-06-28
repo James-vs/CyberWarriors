@@ -12,7 +12,7 @@ public class GameResetter : MonoBehaviour
     void Start()
     {
         Debug.Log("GameResetter script start");
-        this.livesDisplay.text = "Lives\n" + lives;
+        this.livesDisplay.text = "" + lives;
     }
 
     public void OnCollisionEnter2D(Collision2D other) {
@@ -38,11 +38,11 @@ public class GameResetter : MonoBehaviour
     public void LifeLost(BallManager manager) {
         manager.SpawnBall();
         this.lives -= 1;
-        this.livesDisplay.text = "Lives\n" + lives;
+        this.livesDisplay.text = "" + lives;
     }
     public void LifeGained() {
         // for use later in development
         this.lives += 1;
-        this.livesDisplay.text = "Lives\n" + lives;
+        this.livesDisplay.text = "" + lives;
     }
 }
