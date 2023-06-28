@@ -13,22 +13,7 @@ public class MFAStrongPassDestroyer : MonoBehaviour
         Debug.Log("MFAStrongPassDestroyer script start");
     }
 
-    //method to Destroy the brick if a ball collides with it twice
-    public void OnCollisionEnter2D(Collision2D other) {
-        /*if (!other.gameObject.CompareTag("Ball")) return;
-        SpriteRenderer brick = this.GetComponent<SpriteRenderer>();
-        if (collisionCount == 2) {
-            collisionCount -= 1f;
-            brick.color = new Color32(40, 180, 0, 255);
-        } else if (collisionCount == 1){
-            collisionCount -= 1f;
-            brick.color = new Color32(40, 180, 0, 100);
-        } else {
-            Destroy(gameObject);
-            Instantiate(go, transform.position, transform.rotation);
-        }*/
-    }
-
+    //method to Destroy the brick after a ball collides with it 3 times
     private void OnCollisionExit2D(Collision2D other) {
         if (!other.gameObject.CompareTag("Ball")) return;
         SpriteRenderer brick = this.GetComponent<SpriteRenderer>();

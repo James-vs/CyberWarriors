@@ -11,12 +11,7 @@ public class MFASimplePassDestroyer : MonoBehaviour
         Debug.Log("MFASimplePassDestoryer script start");
     }
 
-    //method to Destroy the brick if a ball collides with it
-    public void OnCollisionEnter2D(Collision2D other) {
-        if (!other.gameObject.CompareTag("Ball")) return;
-        // possibly dont need this function
-    }
-
+    //method to Destroy the brick after a ball collides with it
     private void OnCollisionExit2D(Collision2D other) {
         if (!other.gameObject.CompareTag("Ball")) return;
         Destroy(gameObject);

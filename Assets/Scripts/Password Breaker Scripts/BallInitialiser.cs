@@ -57,14 +57,19 @@ public class BallInitialiser : MonoBehaviour
         speed += 1f;
     }
 
-    public float GetSpeed() {
-        return speed;
-    }
-
     // using FixedUpdate to maintain constant ball speed
-    private void FixedUpdate() {
-        // keep the velocity magnitude approx. the original speed of the ball
+    private void FixedUpdate() => CheckSpeed();
+
+    // check the velocity of the ball is constant, adjust it otherwise
+    private void CheckSpeed() {
         Debug.Log(rb.velocity.magnitude);
-        
+        // keep the velocity magnitude approx. the original speed of the ball
+        if (rb.velocity.magnitude > speed + 0.5f) {
+            // clamp the velocity magnitude under the max speed
+            rb.velocity = Vector2.ClampMagnitude(vector: rb.velocity, speed);
+        } else if (rb.velocity.magnitude < speed - 0.5f) {
+            // normalise the velocity magnitude to 1 to set the speed
+            rb.velocity = rb.velocity.normalized * speed;
+        }
     }
 }
