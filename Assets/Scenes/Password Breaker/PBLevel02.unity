@@ -646,6 +646,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2179848277229092703, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
+      propertyPath: livesDisplay
+      value: 
+      objectReference: {fileID: 1700990597}
     - target: {fileID: 4514872156809885712, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
       propertyPath: m_Name
       value: Walls
@@ -790,6 +794,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4396317194702211535, guid: 2d9e263fcc8794c46a0d2c778fa7a148, type: 3}
   m_PrefabInstance: {fileID: 1670899059}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1700990597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 777227230743371758, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 1248829411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2053904190
 PrefabInstance:
   m_ObjectHideFlags: 0

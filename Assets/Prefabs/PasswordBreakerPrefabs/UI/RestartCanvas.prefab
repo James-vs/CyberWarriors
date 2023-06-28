@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597744741064206954}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Lives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: -25}
+  m_AnchoredPosition: {x: -28, y: -25}
   m_SizeDelta: {x: 52.846985, y: 46.794495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5616240386185296072
