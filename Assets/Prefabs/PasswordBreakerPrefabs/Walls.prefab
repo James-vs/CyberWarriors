@@ -599,6 +599,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad749952580b664ca305317daf13f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 3
+  livesDisplay: {fileID: 0}
 --- !u!114 &8862432574912670575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCount: 1
+  ball: {fileID: 3940887901964104181, guid: 7866e0330c97f234a8dcb6eeedda7cd9, type: 3}
+  xPosition: 0
+  yPosition: -2.5
 --- !u!1 &4514872157240296643
 GameObject:
   m_ObjectHideFlags: 0

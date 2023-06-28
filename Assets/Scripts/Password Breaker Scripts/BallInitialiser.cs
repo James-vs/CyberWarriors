@@ -62,7 +62,6 @@ public class BallInitialiser : MonoBehaviour
 
     // check the velocity of the ball is constant, adjust it otherwise
     private void CheckSpeed() {
-        Debug.Log(rb.velocity.magnitude);
         // keep the velocity magnitude approx. the original speed of the ball
         if (rb.velocity.magnitude > speed + 0.5f) {
             // clamp the velocity magnitude under the max speed
