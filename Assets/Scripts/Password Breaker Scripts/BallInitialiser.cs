@@ -4,8 +4,11 @@ public class BallInitialiser : MonoBehaviour
 {
 
     private Rigidbody2D rb {get; set;}
-    public float speed = 100f;
+    [Header("Max Speed")]
+    [SerializeField] private float speed = 7f;
 
+    
+    [Header("Trajectory")]
     // variables for testing ball-wall ricochet angle 
     [SerializeField] private bool randomTrajectory = true;
     [SerializeField] private float xTrajectory = 1f;
@@ -35,7 +38,8 @@ public class BallInitialiser : MonoBehaviour
         force.x = Random.Range(-0.5f,0.5f);
         force.y = -1f;
 
-        rb.AddForce(force.normalized * speed);
+        rb.AddForce(force.normalized * speed * 50); 
+        // constant 50 found to achieve optimal ball velocity
     }
 
     // used for testing ball-wall ricochet angle 
@@ -44,11 +48,23 @@ public class BallInitialiser : MonoBehaviour
         force.x = xTrajectory;
         force.y = yTrajectory;
 
-        rb.AddForce(force.normalized * speed);
+        rb.AddForce(force.normalized * speed * 50);
+        // constant 50 found to achieve optimal ball velocity
     }
 
     // function to increase the speed of the ball 
     public void IncreaseSpeed() {
-        speed += 10f;
+        speed += 1f;
+    }
+
+    public float GetSpeed() {
+        return speed;
+    }
+
+    // using FixedUpdate to maintain constant ball speed
+    private void FixedUpdate() {
+        // keep the velocity magnitude approx. the original speed of the ball
+        Debug.Log(rb.velocity.magnitude);
+        
     }
 }
