@@ -7,6 +7,7 @@ public class GameSettingsManager : MonoBehaviour
     [Header("Slider")]
     [SerializeField] private Slider slider;
     [SerializeField] private float sliderValue = 0f;
+    [SerializeField] private string difficultyKey = "PBDifficulty";
     [Header("Close Settings Button")]
     [SerializeField] private Button doneBtn;
     [Header("UI Aesthetics")]
@@ -18,6 +19,9 @@ public class GameSettingsManager : MonoBehaviour
     void Start()
     {
         Debug.Log("GameSettingsManager script started");
+        //called to keep settings value continuety
+        slider.value = PlayerPrefs.GetFloat(difficultyKey);
+        ChangeDifficulty();
     }
 
     // Update is called once per frame
@@ -37,12 +41,12 @@ public class GameSettingsManager : MonoBehaviour
     public void ChangeDifficulty() {
         sliderValue = slider.value;
         if (sliderValue == 1) {
-            PlayerPrefs.SetFloat("PBDifficulty", sliderValue);
-            Debug.Log("Hard difficulty chosen: " + PlayerPrefs.GetFloat("PBDifficulty"));
+            PlayerPrefs.SetFloat(difficultyKey, sliderValue);
+            Debug.Log("Hard difficulty chosen: " + PlayerPrefs.GetFloat(difficultyKey));
             NormalAesthetics(false);
         } else if (sliderValue == 0) {
-            PlayerPrefs.SetFloat("PBDifficulty", sliderValue);
-            Debug.Log("Normal difficulty chosen: " + PlayerPrefs.GetFloat("PBDifficulty"));
+            PlayerPrefs.SetFloat(difficultyKey, sliderValue);
+            Debug.Log("Normal difficulty chosen: " + PlayerPrefs.GetFloat(difficultyKey));
             NormalAesthetics(true);
         } else {
             Debug.Log("Error: Difficulty settings value not in expected range");

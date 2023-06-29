@@ -12,4 +12,9 @@ public class ExitGame : MonoBehaviour
         Debug.Log("Home");
         SceneManager.LoadScene(22);
     }
+
+    public void GameSelect() {
+        Debug.Log("Game Select");
+        SceneManager.LoadScene(0);
+    }
 }
