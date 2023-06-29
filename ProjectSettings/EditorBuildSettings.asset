@@ -107,4 +107,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBEndScreen.unity
     guid: 92f50f9bbeabd69488b4c50d477457bd
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBTestSettings.unity
+    guid: a25c72f5609e7464e95140a68abae32d
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PB Test Scene.unity
+    guid: e31f86364ee4235479ee29511e62f850
   m_configObjects: {}
