@@ -13,7 +13,7 @@ public class GameResetter : MonoBehaviour
     void Start()
     {
         Debug.Log("GameResetter script start");
-        lives = GetDifficulty();
+        lives = GetLifeSettings();
         this.livesDisplay.text = "" + lives;
     }
 
@@ -49,7 +49,7 @@ public class GameResetter : MonoBehaviour
     }
 
     // function to get the difficulty setting value
-    private int GetDifficulty() {
+    private int GetLifeSettings() {
         if (PlayerPrefs.GetFloat(difficultyKey) == 0) {
             return 3;
         } else if (PlayerPrefs.GetFloat(difficultyKey) == 1) {

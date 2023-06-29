@@ -14,6 +14,8 @@ public class BallInitialiser : MonoBehaviour
     [SerializeField] private float xTrajectory = 1f;
     [SerializeField] private float yTrajectory = 0f;
     
+    [Header("Settings Handling")]
+    [SerializeField] private string difficultyKey = "PBDifficulty";
 
     //Get the physics component of the ball
     private void Awake() {
@@ -24,7 +26,9 @@ public class BallInitialiser : MonoBehaviour
     void Start()
     {
         Debug.Log("BallInitialiser script start");
-        
+        //handle settings
+        ApplySettings();
+
         if (randomTrajectory) {
             Invoke(nameof(SetRandomTrajectory), 1.5f);
         } else {
@@ -69,6 +73,15 @@ public class BallInitialiser : MonoBehaviour
         } else if (rb.velocity.magnitude < speed - 0.5f) {
             // normalise the velocity magnitude to 1 to set the speed
             rb.velocity = rb.velocity.normalized * speed;
+        }
+    }
+
+    private void ApplySettings() {
+        // only affects speed of the ball 
+        if (PlayerPrefs.GetFloat(difficultyKey) == 0) {
+            return;
+        } else if (PlayerPrefs.GetFloat(difficultyKey) == 1) {
+            speed += 2;
         }
     }
 }

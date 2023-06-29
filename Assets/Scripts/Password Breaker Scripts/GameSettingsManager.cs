@@ -20,16 +20,10 @@ public class GameSettingsManager : MonoBehaviour
     {
         Debug.Log("GameSettingsManager script started");
         //called to keep settings value continuety
+        if (!PlayerPrefs.HasKey(difficultyKey)) PlayerPrefs.SetFloat(difficultyKey,0);
         slider.value = PlayerPrefs.GetFloat(difficultyKey);
         ChangeDifficulty();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     // function to change the scene once the player has chosen their settings
     public void SettingsChosen() {
