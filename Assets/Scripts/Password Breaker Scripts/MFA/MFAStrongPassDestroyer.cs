@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class MFAStrongPassDestroyer : MonoBehaviour
+public class MFAStrongPassDestroyer : MFABrick
 {
-    // variable to count collisions for stronger brick types
-    private float collisionCount = 2f;
-    // variable to spawn in a new brick
-    public GameObject go;
-
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("MFAStrongPassDestroyer script start");
+        collisionCount = 2f;
     }
 
     //method to Destroy the brick after a ball collides with it 3 times
@@ -18,10 +14,12 @@ public class MFAStrongPassDestroyer : MonoBehaviour
         if (!other.gameObject.CompareTag("Ball")) return;
         SpriteRenderer brick = this.GetComponent<SpriteRenderer>();
         if (collisionCount == 2) {
-            collisionCount -= 1f;
+            var tmpCount = collisionCount;
+            collisionCount = tmpCount - 1f;
             brick.color = new Color32(40, 180, 0, 255);
         } else if (collisionCount == 1){
-            collisionCount -= 1f;
+            var tmpCount = collisionCount;
+            collisionCount = tmpCount - 1f;
             brick.color = new Color32(40, 180, 0, 100);
         } else {
             Destroy(gameObject);

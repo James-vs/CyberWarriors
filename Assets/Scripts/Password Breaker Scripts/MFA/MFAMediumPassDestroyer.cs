@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class MFAMediumPassDestroyer : MonoBehaviour
+public class MFAMediumPassDestroyer : MFABrick
 {
-    // variable to count collisions for stronger brick types
-    public float collisionCount = 1f;
-    // variable to spawn a new medium brick
-    public GameObject go;
-
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("MFAMediumPassDestroyer script start");
+        collisionCount = 1f;
     }
 
     //method to Destroy the brick after a ball collides with it twice
@@ -20,7 +16,8 @@ public class MFAMediumPassDestroyer : MonoBehaviour
             Destroy(gameObject);
             Instantiate(go, transform.position, transform.rotation);
         } else {
-            collisionCount -= 1f;
+            var tmpCount = collisionCount;
+            collisionCount = tmpCount - 1f;
             SpriteRenderer brick = this.GetComponent<SpriteRenderer>();
             brick.color = new Color32(140, 121, 0, 255);
         }

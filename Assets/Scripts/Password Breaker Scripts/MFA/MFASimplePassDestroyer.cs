@@ -1,10 +1,7 @@
 using UnityEngine;
 
-public class MFASimplePassDestroyer : MonoBehaviour
+public class MFASimplePassDestroyer : MFABrick
 {
-    //new object to Instantiate
-    public GameObject go;
-    
     // Start is called before the first frame update
     void Start()
     {
