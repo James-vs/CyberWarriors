@@ -78,11 +78,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Password Breaker/PBSettings.unity
     guid: a25c72f5609e7464e95140a68abae32d
   - enabled: 1
-    path: Assets/Scenes/Password Breaker/PBLevel01Info.unity
+    path: Assets/Scenes/Password Breaker/PBLevel01_1Info.unity
     guid: 49a203053d37ba743a15d8b5707ed4a3
   - enabled: 1
-    path: Assets/Scenes/Password Breaker/PBLevel01.unity
+    path: Assets/Scenes/Password Breaker/PBLevel01_1.unity
     guid: 021f09fd2bd91c1489e9444ccb5108c8
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBLevel01_2Info.unity
+    guid: 358c96a74d5db4643bedf5cb66813b69
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBLevel01_2.unity
+    guid: 5ea7aa6de13ee6b4e997ce5387d9c7b5
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBLevel02Info.unity
     guid: e26c2ef87cac2514eaf7a06bc4b0bf3d
