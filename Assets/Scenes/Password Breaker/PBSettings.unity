@@ -248,7 +248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 465182836}
         m_TargetAssemblyTypeName: GameSettingsManager, Assembly-CSharp
-        m_MethodName: SettingsChosen
+        m_MethodName: ReturnToScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -687,7 +687,7 @@ MonoBehaviour:
   slider: {fileID: 975870850}
   sliderValue: 0
   difficultyKey: PBDifficulty
-  doneBtn: {fileID: 180332130}
+  doneText: {fileID: 1315037237}
   easyImage: {fileID: 1962112603}
   normalImage: {fileID: 1692365138}
   hardImage: {fileID: 652536284}

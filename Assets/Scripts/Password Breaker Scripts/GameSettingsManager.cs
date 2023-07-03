@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
 
 public class GameSettingsManager : MonoBehaviour
 {
@@ -9,7 +11,9 @@ public class GameSettingsManager : MonoBehaviour
     [SerializeField] private float sliderValue = 0f;
     [SerializeField] private string difficultyKey = "PBDifficulty";
     [Header("Close Settings Button")]
-    [SerializeField] private Button doneBtn;
+    [SerializeField] private TextMeshProUGUI doneText;
+    private int scene;
+    
     [Header("UI Aesthetics")]
     [SerializeField] private GameObject easyImage;
     [SerializeField] private GameObject normalImage;
@@ -20,10 +24,20 @@ public class GameSettingsManager : MonoBehaviour
     void Start()
     {
         Debug.Log("GameSettingsManager script started");
-        //called to keep settings value continuety
+        //handle NoSQL database variable initialisation
         if (!PlayerPrefs.HasKey(difficultyKey)) PlayerPrefs.SetFloat(difficultyKey,0);
+        if (!PlayerPrefs.HasKey("ReturnToScene")) PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex + 1);
+        scene = PlayerPrefs.GetInt("ReturnToScene");
+        //called to keep settings value continuety
         slider.value = PlayerPrefs.GetFloat(difficultyKey);
         ChangeDifficulty();
+        CheckTargetScene();
+    }
+
+    private void CheckTargetScene() {
+        if (scene > SceneManager.GetActiveScene().buildIndex + 1) {
+            doneText.text = "Back";
+        }
     }
 
     // function to change the scene once the player has chosen their settings
@@ -67,5 +81,10 @@ public class GameSettingsManager : MonoBehaviour
         hardImage.SetActive(true);
         normalImage.SetActive(false);
         easyImage.SetActive(false);   
+    }
+
+    public void ReturnToScene() {
+        Debug.Log("Return back to scene: " + scene);
+        SceneManager.LoadScene(scene);
     }
 }
