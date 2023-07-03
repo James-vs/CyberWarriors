@@ -11,6 +11,7 @@ public class GameSettingsManager : MonoBehaviour
     [Header("Close Settings Button")]
     [SerializeField] private Button doneBtn;
     [Header("UI Aesthetics")]
+    [SerializeField] private GameObject easyImage;
     [SerializeField] private GameObject normalImage;
     [SerializeField] private GameObject hardImage;
 
@@ -34,22 +35,37 @@ public class GameSettingsManager : MonoBehaviour
     // function to change the difficulty setting in the NoSQL database
     public void ChangeDifficulty() {
         sliderValue = slider.value;
-        if (sliderValue == 1) {
+        if (sliderValue == 2) {
             PlayerPrefs.SetFloat(difficultyKey, sliderValue);
             Debug.Log("Hard difficulty chosen: " + PlayerPrefs.GetFloat(difficultyKey));
-            NormalAesthetics(false);
-        } else if (sliderValue == 0) {
+            HardAesthetics();
+        } else if (sliderValue == 1) {
             PlayerPrefs.SetFloat(difficultyKey, sliderValue);
             Debug.Log("Normal difficulty chosen: " + PlayerPrefs.GetFloat(difficultyKey));
-            NormalAesthetics(true);
+            NormalAesthetics();
+        } else if (sliderValue == 0) {
+            PlayerPrefs.SetFloat(difficultyKey, sliderValue);
+            Debug.Log("Easy difficulty chosen: " + PlayerPrefs.GetFloat(difficultyKey));
+            EasyAesthetics();
         } else {
             Debug.Log("Error: Difficulty settings value not in expected range");
         }
     }
 
-    // function to handle aesthetic changes in the setting screen
-    private void NormalAesthetics(bool norm) {
-        hardImage.SetActive(!norm);
-        normalImage.SetActive(norm);   
+    // functions to handle aesthetic changes in the setting screen
+    private void EasyAesthetics() {
+        hardImage.SetActive(false);
+        normalImage.SetActive(false);
+        easyImage.SetActive(true);   
+    }
+    private void NormalAesthetics() {
+        hardImage.SetActive(false);
+        normalImage.SetActive(true);
+        easyImage.SetActive(false);   
+    }
+    private void HardAesthetics() {
+        hardImage.SetActive(true);
+        normalImage.SetActive(false);
+        easyImage.SetActive(false);   
     }
 }

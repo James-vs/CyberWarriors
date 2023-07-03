@@ -81,6 +81,8 @@ public class BallInitialiser : MonoBehaviour
         if (PlayerPrefs.GetFloat(difficultyKey) == 0) {
             return;
         } else if (PlayerPrefs.GetFloat(difficultyKey) == 1) {
+            speed += 1;
+        } else if (PlayerPrefs.GetFloat(difficultyKey) == 2) {
             speed += 2;
         }
     }

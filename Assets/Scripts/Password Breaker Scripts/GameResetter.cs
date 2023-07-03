@@ -53,9 +53,11 @@ public class GameResetter : MonoBehaviour
         if (PlayerPrefs.GetFloat(difficultyKey) == 0) {
             return 3;
         } else if (PlayerPrefs.GetFloat(difficultyKey) == 1) {
+            return 2;
+        } else if (PlayerPrefs.GetFloat(difficultyKey) == 2){
             return 1;
         } else {
-            // keeping this if elseif else as medium difficulty might be added later in development
+            // error case - easy difficulty default
             return 3;
         }
     }
