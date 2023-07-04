@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7309295451388435441}
   - component: {fileID: 7309295451388435442}
+  - component: {fileID: 9126015861571940849}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -46,3 +47,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockCount: 0
   totalBlocks: 28
+--- !u!114 &9126015861571940849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309295451388435440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb7255cb0d555241b53beb646ed3838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

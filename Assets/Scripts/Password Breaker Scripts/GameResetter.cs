@@ -6,6 +6,7 @@ public class GameResetter : MonoBehaviour
 {
     [SerializeField] private int lives = 3;
     [SerializeField] private TextMeshProUGUI livesDisplay;
+    [SerializeField] private TextMeshProUGUI pauseLivesDisplay;
     [SerializeField] private string difficultyKey = "PBDifficulty";
 
 
@@ -15,6 +16,7 @@ public class GameResetter : MonoBehaviour
         Debug.Log("GameResetter script start");
         lives = GetLifeSettings();
         this.livesDisplay.text = "" + lives;
+        pauseLivesDisplay.text = this.livesDisplay.text;
     }
 
     public void OnCollisionEnter2D(Collision2D other) {
@@ -41,11 +43,13 @@ public class GameResetter : MonoBehaviour
         manager.SpawnBall();
         this.lives -= 1;
         this.livesDisplay.text = "" + lives;
+        pauseLivesDisplay.text = this.livesDisplay.text;
     }
     public void LifeGained() {
         // for use later in development
         this.lives += 1;
         this.livesDisplay.text = "" + lives;
+        pauseLivesDisplay.text = this.livesDisplay.text;
     }
 
     // function to get the difficulty setting value
