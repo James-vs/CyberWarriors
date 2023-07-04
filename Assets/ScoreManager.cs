@@ -7,10 +7,9 @@ public class ScoreManager : MonoBehaviour
     //[SerializeField] private static int OverallScore = 0;
     [SerializeField] private int bricksBroken = 0;
     [SerializeField] private int lives;
-    [SerializeField] private int difficulty;
+    [SerializeField] private float difficulty;
     [SerializeField] private TextMeshProUGUI scoreText;
     public string difficultyKey = "PBDifficulty";
-
     private int livesWeight;
 
     // Start is called before the first frame update
@@ -25,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     private void CalculateScore() {
         GetLivesWeight();
         score = GetBricksWeight() + GetDifficultyWeight() + livesWeight;
-        Debug.Log("Score: " + score);
+        //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
 
@@ -43,9 +42,17 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     /// <returns>difficulty weighting</returns>
     private int GetDifficultyWeight() {
-        GetDifficulty();
-        //Debug.Log("Difficulty weight: " + difficulty * 1000);
-        return difficulty * 1000;
+        if (difficulty == 2) {
+            Debug.Log("Diff weight: " + 2000);
+            return 2000;
+        } else if (difficulty == 1) {
+            Debug.Log("Diff weight: " + 1000);
+            return 1000;
+        } else {
+            Debug.Log("Diff weight: " + 0);
+            return 0;
+        }
+        
     }
 
     /// <summary>
@@ -75,8 +82,8 @@ public class ScoreManager : MonoBehaviour
     /// function to update the value of difficulty
     /// </summary>
     private void GetDifficulty() {
-        difficulty = PlayerPrefs.GetInt(difficultyKey);
-        Debug.Log("PBDifficulty: " + PlayerPrefs.GetInt(difficultyKey));
+        difficulty = PlayerPrefs.GetFloat(difficultyKey);
+        //Debug.Log("PBDifficulty: " + PlayerPrefs.GetInt(difficultyKey));
     }
 
     /// <summary>

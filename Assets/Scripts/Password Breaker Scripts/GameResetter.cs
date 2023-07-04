@@ -20,6 +20,10 @@ public class GameResetter : MonoBehaviour
         pauseLivesDisplay.text = this.livesDisplay.text;
     }
 
+    private void Update() {
+        scoreManager.UpdateLives(this.lives);
+    }
+
     public void OnCollisionEnter2D(Collision2D other) {
         float ballsLeft = gameObject.GetComponent<BallManager>().ballCount;
         if (other.gameObject.CompareTag("Ball") && ballsLeft == 1 && lives < 2) {
