@@ -8,6 +8,7 @@ public class GameResetter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesDisplay;
     [SerializeField] private TextMeshProUGUI pauseLivesDisplay;
     [SerializeField] private string difficultyKey = "PBDifficulty";
+    [SerializeField] private ScoreManager scoreManager;
 
 
     // Start is called before the first frame update
@@ -44,12 +45,14 @@ public class GameResetter : MonoBehaviour
         this.lives -= 1;
         this.livesDisplay.text = "" + lives;
         pauseLivesDisplay.text = this.livesDisplay.text;
+        scoreManager.UpdateLives(lives);
     }
     public void LifeGained() {
         // for use later in development
         this.lives += 1;
         this.livesDisplay.text = "" + lives;
         pauseLivesDisplay.text = this.livesDisplay.text;
+        scoreManager.UpdateLives(lives);
     }
 
     // function to get the difficulty setting value

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
-    
+    [SerializeField] ScoreManager scoreManager;
     public float blockCount = 0f;
     public float totalBlocks = 0f;
     
@@ -27,6 +27,7 @@ public class LevelEnd : MonoBehaviour
 
     public void IncreaseBlockCount() {
         this.blockCount += 1f;
+        scoreManager.UpdateBricksBroken(((int)blockCount));
     }
 
     public void RestartLevel() {
