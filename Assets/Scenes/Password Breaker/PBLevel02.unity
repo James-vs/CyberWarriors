@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: totalBlocks
       value: 27
       objectReference: {fileID: 0}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1248829413}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -208,6 +212,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cb7255cb0d555241b53beb646ed3838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &331004672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+  m_PrefabInstance: {fileID: 331004670}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851984041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67223e0437ba5e4ba12b2e2c052f2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -554,6 +569,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1248829413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 715811139328245664, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 1248829411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1380038091
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +627,10 @@ PrefabInstance:
       propertyPath: livesDisplay
       value: 
       objectReference: {fileID: 1700990597}
+    - target: {fileID: 2179848277229092703, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 331004672}
     - target: {fileID: 2179848277229092703, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
       propertyPath: pauseLivesDisplay
       value: 

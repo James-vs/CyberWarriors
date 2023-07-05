@@ -266,10 +266,6 @@ PrefabInstance:
       propertyPath: totalBlocks
       value: 21
       objectReference: {fileID: 0}
-    - target: {fileID: 7309295451388435442, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
-      propertyPath: scoreManager
-      value: 
-      objectReference: {fileID: 1040331645}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: scoreText
       value: 

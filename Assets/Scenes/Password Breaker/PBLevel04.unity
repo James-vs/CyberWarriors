@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &12319967 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+  m_PrefabInstance: {fileID: 1255509777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255509779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67223e0437ba5e4ba12b2e2c052f2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &300065755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +407,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2049227977}
     - target: {fileID: 2179848277229092703, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 12319967}
+    - target: {fileID: 2179848277229092703, guid: 2c5d9480adf6b5346bfaa919754a2d85, type: 3}
       propertyPath: pauseLivesDisplay
       value: 
       objectReference: {fileID: 2049227978}
@@ -521,6 +536,10 @@ PrefabInstance:
       propertyPath: totalBlocks
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2049227979}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -917,6 +936,17 @@ MonoBehaviour:
 --- !u!114 &2049227978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4898249473237031053, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 2049227976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2049227979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 715811139328245664, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
   m_PrefabInstance: {fileID: 2049227976}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

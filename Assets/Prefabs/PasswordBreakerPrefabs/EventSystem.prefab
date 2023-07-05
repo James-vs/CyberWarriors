@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc7ff928ec8d944ac437ea8eef4a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 8776165036753536488}
   blockCount: 0
   totalBlocks: 28
 --- !u!114 &9126015861571940849
@@ -72,3 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67223e0437ba5e4ba12b2e2c052f2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  bricksBroken: 0
+  lives: 0
+  difficulty: 0
+  scoreText: {fileID: 0}
+  difficultyKey: PBDifficulty

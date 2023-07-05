@@ -43,13 +43,13 @@ public class ScoreManager : MonoBehaviour
     /// <returns>difficulty weighting</returns>
     private int GetDifficultyWeight() {
         if (difficulty == 2) {
-            Debug.Log("Diff weight: " + 2000);
+            //Debug.Log("Diff weight: " + 2000);
             return 2000;
         } else if (difficulty == 1) {
-            Debug.Log("Diff weight: " + 1000);
+            //Debug.Log("Diff weight: " + 1000);
             return 1000;
         } else {
-            Debug.Log("Diff weight: " + 0);
+            //Debug.Log("Diff weight: " + 0);
             return 0;
         }
         
