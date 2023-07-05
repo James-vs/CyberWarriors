@@ -9,6 +9,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int lives;
     [SerializeField] private float difficulty;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI difficultyBonusText;
+    [SerializeField] private TextMeshProUGUI livesBonusText;
     public string difficultyKey = "PBDifficulty";
     private int livesWeight;
 
@@ -107,5 +109,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     public void UpdateScoreText () {
         scoreText.text = "Score: " + score;
+        difficultyBonusText.text = "" + GetDifficultyWeight();
+        livesBonusText.text = "" + livesWeight;
     }
 }

@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &144760921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3920411520884432314, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 2036835239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &290429055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5276216031160636078, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 2036835239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &734230841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +292,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 814540549}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: livesBonusText
+      value: 
+      objectReference: {fileID: 290429055}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: difficultyBonusText
+      value: 
+      objectReference: {fileID: 144760921}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
