@@ -46,10 +46,10 @@ public class ScoreManager : MonoBehaviour
     private int GetDifficultyWeight() {
         if (difficulty == 2) {
             //Debug.Log("Diff weight: " + 2000);
-            return 2000;
+            return 1000;
         } else if (difficulty == 1) {
             //Debug.Log("Diff weight: " + 1000);
-            return 1000;
+            return 500;
         } else {
             //Debug.Log("Diff weight: " + 0);
             return 0;
@@ -63,11 +63,9 @@ public class ScoreManager : MonoBehaviour
     /// <returns>lives weighting</returns>
     private void GetLivesWeight() {
         if (difficulty == 2 || (difficulty == 1 && lives == 2) || (difficulty == 0 && lives == 3)) {
-            livesWeight = 3000;
-        } else if ((difficulty == 1 && lives == 1) || (difficulty == 0 && lives == 2)) {
-            livesWeight = 2000;
-        } else {
             livesWeight = 1000;
+        } else {
+            livesWeight = 0;
         }
         //Debug.Log("Lives weight: " + livesWeight);
     }
