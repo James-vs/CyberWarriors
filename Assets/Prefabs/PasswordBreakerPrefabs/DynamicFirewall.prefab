@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2708449455449663592}
   - component: {fileID: 2293734925021176465}
   m_Layer: 0
-  m_Name: Firewall
+  m_Name: DynamicFirewall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
