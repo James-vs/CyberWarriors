@@ -11,7 +11,7 @@ public class TimeBar : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         timesUpText.SetActive(false);
-        linearTimerBar = GetComponent<Image>();
+        linearTimerBar = linearTimerBar.GetComponent<Image>();
         radialTimer = radialTimer.GetComponent<Image>();
         timeLeft = maxTime;
         
