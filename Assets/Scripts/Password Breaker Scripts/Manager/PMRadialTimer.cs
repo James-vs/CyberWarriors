@@ -8,6 +8,9 @@ public class PMRadialTimer : MonoBehaviour
     public float timeLeft = 0f;
     //public GameObject timesUpText;
     [SerializeField] private bool startTimer = false;
+    [SerializeField] private PMManager PMManager;
+
+
     // Start is called before the first frame update
     void Start() {
         radialTimer.gameObject.SetActive(false);
@@ -25,8 +28,8 @@ public class PMRadialTimer : MonoBehaviour
             radialTimer.fillAmount = timeLeft / maxTime;
         } else {
             //timesUpText.SetActive(true);
-           radialTimer.gameObject.SetActive(false);
-            startTimer = false;
+            radialTimer.gameObject.SetActive(false);
+            PMManager.SetShield(false);
             //Time.timeScale = 0;
         }
     }
@@ -34,6 +37,7 @@ public class PMRadialTimer : MonoBehaviour
     public void StartPMRadialTimer() {
         Debug.Log("Start Timer");
         radialTimer.gameObject.SetActive(true);
+        PMManager.SetShield(true);
         radialTimer.fillAmount = 1;
         timeLeft = maxTime;
         startTimer = true;
