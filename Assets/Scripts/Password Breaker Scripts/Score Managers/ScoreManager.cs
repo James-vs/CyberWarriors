@@ -3,16 +3,16 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private int score = 0;
+    [SerializeField] protected int score = 0;
     //[SerializeField] private static int OverallScore = 0;
-    [SerializeField] private int bricksBroken = 0;
-    [SerializeField] private int lives;
-    [SerializeField] private float difficulty;
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI difficultyBonusText;
-    [SerializeField] private TextMeshProUGUI livesBonusText;
+    [SerializeField] protected int bricksBroken = 0;
+    [SerializeField] protected int lives;
+    [SerializeField] protected float difficulty;
     public string difficultyKey = "PBDifficulty";
-    private int livesWeight;
+    [SerializeField] protected TextMeshProUGUI scoreText;
+    [SerializeField] protected TextMeshProUGUI difficultyBonusText;
+    [SerializeField] protected TextMeshProUGUI livesBonusText;
+    protected int livesWeight;
 
     // Start is called before the first frame update
     void Start() => GetDifficulty();
@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// function to calculate the score (int)
     /// </summary>
-    private void CalculateScore() {
+    protected virtual void CalculateScore() {
         GetLivesWeight();
         score = GetBricksWeight() + GetDifficultyWeight() + livesWeight;
         //Debug.Log("Score: " + score);
@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
     /// function to calculate the brickbroken weight
     /// </summary>
     /// <returns>bricksBroken weighting</returns>
-    private int GetBricksWeight() {
+    protected int GetBricksWeight() {
         //Debug.Log("Bricks weight: " + bricksBroken * 100);
         return bricksBroken * 100;
     }
@@ -43,7 +43,7 @@ public class ScoreManager : MonoBehaviour
     /// function to calculate the difficulty weight
     /// </summary>
     /// <returns>difficulty weighting</returns>
-    private int GetDifficultyWeight() {
+    protected int GetDifficultyWeight() {
         if (difficulty == 2) {
             //Debug.Log("Diff weight: " + 2000);
             return 1000;
@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
     /// function that calculates a weight for number of lives left
     /// </summary>
     /// <returns>lives weighting</returns>
-    private void GetLivesWeight() {
+    protected void GetLivesWeight() {
         if (difficulty == 2 || (difficulty == 1 && lives == 2) || (difficulty == 0 && lives == 3)) {
             livesWeight = 1000;
         } else {
@@ -81,7 +81,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// function to update the value of difficulty
     /// </summary>
-    private void GetDifficulty() {
+    protected void GetDifficulty() {
         difficulty = PlayerPrefs.GetFloat(difficultyKey);
         //Debug.Log("PBDifficulty: " + PlayerPrefs.GetInt(difficultyKey));
     }
@@ -105,7 +105,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// function to update the score in the pause menu 
     /// </summary>
-    public void UpdateScoreText () {
+    public virtual void UpdateScoreText () {
         scoreText.text = "Score: " + score;
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
