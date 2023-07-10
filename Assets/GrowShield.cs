@@ -17,7 +17,7 @@ public class GrowShield : MonoBehaviour {
     //private bool shrinking;
     private float timePassed = 0.0f;
     private float progress;
-    private enum State { ORIGINAL_SIZE, GROWN }
+    public enum State { ORIGINAL_SIZE, GROWN }
     private State state = State.ORIGINAL_SIZE;
     private enum Actions { NORMALIZING, GROWING }
     private Actions action = Actions.NORMALIZING;
@@ -97,5 +97,9 @@ public class GrowShield : MonoBehaviour {
         active = true;
         action = Actions.NORMALIZING;
         timePassed = 0.0f;
+    }
+
+    public State GetState() {
+        return state;
     }
 }
