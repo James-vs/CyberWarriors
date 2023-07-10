@@ -84,6 +84,15 @@ public class GrowShield : MonoBehaviour {
  
     public void grow()
     {
+        // if grow called while normalising, do not use SetActive since GO already active
+        if (action == Actions.NORMALIZING) {
+            active = false;
+            state = State.ORIGINAL_SIZE;
+            transform.localScale = originalScale;
+            active = true;
+            action = Actions.GROWING;
+            timePassed = 0.0f;
+        }
         Debug.Log("grow");
         gameObject.SetActive(true);
         active = true;
@@ -97,9 +106,5 @@ public class GrowShield : MonoBehaviour {
         active = true;
         action = Actions.NORMALIZING;
         timePassed = 0.0f;
-    }
-
-    public State GetState() {
-        return state;
     }
 }

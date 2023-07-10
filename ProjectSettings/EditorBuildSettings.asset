@@ -115,12 +115,15 @@ EditorBuildSettings:
     guid: 4bd48bb5479711744b11daa614ef4a0b
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBLevel04.unity
-    guid: 8c4ec1da3df7d1f47ba071e99dbbee83
+    guid: c6cb5efe9b271884c9c88a6ba3e471e4
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBLevel05Info.unity
     guid: 430ec29ca43484f4189756b9b6d4a64b
   - enabled: 1
-    path: Assets/Scenes/Password Breaker/PBLevel05.unity
+    path: Assets/Scenes/Password Breaker/PBLevel05_1.unity
+    guid: 8c4ec1da3df7d1f47ba071e99dbbee83
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBLevel05_2.unity
     guid: 3fa938704da008749ad251e777252e2b
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBEndScreen.unity
