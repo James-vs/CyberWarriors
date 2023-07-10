@@ -6,6 +6,7 @@ public class PMManager : MonoBehaviour
     private float collisionCount = 5f;
     [SerializeField] private GameObject eventSystem;
     [SerializeField] private GameObject radialTimer;
+    public GameObject ball;
     public GameObject firewallShield;
     public bool shielded = false;
 
@@ -60,6 +61,19 @@ public class PMManager : MonoBehaviour
                 radialTimer.GetComponent<PMRadialTimer>().StartPMRadialTimer();
             } else {
                 Destroy(gameObject);
+                GameObject ballManager = GameObject.Find("BottomWall");
+                Instantiate(ball, new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z), transform.rotation);
+                ballManager.GetComponent<BallManager>().IncreaseBallCount();
+                Instantiate(ball, new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z), transform.rotation);
+                ballManager.GetComponent<BallManager>().IncreaseBallCount();
+                Instantiate(ball, new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z), transform.rotation);
+                ballManager.GetComponent<BallManager>().IncreaseBallCount();
+                Instantiate(ball, new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z), transform.rotation);
+                ballManager.GetComponent<BallManager>().IncreaseBallCount();
+                Instantiate(ball, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+                ballManager.GetComponent<BallManager>().IncreaseBallCount();
+                var paddle = GameObject.Find("Paddle");
+                paddle.transform.localScale = new Vector3(9f,0.3f,1f);
                 eventSystem.GetComponent<LevelEnd>().IncreaseBlockCount();
             }
         }
