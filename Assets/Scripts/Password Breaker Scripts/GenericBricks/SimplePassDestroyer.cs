@@ -3,8 +3,8 @@ using UnityEngine;
 public class SimplePassDestroyer : MonoBehaviour
 {
     //reference to the ball's script
-    public BallInitialiser ball;
-    public GameObject eventSystem;
+    //public BallInitialiser ball;
+    protected GameObject eventSystem;
 
     // Start is called before the first frame update
     void Start()

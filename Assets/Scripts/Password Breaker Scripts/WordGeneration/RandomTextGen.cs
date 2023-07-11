@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class RandomTextGen : MonoBehaviour
 {
     protected List<Class> namese = new List<Class>();
     [Header("Text Input / Output")]
-    public TextMeshProUGUI text;
+    public TextMeshPro text;
     public TextAsset wordData;
     protected int lines;
     // Start is called before the first frame update
