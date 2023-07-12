@@ -3,8 +3,8 @@ using UnityEngine;
 public class StrongPassDestroyer : MonoBehaviour
 {
     // variable to count collisions for stronger brick types
-    private float collisionCount = 2f;
-    public GameObject eventSystem;
+    protected float collisionCount = 2f;
+    protected GameObject eventSystem;
 
     // Start is called before the first frame update
     void Start()

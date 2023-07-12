@@ -3,7 +3,7 @@ using UnityEngine;
 public class MediumPassDestroyer : SimplePassDestroyer
 {
     // variable to count collisions for stronger brick types
-    public float collisionCount = 1f;
+    protected float collisionCount = 1f;
 
     // Start is called before the first frame update
     void Start()

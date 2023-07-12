@@ -205,7 +205,7 @@ Transform:
   m_Children:
   - {fileID: 4288804492348659429}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5791532942943086890
 SpriteRenderer:
@@ -316,4 +316,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58863a9d2a698b648b80c44579a94dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 7546378709889650843, guid: 42add116aa678b642b2cd30a01e4e4e4, type: 3}
+  go: {fileID: 7546378709889650843, guid: 91bc2ff4244b48548b6afd2d293182ed, type: 3}
