@@ -206,7 +206,7 @@ Transform:
   m_Children:
   - {fileID: 7705301918395254084}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6302515364942562562
 SpriteRenderer:
@@ -330,4 +330,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4025156816665070815}
-  wordData: {fileID: 4900000, guid: 2179e0bc7e72e834b9892237debf4d91, type: 3}
+  wordData: {fileID: 4900000, guid: 49614e5510544344aac2bf87c201c1e7, type: 3}

@@ -815,7 +815,7 @@ PrefabInstance:
     - target: {fileID: 4661229535457786397, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
       propertyPath: go
       value: 
-      objectReference: {fileID: 2147201308048342612, guid: c4128ebfeeffb924f94d5e59ff7d4f2a, type: 3}
+      objectReference: {fileID: 7546378709889650843, guid: 91bc2ff4244b48548b6afd2d293182ed, type: 3}
     - target: {fileID: 5791532942943086892, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
       propertyPath: m_Name
       value: MFASimplePass 1
@@ -1590,16 +1590,16 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4452996588854172798, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4636668393129361309, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4452996587315721655, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 1784667399869066539, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4452996586830881350, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 7925789560671827885, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 4452996587850853497, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5520655695264040352, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: baa37fb33954db4408c4ad7f01571d29, type: 3}
