@@ -476,14 +476,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287577221}
-        m_TargetAssemblyTypeName: LevelEnd, Assembly-CSharp
-        m_MethodName: EndLevel
-        m_Mode: 1
+      - m_Target: {fileID: 1287577223}
+        m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -550,7 +550,6 @@ GameObject:
   - component: {fileID: 1287577219}
   - component: {fileID: 1287577218}
   - component: {fileID: 1287577221}
-  - component: {fileID: 1287577222}
   - component: {fileID: 1287577223}
   m_Layer: 0
   m_Name: EventSystem
@@ -621,20 +620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36fc7ff928ec8d944ac437ea8eef4a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
+  canvasManager: {fileID: 0}
   blockCount: 0
   totalBlocks: 1
---- !u!114 &1287577222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287577217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cb7255cb0d555241b53beb646ed3838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1287577223
 MonoBehaviour:
   m_ObjectHideFlags: 0
