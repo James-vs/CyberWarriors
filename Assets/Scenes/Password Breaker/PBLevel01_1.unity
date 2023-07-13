@@ -988,7 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &5616240387296130336 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5276216031160636078, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2009964989194001582, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
   m_PrefabInstance: {fileID: 5616240387296130333}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -999,7 +999,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &5616240387296130337 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3920411520884432314, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7772163051820967624, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 5616240387296130333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5616240387296130338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4534214073968786370, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 5616240387296130333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5616240387296130339 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8265355772467563272, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 5616240387296130333}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5616240387296130340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4481980779817858180, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
   m_PrefabInstance: {fileID: 5616240387296130333}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1064,14 +1097,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7309295451388435442, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: canvasManager
+      value: 
+      objectReference: {fileID: 1169630050}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 5616240387296130335}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: baseScoreText
+      value: 
+      objectReference: {fileID: 5616240387296130339}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: livesBonusText
       value: 
       objectReference: {fileID: 5616240387296130336}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: pauseScoreText
+      value: 
+      objectReference: {fileID: 5616240387296130340}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: overallScoreText
+      value: 
+      objectReference: {fileID: 5616240387296130338}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: difficultyBonusText
       value: 

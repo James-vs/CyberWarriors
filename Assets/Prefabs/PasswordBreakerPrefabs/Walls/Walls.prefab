@@ -87,7 +87,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4514872155962113872}
   - component: {fileID: 4514872155962113887}
-  - component: {fileID: 5743274349772721407}
   - component: {fileID: 8103839961779113621}
   m_Layer: 0
   m_Name: LeftWall
@@ -156,19 +155,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10.883059}
   m_EdgeRadius: 0
---- !u!114 &5743274349772721407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4514872155962113873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adbbb539733dc442a880fd006e11b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeftWall: 1
 --- !u!50 &8103839961779113621
 Rigidbody2D:
   serializedVersion: 4
@@ -206,7 +192,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4514872156747842891}
   - component: {fileID: 4514872156747842890}
-  - component: {fileID: 3051057491000495218}
   - component: {fileID: 2227601512850140838}
   m_Layer: 0
   m_Name: RightWall
@@ -275,19 +260,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10.883059}
   m_EdgeRadius: 0
---- !u!114 &3051057491000495218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4514872156747842892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4adbbb539733dc442a880fd006e11b7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLeftWall: 0
 --- !u!50 &2227601512850140838
 Rigidbody2D:
   serializedVersion: 4
@@ -443,7 +415,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 3
   livesDisplay: {fileID: 0}
+  pauseLivesDisplay: {fileID: 0}
   difficultyKey: PBDifficulty
+  scoreManager: {fileID: 0}
 --- !u!114 &8862432574912670575
 MonoBehaviour:
   m_ObjectHideFlags: 0

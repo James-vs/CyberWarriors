@@ -86,4 +86,24 @@ public class BallInitialiser : MonoBehaviour
             speed += 2;
         }
     }
+
+    /// <summary>
+    /// function to handle perpendicular collisions
+    /// </summary>
+    /// <param name="other">other object's collider</param>
+    private void OnCollisionEnter2D(Collision2D other) {
+        float rightRicochet = Vector2.SignedAngle(Vector2.right, rb.velocity);
+        float leftRicochet = Vector2.SignedAngle(Vector2.left, rb.velocity);
+        if (rightRicochet < 1f && rightRicochet > -1f) {
+            Debug.Log("Left collision detected");
+            float newAngle = Mathf.Clamp(rightRicochet, -90f, -3f);
+            Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+            rb.velocity = rotation * Vector2.right * rb.velocity.magnitude;
+        } else if (leftRicochet < 1f && leftRicochet > -1f) {
+            Debug.Log("Right collision detected");
+            float newAngle = Mathf.Clamp(leftRicochet, 3f, 90f);
+            Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+            rb.velocity = rotation * Vector2.left * rb.velocity.magnitude;
+        }
+    }
 }

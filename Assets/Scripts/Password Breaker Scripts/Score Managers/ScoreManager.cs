@@ -11,9 +11,9 @@ public class ScoreManager : MonoBehaviour
     public string difficultyKey = "PBDifficulty";
     [SerializeField] protected TextMeshProUGUI pauseScoreText;
     [SerializeField] protected TextMeshProUGUI baseScoreText;
-    [SerializeField] protected TextMeshProUGUI overallScoreText;
     [SerializeField] protected TextMeshProUGUI difficultyBonusText;
     [SerializeField] protected TextMeshProUGUI livesBonusText;
+    [SerializeField] protected TextMeshProUGUI overallScoreText;
     protected int livesWeight;
 
     // Start is called before the first frame update
