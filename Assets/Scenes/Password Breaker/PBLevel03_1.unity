@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -1.625
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -470,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -608,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 1.625
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -859,7 +859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 7085021755526539981, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -960,7 +960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7309295451388435442, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: totalBlocks
-      value: 23
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7309295451388435442, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: canvasManager
@@ -1850,6 +1850,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 8797687896234502154, guid: bf7d1673d3bc4084a8911989cb724bd2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4970796586793321017, guid: bf7d1673d3bc4084a8911989cb724bd2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4426390896156096024, guid: bf7d1673d3bc4084a8911989cb724bd2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bf7d1673d3bc4084a8911989cb724bd2, type: 3}
