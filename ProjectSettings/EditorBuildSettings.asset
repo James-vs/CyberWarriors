@@ -114,6 +114,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Password Breaker/PBLevel03_1.unity
     guid: 00df26c3d66add24c8653b4d5283285f
   - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBLevel03_2.unity
+    guid: 254aa577b6431f94899db1364c7d27c1
+  - enabled: 1
     path: Assets/Scenes/Password Breaker/PBLevel04Info.unity
     guid: 4bd48bb5479711744b11daa614ef4a0b
   - enabled: 1
