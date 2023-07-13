@@ -914,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3940887901964104176, guid: 7866e0330c97f234a8dcb6eeedda7cd9, type: 3}
       propertyPath: randomTrajectory
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3940887901964104178, guid: 7866e0330c97f234a8dcb6eeedda7cd9, type: 3}
       propertyPath: m_RootOrder
@@ -1268,9 +1268,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: RestartCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5829899912058364663, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7309295452590775798}
+    - target: {fileID: 5829899912058364663, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Home
+      objectReference: {fileID: 0}
     - target: {fileID: 6486213054610102730, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848895408058903143, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7309295452590775797}
+    - target: {fileID: 6848895408058903143, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 7271186807911751641, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

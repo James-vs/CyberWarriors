@@ -7,7 +7,6 @@ public class BallInitialiser : MonoBehaviour
     [Header("Max Speed")]
     [SerializeField] private float speed = 7f;
 
-    
     [Header("Initial Trajectory")]
     // variables for testing ball-wall ricochet angle 
     [SerializeField] private bool randomTrajectory = true;
@@ -88,12 +87,14 @@ public class BallInitialiser : MonoBehaviour
     }
 
     /// <summary>
-    /// function to handle perpendicular collisions
+    /// function to handle perpendicular collisions in all directions 
     /// </summary>
     /// <param name="other">other object's collider</param>
     private void OnCollisionEnter2D(Collision2D other) {
         float rightRicochet = Vector2.SignedAngle(Vector2.right, rb.velocity);
         float leftRicochet = Vector2.SignedAngle(Vector2.left, rb.velocity);
+        float upRicochet = Vector2.SignedAngle(Vector2.up, rb.velocity);
+        float downRicochet = Vector2.SignedAngle(Vector2.down, rb.velocity);
         if (rightRicochet < 1f && rightRicochet > -1f) {
             Debug.Log("Left collision detected");
             float newAngle = Mathf.Clamp(rightRicochet, -90f, -3f);
@@ -104,6 +105,16 @@ public class BallInitialiser : MonoBehaviour
             float newAngle = Mathf.Clamp(leftRicochet, 3f, 90f);
             Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
             rb.velocity = rotation * Vector2.left * rb.velocity.magnitude;
+        } else if (upRicochet < 1f && upRicochet > -1f) {
+            Debug.Log("Up collision detected");
+            float newAngle = Mathf.Clamp(upRicochet, 3f, 90f);
+            Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+            rb.velocity = rotation * Vector2.up * rb.velocity.magnitude;
+        } else if (downRicochet < 1f && downRicochet > -1f) {
+            Debug.Log("down collision detected");
+            float newAngle = Mathf.Clamp(downRicochet, 3f, 90f);
+            Quaternion rotation = Quaternion.AngleAxis(newAngle, Vector3.forward);
+            rb.velocity = rotation * Vector2.down * rb.velocity.magnitude;
         }
     }
 }

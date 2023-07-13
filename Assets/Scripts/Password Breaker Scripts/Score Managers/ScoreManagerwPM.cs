@@ -15,7 +15,8 @@ public class ScoreManagerwPM : ScoreManager
     /// </summary>
     protected override void CalculateScore() {
         GetLivesWeight();
-        score = GetBricksWeight() + GetDifficultyWeight() + livesWeight + PMBonus();
+        overallScore = GetBricksWeight() + GetDifficultyWeight() + livesWeight + PMBonus();
+        score = GetBricksWeight();
         //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
