@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 public class CanvasManager : MonoBehaviour
 {
     [Header("Pause Menu UI Objects")]
-    [SerializeField] private GameObject GameUI;
-    [SerializeField] private GameObject PauseUI;
-    private bool IsPaused = false;
+    [SerializeField] protected GameObject GameUI;
+    [SerializeField] protected GameObject PauseUI;
+    [SerializeField] protected GameObject EndScreen;
+    protected bool IsPaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,20 +34,52 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
-    //functions to pause & play the level
+    /// <summary>
+    /// functions to pause the level and display pause menu
+    /// </summary>
     public void Pause() {
         GameUI.SetActive(false);
         PauseUI.SetActive(true);
         Time.timeScale = 0f;
     }
+
+    /// <summary>
+    /// function to resume gameplay
+    /// </summary>
     public void Play() {
         GameUI.SetActive(true);
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    // function to return the time to normal when home is selected
+    /// <summary>
+    /// function to return the time to normal when home is selected
+    /// </summary>
     public void Home() {
         Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// function to restart the level
+    /// </summary>
+    public void Retry() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    /// <summary>
+    /// function to start the next scene
+    /// </summary>
+    public void NextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    /// <summary>
+    /// function to display the level complete screen
+    /// </summary>
+    public void LevelComplete() {
+        GameUI.SetActive(false);
+        PauseUI.SetActive(false);
+        EndScreen.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

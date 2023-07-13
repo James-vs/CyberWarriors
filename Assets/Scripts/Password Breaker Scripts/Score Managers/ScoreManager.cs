@@ -4,12 +4,14 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] protected int score = 0;
-    //[SerializeField] private static int OverallScore = 0;
+    protected int overallScore = 0;
     [SerializeField] protected int bricksBroken = 0;
     [SerializeField] protected int lives;
     [SerializeField] protected float difficulty;
     public string difficultyKey = "PBDifficulty";
-    [SerializeField] protected TextMeshProUGUI scoreText;
+    [SerializeField] protected TextMeshProUGUI pauseScoreText;
+    [SerializeField] protected TextMeshProUGUI baseScoreText;
+    [SerializeField] protected TextMeshProUGUI overallScoreText;
     [SerializeField] protected TextMeshProUGUI difficultyBonusText;
     [SerializeField] protected TextMeshProUGUI livesBonusText;
     protected int livesWeight;
@@ -25,7 +27,8 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     protected virtual void CalculateScore() {
         GetLivesWeight();
-        score = GetBricksWeight() + GetDifficultyWeight() + livesWeight;
+        overallScore = GetBricksWeight() + GetDifficultyWeight() + livesWeight;
+        score = GetBricksWeight();
         //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
@@ -106,7 +109,9 @@ public class ScoreManager : MonoBehaviour
     /// function to update the score in the pause menu 
     /// </summary>
     public virtual void UpdateScoreText () {
-        scoreText.text = "Score: " + score;
+        pauseScoreText.text = "" + score;
+        baseScoreText.text = "" + score;
+        overallScoreText.text = "" + overallScore;
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
     }

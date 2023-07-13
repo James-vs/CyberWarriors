@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
-    [SerializeField] ScoreManager scoreManager;
+    [SerializeField] protected ScoreManager scoreManager;
+    [SerializeField] protected CanvasManager canvasManager;
     public float blockCount = 0f;
     public float totalBlocks = 0f;
     
@@ -22,7 +23,8 @@ public class LevelEnd : MonoBehaviour
 
     public void EndLevel() {
         Debug.Log("Level ended");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        canvasManager.LevelComplete();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void IncreaseBlockCount() {

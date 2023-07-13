@@ -24,7 +24,9 @@ public class ScoreManagerwPM : ScoreManager
     /// function to update the score in the pause menu 
     /// </summary>
     public override void UpdateScoreText () {
-        scoreText.text = "Score: " + score;
+        pauseScoreText.text = "" + score;
+        baseScoreText.text = "" + score;
+        overallScoreText.text = "" + overallScore;
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
         PMBonusText.text = "" + PMBonus();
