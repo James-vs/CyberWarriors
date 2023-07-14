@@ -7,12 +7,14 @@ public class PaddleController : MonoBehaviour
     private Vector2 direction;
     public float speed = 30f;
     private float maxBounceAngle = 75f;
+    private GameObject eventSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("PaddleController script start");
         rb = GetComponent<Rigidbody2D>();
+        eventSystem = GameObject.Find("EventSystem");
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class PaddleController : MonoBehaviour
     //method to handle ball riquochet math
     private void OnCollisionEnter2D(Collision2D other) {
         if (!other.gameObject.CompareTag("Ball")) return;
+        eventSystem.GetComponent<ScoreManager>().ResetMultiplier();
         Vector3 paddlePosition = transform.position;
         Vector2 contactPoint = other.GetContact(0).point;
 

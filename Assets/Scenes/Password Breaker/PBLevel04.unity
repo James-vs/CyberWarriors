@@ -311,6 +311,28 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3d10118d2c629364da765b2efc252753, type: 3}
+--- !u!114 &513969450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8278195436643263452, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+  m_PrefabInstance: {fileID: 2850626051979463917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &513969451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592753982362003195, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+  m_PrefabInstance: {fileID: 2850626051979463917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &937892481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,7 +596,10 @@ MonoBehaviour:
   bricksBroken: 0
   lives: 0
   difficulty: 0
+  multiplier: 1
   difficultyKey: PBDifficulty
+  gameUIScoreText: {fileID: 513969451}
+  multiplierText: {fileID: 513969450}
   pauseScoreText: {fileID: 2850626051979463923}
   baseScoreText: {fileID: 2850626051979463922}
   difficultyBonusText: {fileID: 2850626051979463921}

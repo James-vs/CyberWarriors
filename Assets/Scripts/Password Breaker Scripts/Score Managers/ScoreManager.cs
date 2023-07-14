@@ -3,13 +3,24 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    [Header("Score Values")]
     [SerializeField] protected int score = 0;
     protected int overallScore = 0;
     [SerializeField] protected int bricksBroken = 0;
     [SerializeField] protected int lives;
     [SerializeField] protected float difficulty;
+    [SerializeField] protected int multiplier = 1;
+    private bool newReset = true;
     public string difficultyKey = "PBDifficulty";
+
+    [Header("Game UI Text Objects")]
+    [SerializeField] protected TextMeshProUGUI gameUIScoreText;
+    [SerializeField] protected TextMeshProUGUI multiplierText;
+
+    [Header("Pause Screen Text Objects")]
     [SerializeField] protected TextMeshProUGUI pauseScoreText;
+
+    [Header("End Screen Text Objects")]
     [SerializeField] protected TextMeshProUGUI baseScoreText;
     [SerializeField] protected TextMeshProUGUI difficultyBonusText;
     [SerializeField] protected TextMeshProUGUI livesBonusText;
@@ -27,8 +38,7 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     protected virtual void CalculateScore() {
         GetLivesWeight();
-        overallScore = GetBricksWeight() + GetDifficultyWeight() + livesWeight;
-        score = GetBricksWeight();
+        overallScore = GetBaseScore() + GetDifficultyWeight() + livesWeight;
         //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
@@ -37,9 +47,9 @@ public class ScoreManager : MonoBehaviour
     /// function to calculate the brickbroken weight
     /// </summary>
     /// <returns>bricksBroken weighting</returns>
-    protected int GetBricksWeight() {
+    protected int GetBaseScore() {
         //Debug.Log("Bricks weight: " + bricksBroken * 100);
-        return bricksBroken * 100;
+        return score;
     }
 
     /// <summary>
@@ -93,7 +103,14 @@ public class ScoreManager : MonoBehaviour
     /// function to update the bricksBroken variable
     /// </summary>
     /// <param name="value">number of broken bricks</param>
-    public void UpdateBricksBroken(int value) {
+    public void UpdateBricksBrokenScore(int value) {
+        if (bricksBroken < value && newReset != true) {
+            multiplier += value - bricksBroken;
+        } else {
+            newReset = false;
+            multiplierText.transform.parent.gameObject.SetActive(true);
+        }
+        score += (value - bricksBroken) * multiplier * 100;
         bricksBroken = value;
     }
 
@@ -111,8 +128,19 @@ public class ScoreManager : MonoBehaviour
     public virtual void UpdateScoreText () {
         pauseScoreText.text = "" + score;
         baseScoreText.text = "" + score;
+        gameUIScoreText.text = "Score: " + score;
+        multiplierText.text = "x" + multiplier;
         overallScoreText.text = "" + overallScore;
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
+    }
+
+    /// <summary>
+    /// function to reset the multiplier when the ball hits the paddle
+    /// </summary>
+    public void ResetMultiplier() {
+        multiplier = 1;
+        newReset = true;
+        multiplierText.transform.parent.gameObject.SetActive(false);
     }
 }

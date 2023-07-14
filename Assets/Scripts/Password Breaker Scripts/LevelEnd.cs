@@ -29,7 +29,7 @@ public class LevelEnd : MonoBehaviour
 
     public void IncreaseBlockCount() {
         this.blockCount += 1f;
-        scoreManager.UpdateBricksBroken(((int)blockCount));
+        scoreManager.UpdateBricksBrokenScore(((int)blockCount));
     }
 
     public void RestartLevel() {

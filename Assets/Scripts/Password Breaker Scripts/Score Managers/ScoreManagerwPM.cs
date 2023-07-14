@@ -15,8 +15,7 @@ public class ScoreManagerwPM : ScoreManager
     /// </summary>
     protected override void CalculateScore() {
         GetLivesWeight();
-        overallScore = GetBricksWeight() + GetDifficultyWeight() + livesWeight + PMBonus();
-        score = GetBricksWeight();
+        overallScore = GetBaseScore() + GetDifficultyWeight() + livesWeight + PMBonus();
         //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
@@ -27,7 +26,9 @@ public class ScoreManagerwPM : ScoreManager
     public override void UpdateScoreText () {
         pauseScoreText.text = "" + score;
         baseScoreText.text = "" + score;
+        gameUIScoreText.text = "Score: " + score;
         overallScoreText.text = "" + overallScore;
+        multiplierText.text = "x" + multiplier;
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
         PMBonusText.text = "" + PMBonus();

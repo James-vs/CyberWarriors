@@ -220,9 +220,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1248829414}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: multiplierText
+      value: 
+      objectReference: {fileID: 1248829413}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: pauseScoreText
       value: 
       objectReference: {fileID: 134241277}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: gameUIScoreText
+      value: 
+      objectReference: {fileID: 1248829415}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: overallScoreText
       value: 
@@ -655,9 +663,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1248829413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7434869390708229473, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 1248829411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1248829414 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2009964989194001582, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+  m_PrefabInstance: {fileID: 1248829411}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1248829415 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6295028394257987800, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
   m_PrefabInstance: {fileID: 1248829411}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

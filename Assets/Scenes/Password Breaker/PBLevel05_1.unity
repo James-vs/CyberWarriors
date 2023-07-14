@@ -637,6 +637,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextScene
       objectReference: {fileID: 0}
+    - target: {fileID: 4322023602242137688, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.3796387
+      objectReference: {fileID: 0}
     - target: {fileID: 5676523595989930589, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1176,7 +1180,10 @@ MonoBehaviour:
   bricksBroken: 0
   lives: 0
   difficulty: 0
+  multiplier: 1
   difficultyKey: PBDifficulty
+  gameUIScoreText: {fileID: 1682657280}
+  multiplierText: {fileID: 1682657279}
   pauseScoreText: {fileID: 1029209361}
   baseScoreText: {fileID: 1029209360}
   difficultyBonusText: {fileID: 1029209359}
@@ -1425,6 +1432,28 @@ PrefabInstance:
 --- !u!114 &1677768487 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6734157776947090577, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+  m_PrefabInstance: {fileID: 1029209353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1682657279 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8278195436643263452, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+  m_PrefabInstance: {fileID: 1029209353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1682657280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592753982362003195, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
   m_PrefabInstance: {fileID: 1029209353}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
