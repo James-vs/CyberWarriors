@@ -11,18 +11,18 @@ public class BrowserManager : MonoBehaviour
 
     //function to switch to tab 2
     public virtual void SwitchToTab2() {
-        tab1.SetActive(false);
-        tab1Button.GetComponent<Button>().interactable = true;
-        tab2.SetActive(true);
-        tab2Button.GetComponent<Button>().interactable = false;
+        tab1.SetActive(true);
+        tab1Button.GetComponent<Button>().interactable = false;
+        tab2.SetActive(false);
+        tab2Button.GetComponent<Button>().interactable = true;
     }
 
     //function to switch to tab1
     public virtual void SwitchToTab1(){
-        tab2.SetActive(false);
-        tab2Button.GetComponent<Button>().interactable = true;
-        tab1.SetActive(true);
-        tab1Button.GetComponent<Button>().interactable = false;
+        tab2.SetActive(true);
+        tab2Button.GetComponent<Button>().interactable = false;
+        tab1.SetActive(false);
+        tab1Button.GetComponent<Button>().interactable = true;
         
     }
 
