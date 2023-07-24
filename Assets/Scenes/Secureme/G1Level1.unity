@@ -1042,6 +1042,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1914996153068346008, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 168.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914996153068346008, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.909501
+      objectReference: {fileID: 0}
     - target: {fileID: 1992348029666949690, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1186,6 +1194,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6033490237198154816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 27.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033490237198154816, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6351324618906697718, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_Name
       value: click d2
@@ -1193,6 +1209,10 @@ PrefabInstance:
     - target: {fileID: 6499534506732112030, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601556000759806545, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6719934856994857371, guid: 09eb165c70720eb4586d0775cf93c484, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
