@@ -22,13 +22,13 @@ EditorBuildSettings:
     guid: e24cb6e4990153346b9bf7aa25b2e44e
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level1.unity
-    guid: 7f04ecd201532ec48b39850eb2af9ef3
+    guid: a80638f2a1adb3947a897a4c57deffd7
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level1 Debrief.unity
     guid: e9003ef00d971454ca0ffcc1ed0a2bbd
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level2.unity
-    guid: e4c2c854d934d1548bbcbcb5dfaa0af3
+    guid: 93f48c277df01624da24866d7b6c51ea
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level2 Debrief.unity
     guid: da74424d7cb2d7549b865c2eb00b2157
@@ -138,3 +138,4 @@ EditorBuildSettings:
     path: Assets/Scenes/Password Breaker/PB Test Scene.unity
     guid: e31f86364ee4235479ee29511e62f850
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
