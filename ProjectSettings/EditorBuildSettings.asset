@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: c7fe8937108386b4aa6e93eb3658b5cf
   - enabled: 1
     path: Assets/Scenes/Secureme/SecuremeWelcome.unity
-    guid: f13886b2beb46e14498e5b0234e6f071
+    guid: 9d0e3e9b21c62b846be2ef36e5e849e9
   - enabled: 1
     path: Assets/Scenes/Secureme/SecuremeDesktop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: a80638f2a1adb3947a897a4c57deffd7
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level1 Debrief.unity
-    guid: e9003ef00d971454ca0ffcc1ed0a2bbd
+    guid: 8feb8b732d27db54dbcecb429fa8e13c
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level2.unity
     guid: 93f48c277df01624da24866d7b6c51ea
@@ -40,7 +40,7 @@ EditorBuildSettings:
     guid: c726fa76d7654b14d84ec1ce2c381d71
   - enabled: 1
     path: Assets/Scenes/Secureme/App Permissions brief.unity
-    guid: 5e3f345050f5bc143ad2b137bfd957a8
+    guid: 75aa81fbc2a9287429291e0043a148c8
   - enabled: 1
     path: Assets/Scenes/Secureme/G1Level4.unity
     guid: 7ed9e7cbec55a664fbd6e793c4baa5fb
@@ -49,7 +49,7 @@ EditorBuildSettings:
     guid: 55284e8689593244c832b69c2bd690f0
   - enabled: 1
     path: Assets/Scenes/Secureme/FirstGameQuiz.unity
-    guid: dc895f06fee393f4e97334206df25b8e
+    guid: 324e71d80fe75d24f8af5101e01545d7
   - enabled: 1
     path: Assets/Scenes/Secureme/SecuremeDesktop2.unity
     guid: a1a579eb0baa2074b9752a4fd5e2f34c
@@ -70,7 +70,7 @@ EditorBuildSettings:
     guid: 9b2a1d357ee7f3a46af3e4874830e17d
   - enabled: 1
     path: Assets/Scenes/Secureme/SecuremeEnd.unity
-    guid: 5d28431e7ecee1441837e27b838b6b7b
+    guid: 65f1028f3d32bb545a4533d849804b07
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PBWelcome.unity
     guid: f79bd18567b95de40b39f3d60528f4e5
