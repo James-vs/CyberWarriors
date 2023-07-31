@@ -32,6 +32,11 @@ public class LevelEnd : MonoBehaviour
         scoreManager.UpdateBricksBrokenScore(((int)blockCount));
     }
 
+    public void SetTotalBlocks(int total)
+    {
+        this.totalBlocks = total;
+    }
+
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

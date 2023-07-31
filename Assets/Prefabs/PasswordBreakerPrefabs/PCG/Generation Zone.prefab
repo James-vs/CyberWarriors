@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &679436738822599487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425788914240010515}
+  - component: {fileID: 1250235895937885427}
+  m_Layer: 0
+  m_Name: Generation Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &425788914240010515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679436738822599487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250235895937885427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679436738822599487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdab5f9325cbb1f429c98cad90dd8f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapWidth: 20
+  mapHeight: 9
+  widthOffset: -10
+  heightOffset: -2
+  resettable: 1
+  PassManager: {fileID: 7849948444938370243, guid: 3d10118d2c629364da765b2efc252753, type: 3}
+  Firewall: {fileID: 4829406114342023481, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
+  Bricks:
+  - {fileID: 7546378709889650843, guid: f2b4f9a66875eca49a1cc74437190af7, type: 3}
+  - {fileID: 7546378709889650843, guid: 42add116aa678b642b2cd30a01e4e4e4, type: 3}
+  - {fileID: 8909172527481163629, guid: 12485ad951c48d94e931bef8a98e24ae, type: 3}
+  - {fileID: 5791532942943086892, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
+  - {fileID: 6583892206587839439, guid: fb3fcebbbb3c6094d82b8ec1d15c4394, type: 3}
+  - {fileID: 7546378709889650843, guid: 0235cf88f6a0d9843aa3dfce2768d2fe, type: 3}
+  levelEnd: {fileID: 0}
+  brickCount: 0
+  spawnCount: 0
+  brickValue: 3
+  passManInCenter: 0
+  maxWalkers: 3
+  fillPercentage: 0.4
+  passManInCenterChance: 0.3
+  firewallSpawnChance: 0.15
+  waitTime: 0.1
+  smoothness: 11.1

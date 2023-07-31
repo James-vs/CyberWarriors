@@ -42,4 +42,9 @@ public class PMRadialTimer : MonoBehaviour
         timeLeft = maxTime;
         startTimer = true;
     }
+
+    public void SetPassManager(PMManager pMManager)
+    {
+        this.PMManager = pMManager;
+    }
 }

@@ -16,6 +16,9 @@ public class PMManager : MonoBehaviour
     {
         Debug.Log("PassManagerDestroyer script start");
         eventSystem = GameObject.Find("EventSystem");
+        radialTimer = GameObject.Find("Radial");
+        ball = GameObject.Find("Ball");
+        radialTimer.GetComponent<PMRadialTimer>().SetPassManager(this);
     }
 
 

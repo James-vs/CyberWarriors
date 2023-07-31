@@ -18,6 +18,7 @@ public class GenerateLevel : MonoBehaviour
     public int mapHeight;
     public int widthOffset;
     public int heightOffset;
+    public bool resettable;
     [Header("GameObjects")]
     public GameObject PassManager;
     public GameObject Firewall;
@@ -25,6 +26,7 @@ public class GenerateLevel : MonoBehaviour
     protected Grid[,] grid;
     protected GameObject prent;
     protected List<WalkerObject> Walkers;
+    public LevelEnd levelEnd;
     [Header("Information Variables (DO NOT MANUALLY ALTER)")]
     [SerializeField] protected int brickCount = 0;
     [SerializeField] protected int spawnCount = 0;
@@ -50,18 +52,27 @@ public class GenerateLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && brickCount == 0)
+        if (resettable)
+        {
+            if (Input.GetKeyUp(KeyCode.R)) 
+            { 
+                for( int i = 0;  i < prent.transform.childCount; i++ )
+                {
+                    Destroy(prent.transform.GetChild(i).gameObject);
+                }
+                brickCount = 0;
+                spawnCount = 0;
+
+                InitialiseLevel();
+            }
+        }
+        /*if (Input.GetKeyDown(KeyCode.A) && brickCount == 0)
         { 
-            InitialiseLevel();
+            
         } else if (Input.GetKeyDown(KeyCode.D))
         {
-            for( int i = 0;  i < prent.transform.childCount; i++ )
-            {
-                Destroy(prent.transform.GetChild(i).gameObject);
-            }
-            brickCount = 0;
-            spawnCount = 0;
-        }
+            
+        }*/
     }
 
     
@@ -165,6 +176,8 @@ public class GenerateLevel : MonoBehaviour
                 yield return new WaitForSeconds(waitTime);
             }
         }
+
+        levelEnd.SetTotalBlocks(spawnCount);
 
     }
 
