@@ -13,19 +13,28 @@ public class GenerateLevel : MonoBehaviour
         EMPTY
     }
 
+    [Header("Grid Size & Position")]
     public int mapWidth;
     public int mapHeight;
     public int widthOffset;
     public int heightOffset;
+    [Header("GameObjects")]
     public GameObject PassManager;
+    public GameObject Firewall;
     public GameObject[] Bricks;
     protected Grid[,] grid;
     protected GameObject prent;
-    public List<WalkerObject> Walkers;
+    protected List<WalkerObject> Walkers;
+    [Header("Information Variables (DO NOT MANUALLY ALTER)")]
+    [SerializeField] protected int brickCount = 0;
+    [SerializeField] protected int spawnCount = 0;
+    [SerializeField] protected int brickValue;
+    [SerializeField] protected bool passManInCenter = false;
+    [Header("Item Spawn Variables")]
     public int maxWalkers = 10;
-    public int brickCount = 0;
-    public int brickValue;
     public float fillPercentage = 0.3f;
+    public float passManInCenterChance = 0.4f;
+    public float firewallSpawnChance = 0.2f;
     public float waitTime = 0.05f;
     [Range(1,100)]
     public float smoothness;
@@ -41,7 +50,7 @@ public class GenerateLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && brickCount == 0)
         { 
             InitialiseLevel();
         } else if (Input.GetKeyDown(KeyCode.D))
@@ -51,6 +60,7 @@ public class GenerateLevel : MonoBehaviour
                 Destroy(prent.transform.GetChild(i).gameObject);
             }
             brickCount = 0;
+            spawnCount = 0;
         }
     }
 
@@ -74,16 +84,16 @@ public class GenerateLevel : MonoBehaviour
 
         Vector3Int tileCenter = new Vector3Int(mapWidth / 2, mapHeight / 2, 0);
 
-        WalkerObject curWalker = new WalkerObject(new Vector2(tileCenter.x, tileCenter.y), GetDirection(), 0.5f);
+        WalkerObject newWalker = new WalkerObject(new Vector2(tileCenter.x, tileCenter.y), GetDirection(), 0.5f);
 
-        Debug.Log("tileCenter = " + tileCenter.x + ", " + tileCenter.y);
+        //Debug.Log("tileCenter = " + tileCenter.x + ", " + tileCenter.y);
 
-        SpawnSingleBrick(tileCenter);
+        //SpawnSingleBrick(tileCenter);
         
         
-        Walkers.Add(curWalker);
+        Walkers.Add(newWalker);
 
-        StartCoroutine(SpawnBricks());
+        StartCoroutine(PopulateGrid());
 
     }
 
@@ -98,18 +108,21 @@ public class GenerateLevel : MonoBehaviour
 
     
 
-    IEnumerator SpawnBricks()
+    IEnumerator PopulateGrid()
     {
+        // Potentially spawn PM in the center of the grid
+        MaybeSpawnPMInCenter();
 
-        while ((float)brickCount / (float)grid.Length < fillPercentage) // while amount of tiles < fill percentage...
+        // Spawn bricks and firewalls in half of the available space
+        while ((float)brickCount / (float)grid.Length < (fillPercentage / 2.0f)) // while amount of tiles < fill percentage...
         {
             bool hasCreatedFloor = false;
-            foreach (WalkerObject curWalker in Walkers)
+            foreach (WalkerObject walker in Walkers)
             {
-                Vector3Int curPos = new Vector3Int((int)curWalker.position.x, (int)curWalker.position.y, 0);
+                Vector3Int position = new Vector3Int((int)walker.position.x, (int)walker.position.y, 0);
 
-                hasCreatedFloor = SpawnSingleBrick(curPos);
-                
+                hasCreatedFloor |= SpawnSingleBrick(position);
+
             }
 
             // Walker Methods
@@ -125,32 +138,114 @@ public class GenerateLevel : MonoBehaviour
         }
 
 
-        StartCoroutine(SpawnPassManager());
+        // Spawn a Password Manager if not already spawned
+        if (!passManInCenter) SpawnPasswordManager();
+
+
+        // Spawn the rest of the bricks and firewalls
+        while ((float)brickCount / (float)grid.Length < fillPercentage) // while amount of tiles < fill percentage...
+        {
+            bool hasCreatedFloor = false;
+            foreach (WalkerObject walker in Walkers)
+            {
+                Vector3Int position = new Vector3Int((int)walker.position.x, (int)walker.position.y, 0);
+
+                hasCreatedFloor |= SpawnSingleBrick(position);
+
+            }
+
+            // Walker Methods
+            ChanceToRemove();
+            ChanceToRedirect();
+            ChanceToCreate();
+            UpdatePosition();
+
+            if (hasCreatedFloor)
+            {
+                yield return new WaitForSeconds(waitTime);
+            }
+        }
+
     }
 
-
-    IEnumerator SpawnPassManager()
+    private void MaybeSpawnPMInCenter()
     {
-        for (int x = 0; x < grid.GetLength(0) - 1; x++)
+        if (UnityEngine.Random.value < passManInCenterChance)
         {
-            for (int y = 0; y < grid.GetLength(1) - 1; y++)
+            int x = grid.GetLength(0) / 2;
+            int y = grid.GetLength(1) / 2;
+
+            grid[x, y] = Grid.PASSMAN;
+            grid[x, y - 1] = Grid.PASSMAN;
+            grid[x, y - 2] = Grid.PASSMAN;
+            grid[x, y + 1] = Grid.PASSMAN;
+            grid[x, y + 2] = Grid.PASSMAN;
+
+            grid[x - 1, y] = Grid.PASSMAN;
+            grid[x - 1, y - 1] = Grid.PASSMAN;
+            grid[x - 1, y - 2] = Grid.PASSMAN;
+            grid[x - 1, y + 1] = Grid.PASSMAN;
+            grid[x - 1, y + 2] = Grid.PASSMAN;
+
+            grid[x - 2, y] = Grid.PASSMAN;
+            grid[x - 2, y - 1] = Grid.PASSMAN;
+            grid[x - 2, y - 2] = Grid.PASSMAN;
+            grid[x - 2, y + 1] = Grid.PASSMAN;
+            grid[x - 2, y + 2] = Grid.PASSMAN;
+
+            grid[x - 3, y] = Grid.PASSMAN;
+            grid[x - 3, y - 1] = Grid.PASSMAN;
+            grid[x - 3, y - 2] = Grid.PASSMAN;
+            grid[x - 3, y + 1] = Grid.PASSMAN;
+            grid[x - 3, y + 2] = Grid.PASSMAN;
+
+            grid[x + 1, y] = Grid.PASSMAN;
+            grid[x + 1, y - 1] = Grid.PASSMAN;
+            grid[x + 1, y - 2] = Grid.PASSMAN;
+            grid[x + 1, y + 1] = Grid.PASSMAN;
+            grid[x + 1, y + 2] = Grid.PASSMAN;
+
+            grid[x + 2, y] = Grid.PASSMAN;
+            grid[x + 2, y - 1] = Grid.PASSMAN;
+            grid[x + 2, y - 2] = Grid.PASSMAN;
+            grid[x + 2, y + 1] = Grid.PASSMAN;
+            grid[x + 2, y + 2] = Grid.PASSMAN;
+
+            grid[x + 3, y] = Grid.PASSMAN;
+            grid[x + 3, y - 1] = Grid.PASSMAN;
+            grid[x + 3, y - 2] = Grid.PASSMAN;
+            grid[x + 3, y + 1] = Grid.PASSMAN;
+            grid[x + 3, y + 2] = Grid.PASSMAN;
+
+            Instantiate(PassManager, new Vector3Int(x + widthOffset, y + heightOffset, 0), Quaternion.identity, prent.transform);
+            brickCount += 25;
+            passManInCenter = true;
+
+        } 
+        else
+        {
+            passManInCenter = false;
+        }
+    }
+
+    private void SpawnPasswordManager()
+    {
+        for (int x = grid.GetLength(0) - 1; x >= 0 ; x--)
+        {
+            for (int y = grid.GetLength(1) - 1; y >= 0 ; y--)
             {
                 if (grid[x, y] == Grid.EMPTY)
                 {
-                    bool hasCreatedPM = false;
-                    
-                    Debug.Log("Checking grid point " + x + "," + y);
                     if (x - 3 >= 0 && y - 2 >= 0 && x + 3 < mapWidth && y + 2 < mapHeight)
                     {
-
                         if (
-                            grid[x, y - 1] == Grid.EMPTY && 
+                            grid[x, y - 1] == Grid.EMPTY &&
                             grid[x, y + 1] == Grid.EMPTY &&
                             grid[x, y - 2] == Grid.EMPTY &&
                             grid[x, y + 2] == Grid.EMPTY &&
 
-                            grid[x - 1, y] == Grid.EMPTY && 
-                            grid[x - 1, y - 1] == Grid.EMPTY && 
+                            grid[x - 1, y] == Grid.EMPTY &&
+                            grid[x - 1, y - 1] == Grid.EMPTY &&
                             grid[x - 1, y + 1] == Grid.EMPTY &&
                             grid[x - 1, y - 2] == Grid.EMPTY &&
                             grid[x - 1, y + 2] == Grid.EMPTY &&
@@ -167,8 +262,8 @@ public class GenerateLevel : MonoBehaviour
                             grid[x - 3, y - 2] == Grid.EMPTY &&
                             grid[x - 3, y + 2] == Grid.EMPTY &&
 
-                            grid[x + 1, y] == Grid.EMPTY && 
-                            grid[x + 1, y - 1] == Grid.EMPTY && 
+                            grid[x + 1, y] == Grid.EMPTY &&
+                            grid[x + 1, y - 1] == Grid.EMPTY &&
                             grid[x + 1, y + 1] == Grid.EMPTY &&
                             grid[x + 1, y - 2] == Grid.EMPTY &&
                             grid[x + 1, y + 2] == Grid.EMPTY &&
@@ -186,7 +281,6 @@ public class GenerateLevel : MonoBehaviour
                             grid[x + 3, y + 2] == Grid.EMPTY
                             )
                         {
-                            //grid.SetTile(new Vector3Int(x + 1, y, 0), Wall);
                             grid[x, y] = Grid.PASSMAN;
                             grid[x, y - 1] = Grid.PASSMAN;
                             grid[x, y - 2] = Grid.PASSMAN;
@@ -231,15 +325,10 @@ public class GenerateLevel : MonoBehaviour
 
                             Debug.Log("Spawn Point found");
                             Instantiate(PassManager, new Vector3Int(x + widthOffset, y + heightOffset, 0), Quaternion.identity, prent.transform);
+                            brickCount += 25;
 
-
-                            hasCreatedPM = true;
+                            return;
                         }
-                    }
-
-                    if (hasCreatedPM)
-                    {
-                        yield return new WaitForSeconds(waitTime);
                     }
                 }
             }
@@ -249,11 +338,11 @@ public class GenerateLevel : MonoBehaviour
 
     private bool SpawnSingleBrick(Vector3Int vector)
     {
-        if (grid[vector.x, vector.y] != Grid.BRICK && (vector.x - 1 >= 0 && vector.y >= 0) && (vector.x + 1 < mapWidth && vector.y < mapHeight))
+        if (grid[vector.x, vector.y] != Grid.BRICK && grid[vector.x, vector.y] != Grid.PASSMAN && (vector.x - 1 >= 0 && vector.y >= 0) && (vector.x + 1 < mapWidth && vector.y < mapHeight))
         {
             if (vector.x - 2 >= 0) // if this grid reference is in-bounds...
             {
-                if (grid[vector.x - 2, vector.y] != Grid.BRICK) // ... and it is not already labelled brick ...
+                if (grid[vector.x - 2, vector.y] != Grid.BRICK && grid[vector.x - 2, vector.y] != Grid.PASSMAN) // ... and it is not already labelled brick ...
                 {
                     grid[vector.x - 2, vector.y] = Grid.BRICK; // ... label it a brick
                 } 
@@ -267,7 +356,15 @@ public class GenerateLevel : MonoBehaviour
             grid[vector.x, vector.y] = Grid.BRICK;
             grid[vector.x + 1, vector.y] = Grid.BRICK;
 
-            Instantiate(Bricks[GenerateInteger(vector.x, vector.y)], new Vector3Int(vector.x + widthOffset, vector.y + heightOffset, 0), Quaternion.identity, prent.transform);
+            if (UnityEngine.Random.value < firewallSpawnChance)
+            {
+                Instantiate(Firewall, new Vector3Int(vector.x + widthOffset, vector.y + heightOffset, 0), Quaternion.identity, prent.transform);
+            } else
+            {
+                Instantiate(Bricks[GenerateInteger(vector.x, vector.y)], new Vector3Int(vector.x + widthOffset, vector.y + heightOffset, 0), Quaternion.identity, prent.transform);
+                spawnCount += 1;
+            }
+            
             brickCount += 3;
             return true;
         }
@@ -279,7 +376,6 @@ public class GenerateLevel : MonoBehaviour
     private int GenerateInteger(int x, int y) {
         float pnoise = Mathf.PerlinNoise1D(x+y / smoothness);
         int value = Mathf.RoundToInt((Bricks.Length - 1) * pnoise);
-        Debug.Log(" bricks length = " + Bricks.Length + " Value generated = " + value + " & pnoise = " + pnoise + " & x+y = " + (x+y));
         if (pnoise < 0.1f) return 0;
         return value;
     }
@@ -303,9 +399,9 @@ public class GenerateLevel : MonoBehaviour
         {
             if (UnityEngine.Random.value < Walkers[i].chanceToChange)
             {
-                WalkerObject curWalker = Walkers[i];
-                curWalker.direction = GetDirection();
-                Walkers[i] = curWalker;
+                WalkerObject walker = Walkers[i];
+                walker.direction = GetDirection();
+                Walkers[i] = walker;
             }
         }
     }
@@ -330,20 +426,19 @@ public class GenerateLevel : MonoBehaviour
     {
         for (int i = 0; i < Walkers.Count; i++)
         {
-            WalkerObject foundWalker = Walkers[i];
-            foundWalker.position += foundWalker.direction;
-            foundWalker.position.x = Mathf.Clamp(foundWalker.position.x, 1, grid.GetLength(0) - 2);
-            foundWalker.position.y = Mathf.Clamp(foundWalker.position.y, 1, grid.GetLength(1) - 2);
-            Walkers[i] = foundWalker;
-
+            WalkerObject walker = Walkers[i];
+            walker.position += walker.direction;
+            walker.position.x = Mathf.Clamp(walker.position.x, 1, grid.GetLength(0) - 2);
+            walker.position.y = Mathf.Clamp(walker.position.y, 1, grid.GetLength(1) - 2);
+            Walkers[i] = walker;
         }
     }
 
     private Vector2 GetDirection()
     {
-        int choice = Mathf.FloorToInt(UnityEngine.Random.value * 3.99f);
+        int direction = Mathf.FloorToInt(UnityEngine.Random.value * 3.99f);
 
-        switch (choice)
+        switch (direction)
         {
             case 0:
                 return Vector2.down;
