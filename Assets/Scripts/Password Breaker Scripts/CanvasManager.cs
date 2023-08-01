@@ -5,6 +5,7 @@ public class CanvasManager : MonoBehaviour
 {
     [Header("Pause Menu UI Objects")]
     [SerializeField] protected GameObject GameUI;
+    [SerializeField] protected GameObject GameUIBackground;
     [SerializeField] protected GameObject PauseUI;
     [SerializeField] protected GameObject EndScreen;
     protected bool IsPaused = false;
@@ -39,6 +40,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void Pause() {
         GameUI.SetActive(false);
+        GameUIBackground.SetActive(false);
         PauseUI.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -48,6 +50,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void Play() {
         GameUI.SetActive(true);
+        GameUIBackground.SetActive(true);
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -78,6 +81,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void LevelComplete() {
         GameUI.SetActive(false);
+        GameUIBackground.SetActive(false);
         PauseUI.SetActive(false);
         EndScreen.SetActive(true);
         Time.timeScale = 0f;

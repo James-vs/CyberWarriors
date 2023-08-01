@@ -6,7 +6,7 @@ public class PMManager : MonoBehaviour
     private float collisionCount = 5f;
     [SerializeField] private GameObject eventSystem;
     [SerializeField] private GameObject radialTimer;
-    public GameObject ball;
+    [SerializeField] private GameObject ball;
     public GameObject firewallShield;
     public bool shielded = false;
 
@@ -17,7 +17,7 @@ public class PMManager : MonoBehaviour
         Debug.Log("PassManagerDestroyer script start");
         eventSystem = GameObject.Find("EventSystem");
         radialTimer = GameObject.Find("Radial");
-        ball = GameObject.Find("Ball");
+        //ball = GameObject.FindGameObjectWithTag("Ball");
         radialTimer.GetComponent<PMRadialTimer>().SetPassManager(this);
     }
 

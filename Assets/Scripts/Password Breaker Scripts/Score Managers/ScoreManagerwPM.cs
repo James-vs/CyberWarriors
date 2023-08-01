@@ -4,7 +4,7 @@ using TMPro;
 public class ScoreManagerwPM : ScoreManager
 {
     [SerializeField] protected TextMeshProUGUI PMBonusText;
-    protected int PMCount = 0;
+    [SerializeField] protected int PMCount = 0;
 
     protected int PMBonus() {
         return PMCount * 1000;

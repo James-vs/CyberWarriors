@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &344270687657082827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2682295027368026068}
+  - component: {fileID: 948214821804987730}
+  - component: {fileID: 2796041321697610806}
+  - component: {fileID: 6132549926210053790}
+  - component: {fileID: 4996765850157537456}
+  m_Layer: 0
+  m_Name: EndlessEventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2682295027368026068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344270687657082827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.385174, y: 0.7439248, z: -0.08255151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &948214821804987730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344270687657082827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb7255cb0d555241b53beb646ed3838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2796041321697610806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344270687657082827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67223e0437ba5e4ba12b2e2c052f2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  bricksBroken: 0
+  lives: 0
+  difficulty: 0
+  multiplier: 1
+  difficultyKey: PBDifficulty
+  gameUIScoreText: {fileID: 0}
+  multiplierText: {fileID: 0}
+  pauseScoreText: {fileID: 0}
+  baseScoreText: {fileID: 0}
+  difficultyBonusText: {fileID: 0}
+  livesBonusText: {fileID: 0}
+  overallScoreText: {fileID: 0}
+--- !u!114 &6132549926210053790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344270687657082827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4843606ef02222845aa57b6c9cddc2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  bricksBroken: 0
+  lives: 0
+  difficulty: 0
+  multiplier: 1
+  difficultyKey: PBDifficulty
+  gameUIScoreText: {fileID: 0}
+  multiplierText: {fileID: 0}
+  pauseScoreText: {fileID: 0}
+  baseScoreText: {fileID: 0}
+  difficultyBonusText: {fileID: 0}
+  livesBonusText: {fileID: 0}
+  overallScoreText: {fileID: 0}
+  PMBonusText: {fileID: 0}
+  PMCount: 0
+--- !u!114 &4996765850157537456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344270687657082827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce33117835cefaf4a8cc9d607a83ab65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreManager: {fileID: 2796041321697610806}
+  canvasManager: {fileID: 0}
+  blockCount: 0
+  totalBlocks: 0
+  scoreManagerwPM: {fileID: 6132549926210053790}
+  pmManager: {fileID: 0}
+  playerPrefsVariable: PBEndless
+  resetPlayerPrefsValue: 0

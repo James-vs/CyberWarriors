@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Browser Window
+  - Ball
+  - Paddle
+  - PassMan
   layers:
   - Default
   - TransparentFX

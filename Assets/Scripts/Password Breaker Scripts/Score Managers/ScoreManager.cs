@@ -84,7 +84,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     /// <summary>
-    /// returns the current score value
+    /// PUBLIC function that returns the current score value
     /// </summary>
     /// <returns>score value (int)</returns>
     public int GetScore() {
@@ -142,5 +142,23 @@ public class ScoreManager : MonoBehaviour
         multiplier = 1;
         newReset = true;
         multiplierText.transform.parent.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// function to return the overallScore variable
+    /// </summary>
+    /// <returns>overallScore (int)</returns>
+    public int GetOverallScore()
+    {
+        return overallScore;
+    }
+
+    /// <summary>
+    /// function to set the base score of a level (only used for i)
+    /// </summary>
+    /// <param name="baseScore"></param>
+    public void SetBaseScore(int baseScore) 
+    { 
+        score = baseScore;
     }
 }

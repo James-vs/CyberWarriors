@@ -26,7 +26,7 @@ public class GenerateLevel : MonoBehaviour
     protected Grid[,] grid;
     protected GameObject prent;
     protected List<WalkerObject> Walkers;
-    public LevelEnd levelEnd;
+    public EndlessManager endlessManager;
     [Header("Information Variables (DO NOT MANUALLY ALTER)")]
     [SerializeField] protected int brickCount = 0;
     [SerializeField] protected int spawnCount = 0;
@@ -177,7 +177,7 @@ public class GenerateLevel : MonoBehaviour
             }
         }
 
-        levelEnd.SetTotalBlocks(spawnCount);
+        endlessManager.SetTotalBlocks(spawnCount);
 
     }
 
