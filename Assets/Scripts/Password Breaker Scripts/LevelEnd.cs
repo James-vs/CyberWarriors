@@ -7,7 +7,7 @@ public class LevelEnd : MonoBehaviour
     [SerializeField] protected CanvasManager canvasManager;
     public float blockCount = 0f;
     public float totalBlocks = 0f;
-    private bool levelEnded = false;
+    protected bool levelEnded = false;
     
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,9 @@ public class LevelEnd : MonoBehaviour
         Debug.Log("Level ended");
         canvasManager.LevelComplete();
         levelEnded = true;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void IncreaseBlockCount() {
+    public virtual void IncreaseBlockCount() {
         this.blockCount += 1f;
         scoreManager.UpdateBricksBrokenScore(((int)blockCount));
     }

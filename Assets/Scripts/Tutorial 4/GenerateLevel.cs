@@ -66,13 +66,6 @@ public class GenerateLevel : MonoBehaviour
                 InitialiseLevel();
             }
         }
-        /*if (Input.GetKeyDown(KeyCode.A) && brickCount == 0)
-        { 
-            
-        } else if (Input.GetKeyDown(KeyCode.D))
-        {
-            
-        }*/
     }
 
     
@@ -95,12 +88,7 @@ public class GenerateLevel : MonoBehaviour
 
         Vector3Int tileCenter = new Vector3Int(mapWidth / 2, mapHeight / 2, 0);
 
-        WalkerObject newWalker = new WalkerObject(new Vector2(tileCenter.x, tileCenter.y), GetDirection(), 0.5f);
-
-        //Debug.Log("tileCenter = " + tileCenter.x + ", " + tileCenter.y);
-
-        //SpawnSingleBrick(tileCenter);
-        
+        WalkerObject newWalker = new WalkerObject(new Vector2(tileCenter.x, tileCenter.y), GetDirection(), 0.5f);        
         
         Walkers.Add(newWalker);
 

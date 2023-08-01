@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class EndlessManager : LevelEnd
 {
-    [SerializeField] private ScoreManagerwPM scoreManagerwPM;
     [SerializeField] private GameObject pmManager;
+    [SerializeField] private ScoreManagerEndless smEndless;
     private bool initialBlocksCreated = false;
     [SerializeField] private string playerPrefsVariable;
     [SerializeField] private bool resetPlayerPrefsValue = false;
@@ -14,13 +14,9 @@ public class EndlessManager : LevelEnd
     {
         if (resetPlayerPrefsValue && PlayerPrefs.HasKey(playerPrefsVariable)) PlayerPrefs.SetInt(playerPrefsVariable, 0);
         resetPlayerPrefsValue = false;
-        scoreManager.SetBaseScore(PlayerPrefs.GetInt(playerPrefsVariable));
-        scoreManagerwPM.SetBaseScore(PlayerPrefs.GetInt(playerPrefsVariable));
-        Debug.Log("scoreManager initial value: " + scoreManager.GetScore());
-        Debug.Log("scoreManagerwPM initial value: " + scoreManagerwPM.GetScore());
-        scoreManager.enabled = true;
-        scoreManagerwPM.enabled = false;
-        
+        smEndless.SetBaseScore(PlayerPrefs.GetInt(playerPrefsVariable));
+        Debug.Log("smEndless initial value: " + smEndless.GetScore());
+
     }
 
     // Update is called once per frame
@@ -32,16 +28,19 @@ public class EndlessManager : LevelEnd
         }
         else
         {
-            scoreManager.enabled = false;
-            scoreManagerwPM.enabled = true;
+            smEndless.PMExists(true);
         }
 
-        if (blockCount == totalBlocks && initialBlocksCreated)
+        if (blockCount == totalBlocks && initialBlocksCreated && !levelEnded)
         {
             EndLevel();
         }
     }
 
+    /// <summary>
+    /// function to set the total number of blocks
+    /// </summary>
+    /// <param name="total">totalBlocks var set to this value (int)</param>
     public void SetTotalBlocks(int total)
     {
         this.totalBlocks = total;
@@ -53,12 +52,21 @@ public class EndlessManager : LevelEnd
         this.totalBlocks += num;
     }
 
+    /// <summary>
+    /// override for parent class function EndLevel()
+    /// </summary>
     public override void EndLevel()
     {
         base.EndLevel();
-        if (scoreManager.enabled == true) PlayerPrefs.SetInt(playerPrefsVariable, scoreManager.GetOverallScore());
-        if (scoreManagerwPM.enabled == true) PlayerPrefs.SetInt(playerPrefsVariable, scoreManagerwPM.GetOverallScore());
-        Debug.Log("scoreManager end value: " + scoreManager.GetOverallScore());
-        Debug.Log("scoreManagerwPM end value: " + scoreManagerwPM.GetOverallScore());
+        Debug.Log("smEndless end value: " + smEndless.GetOverallScore());
+    }
+
+    /// <summary>
+    /// override for parent function IncreaseBlockCount()
+    /// </summary>
+    public override void IncreaseBlockCount()
+    {
+        this.blockCount += 1f;
+        smEndless.UpdateBricksBrokenScore(((int)blockCount));
     }
 }

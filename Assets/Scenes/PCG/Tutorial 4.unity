@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 4857932940781419737, guid: defb1860493a56747a4ee8c61c02a834, type: 3}
       propertyPath: scoreManager
       value: 
-      objectReference: {fileID: 8776165037493976042}
+      objectReference: {fileID: 9126015861989134326}
     - target: {fileID: 4857932940781419737, guid: defb1860493a56747a4ee8c61c02a834, type: 3}
       propertyPath: pauseLivesDisplay
       value: 
@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1547004608609726482, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
+      propertyPath: m_Name
+      value: GameScoreText
+      objectReference: {fileID: 0}
     - target: {fileID: 6592490291152248314, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_Name
       value: UICanvasEndless
@@ -770,6 +774,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796041321697610806, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2796041321697610806, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: baseScoreText
       value: 
       objectReference: {fileID: 8027114024351786802}
@@ -798,9 +806,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9152755985759352668}
     - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: smEndless
+      value: 
+      objectReference: {fileID: 9126015861989134326}
+    - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: canvasManager
       value: 
       objectReference: {fileID: 1959000520096553386}
+    - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: scoreManagerwPM
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132549926210053790, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6132549926210053790, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: PMBonusText
       value: 
@@ -833,10 +857,15 @@ PrefabInstance:
       propertyPath: difficultyBonusText
       value: 
       objectReference: {fileID: 9152755985759352668}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2796041321697610806, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+    - {fileID: 6132549926210053790, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 344270687657082827, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 9126015861989134326}
     - targetCorrespondingSourceObject: {fileID: 344270687657082827, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9126015861989134325}
@@ -904,17 +933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8776165037493976042 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2796041321697610806, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
-  m_PrefabInstance: {fileID: 5648915401118821092}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7309295451843388914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e67223e0437ba5e4ba12b2e2c052f2b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9126015861989134324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +968,35 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &9126015861989134326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309295451843388914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683f3b21bd1acc34b9d54bcea2137753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  bricksBroken: 0
+  lives: 0
+  difficulty: 0
+  multiplier: 1
+  difficultyKey: PBDifficulty
+  gameUIScoreText: {fileID: 1592753981695490432}
+  multiplierText: {fileID: 8278195435708578983}
+  pauseScoreText: {fileID: 4585816064849558725}
+  baseScoreText: {fileID: 8027114024351786802}
+  difficultyBonusText: {fileID: 9152755985759352668}
+  livesBonusText: {fileID: 6672806064392327411}
+  overallScoreText: {fileID: 2232033275029416295}
+  PMBonusText: {fileID: 4143859376626902811}
+  PMCount: 0
+  pMExists: 0
+  playerPrefsVariable: PBEndless
 --- !u!114 &9152755985759352668 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3322776032789077912, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}

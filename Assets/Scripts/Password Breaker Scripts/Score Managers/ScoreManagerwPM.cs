@@ -16,7 +16,6 @@ public class ScoreManagerwPM : ScoreManager
     protected override void CalculateScore() {
         GetLivesWeight();
         overallScore = GetBaseScore() + GetDifficultyWeight() + livesWeight + PMBonus();
-        //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
 

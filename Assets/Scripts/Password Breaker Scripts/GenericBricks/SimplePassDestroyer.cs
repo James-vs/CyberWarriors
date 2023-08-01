@@ -20,10 +20,4 @@ public class SimplePassDestroyer : MonoBehaviour
         eventSystem.GetComponent<LevelEnd>().IncreaseBlockCount();
         Destroy(gameObject);
     }
-
-    //method to generate random number 0<=x<10
-    int GetRandomFloat() {
-        return Random.Range(0, 10);
-    }
-
 }

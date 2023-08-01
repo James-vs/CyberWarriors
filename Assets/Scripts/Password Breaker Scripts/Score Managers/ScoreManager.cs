@@ -39,7 +39,6 @@ public class ScoreManager : MonoBehaviour
     protected virtual void CalculateScore() {
         GetLivesWeight();
         overallScore = GetBaseScore() + GetDifficultyWeight() + livesWeight;
-        //Debug.Log("Score: " + score);
         UpdateScoreText();
     }
 
@@ -48,7 +47,6 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     /// <returns>bricksBroken weighting</returns>
     protected int GetBaseScore() {
-        //Debug.Log("Bricks weight: " + bricksBroken * 100);
         return score;
     }
 
@@ -58,13 +56,10 @@ public class ScoreManager : MonoBehaviour
     /// <returns>difficulty weighting</returns>
     protected int GetDifficultyWeight() {
         if (difficulty == 2) {
-            //Debug.Log("Diff weight: " + 2000);
             return 1000;
         } else if (difficulty == 1) {
-            //Debug.Log("Diff weight: " + 1000);
             return 500;
         } else {
-            //Debug.Log("Diff weight: " + 0);
             return 0;
         }
         
@@ -80,7 +75,6 @@ public class ScoreManager : MonoBehaviour
         } else {
             livesWeight = 0;
         }
-        //Debug.Log("Lives weight: " + livesWeight);
     }
 
     /// <summary>
@@ -96,7 +90,6 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     protected void GetDifficulty() {
         difficulty = PlayerPrefs.GetFloat(difficultyKey);
-        //Debug.Log("PBDifficulty: " + PlayerPrefs.GetInt(difficultyKey));
     }
 
     /// <summary>
