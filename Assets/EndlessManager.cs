@@ -7,7 +7,7 @@ public class EndlessManager : LevelEnd
     [SerializeField] private ScoreManagerEndless smEndless;
     private bool initialBlocksCreated = false;
     [SerializeField] private string playerPrefsVariable;
-    [SerializeField] private bool resetPlayerPrefsValue = false;
+    private static bool resetPlayerPrefsValue = true;
 
     // Start is called before the first frame update
     void Start()
