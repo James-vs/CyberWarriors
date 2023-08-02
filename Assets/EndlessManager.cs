@@ -8,6 +8,7 @@ public class EndlessManager : LevelEnd
     private bool initialBlocksCreated = false;
     [SerializeField] private string playerPrefsVariable;
     private static bool resetPlayerPrefsValue = true;
+    [SerializeField] private CanvasManagerEndless canvasManagerEndless;
 
     // Start is called before the first frame update
     void Start()
@@ -57,8 +58,18 @@ public class EndlessManager : LevelEnd
     /// </summary>
     public override void EndLevel()
     {
-        base.EndLevel();
+        base.EndLevel();     
         Debug.Log("smEndless end value: " + smEndless.GetOverallScore());
+    }
+
+    /// <summary>
+    /// function to end the game
+    /// </summary>
+    public void EndGame()
+    {
+        Debug.Log("Level ended");
+        canvasManagerEndless.GameOver();
+        levelEnded = true;
     }
 
     /// <summary>
@@ -69,4 +80,11 @@ public class EndlessManager : LevelEnd
         this.blockCount += 1f;
         smEndless.UpdateBricksBrokenScore(((int)blockCount));
     }
+
+    public override void RestartLevel()
+    {
+        base.RestartLevel();
+        resetPlayerPrefsValue = true;
+    }
+
 }

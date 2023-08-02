@@ -33,7 +33,7 @@ public class LevelEnd : MonoBehaviour
         scoreManager.UpdateBricksBrokenScore(((int)blockCount));
     }
 
-    public void RestartLevel() {
+    public virtual void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

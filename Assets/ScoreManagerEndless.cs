@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreManagerEndless : ScoreManagerwPM
 {
+    [Header("Game Over Text Objects")]
+    [SerializeField] protected TextMeshProUGUI endBaseScoreText;
+    [SerializeField] protected TextMeshProUGUI endDifficultyBonusText;
+    [SerializeField] protected TextMeshProUGUI endLivesBonusText;
+    [SerializeField] protected TextMeshProUGUI endOverallScoreText;
+    [SerializeField] protected TextMeshProUGUI endPMBonusText;
+    [Header("Additional Score Variables")]
     [SerializeField] private bool pMExists = false;
     [SerializeField] private string playerPrefsVariable;
 
@@ -12,6 +20,8 @@ public class ScoreManagerEndless : ScoreManagerwPM
     /// </summary>
     public override void UpdateScoreText()
     {
+        int difficultyWeight = GetDifficultyWeight();
+        int pMBonus = PMBonus();
         if (pMExists)
         {
             pauseScoreText.text = "" + score;
@@ -20,9 +30,14 @@ public class ScoreManagerEndless : ScoreManagerwPM
             overallScoreText.text = "" + overallScore;
             PlayerPrefs.SetInt(playerPrefsVariable, overallScore);
             multiplierText.text = "x" + multiplier;
-            difficultyBonusText.text = "" + GetDifficultyWeight();
+            difficultyBonusText.text = "" + difficultyWeight;
             livesBonusText.text = "" + livesWeight;
-            PMBonusText.text = "" + PMBonus();
+            PMBonusText.text = "" + pMBonus;
+            endBaseScoreText.text = "" + score;
+            endDifficultyBonusText.text = "" + difficultyWeight;
+            endLivesBonusText.text = "" + livesWeight;
+            endOverallScoreText.text = "" + overallScore;
+            endPMBonusText.text = "" + pMBonus;
         }
         else
         {
@@ -34,6 +49,10 @@ public class ScoreManagerEndless : ScoreManagerwPM
             multiplierText.text = "x" + multiplier;
             difficultyBonusText.text = "" + GetDifficultyWeight();
             livesBonusText.text = "" + livesWeight;
+            endBaseScoreText.text = "" + score;
+            endDifficultyBonusText.text = "" + difficultyWeight;
+            endLivesBonusText.text = "" + livesWeight;
+            endOverallScoreText.text = "" + overallScore;
         }
     }
     

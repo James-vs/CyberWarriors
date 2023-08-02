@@ -4,11 +4,11 @@ using TMPro;
 
 public class GameResetter : MonoBehaviour
 {
-    [SerializeField] private int lives = 3;
+    [SerializeField] protected int lives = 3;
     [SerializeField] private TextMeshProUGUI livesDisplay;
     [SerializeField] private TextMeshProUGUI pauseLivesDisplay;
     [SerializeField] private string difficultyKey = "PBDifficulty";
-    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] protected ScoreManager scoreManager;
 
 
     // Start is called before the first frame update
