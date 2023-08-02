@@ -137,5 +137,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Password Breaker/PB Test Scene.unity
     guid: e31f86364ee4235479ee29511e62f850
+  - enabled: 1
+    path: Assets/Scenes/Password Breaker/PCG/Endless Mode.unity
+    guid: e00978a07c445b54c942b75d4f32c2b2
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
