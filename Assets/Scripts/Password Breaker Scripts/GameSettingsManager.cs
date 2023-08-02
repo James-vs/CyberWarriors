@@ -13,7 +13,8 @@ public class GameSettingsManager : MonoBehaviour
     [Header("Close Settings Button")]
     [SerializeField] private TextMeshProUGUI doneText;
     private int scene;
-    
+    //[Header("Endless Mode Scene Number")]
+    //[SerializeField] private int endlessSceneNum = 0;
     [Header("UI Aesthetics")]
     [SerializeField] private GameObject easyImage;
     [SerializeField] private GameObject normalImage;
@@ -24,9 +25,10 @@ public class GameSettingsManager : MonoBehaviour
     void Start()
     {
         Debug.Log("GameSettingsManager script started");
-        //handle NoSQL database variable initialisation
+        //NoSQL database variable initialisation / management
         if (!PlayerPrefs.HasKey(difficultyKey)) PlayerPrefs.SetFloat(difficultyKey,0);
         if (!PlayerPrefs.HasKey("ReturnToScene")) PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex + 1);
+        if (PlayerPrefs.GetInt("PBModeSelection") == 0) PlayerPrefs.SetInt("ReturnToScene", SceneManager.sceneCountInBuildSettings - 1);
         scene = PlayerPrefs.GetInt("ReturnToScene");
         //called to keep settings value continuety
         slider.value = PlayerPrefs.GetFloat(difficultyKey);
@@ -35,7 +37,8 @@ public class GameSettingsManager : MonoBehaviour
     }
 
     private void CheckTargetScene() {
-        if (scene > SceneManager.GetActiveScene().buildIndex + 1) {
+        // if the scene is not the immediate next buildIndex && scene is not the endless mode buildIndex
+        if (scene > SceneManager.GetActiveScene().buildIndex + 1 && scene < SceneManager.sceneCountInBuildSettings - 1) {
             doneText.text = "Back";
         }
     }

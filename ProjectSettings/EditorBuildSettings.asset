@@ -75,6 +75,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Password Breaker/PBWelcome.unity
     guid: f79bd18567b95de40b39f3d60528f4e5
   - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBModeSelect.unity
+    guid: 554ab001963711e41807494bc3d5b30e
+  - enabled: 1
     path: Assets/Scenes/Password Breaker/PBSettings.unity
     guid: a25c72f5609e7464e95140a68abae32d
   - enabled: 1

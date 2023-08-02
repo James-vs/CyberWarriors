@@ -40,11 +40,22 @@ public class LevelEnd : MonoBehaviour
     public void OpenSettings() {
         PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Return to scene " + SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene(23);
+        SceneManager.LoadScene(24);
     }
 
     public void FirstTimeSettings() {
-        PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex+2);
+        PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex+3);
+    }
+
+    public void SelectNormalMode(bool choice)
+    {
+        if (choice) 
+        {
+            PlayerPrefs.SetInt("PBModeSelection", 1);
+        } else
+        {
+            PlayerPrefs.SetInt("PBModeSelection", 0);
+        }
     }
     
 }
