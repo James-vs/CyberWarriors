@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Unity.Collections.AllocatorManager;
 
 public class LevelEnd : MonoBehaviour
 {
     [SerializeField] protected ScoreManager scoreManager;
     [SerializeField] protected CanvasManager canvasManager;
+    [SerializeField] protected string normalModeComplete = "PBNormModeComplete";
+    [SerializeField] protected bool resetNormalModeComplete = false;
     public float blockCount = 0f;
     public float totalBlocks = 0f;
     protected bool levelEnded = false;
@@ -57,5 +60,15 @@ public class LevelEnd : MonoBehaviour
             PlayerPrefs.SetInt("PBModeSelection", 0);
         }
     }
+
+    public void InitialiseNormalModeNoSQLValue()
+    {
+        //PlayerPrefs.DeleteKey(normalModeComplete); // for development purposes only
+        if (!PlayerPrefs.HasKey(normalModeComplete) || resetNormalModeComplete) PlayerPrefs.SetInt(normalModeComplete, 0);
+    }
     
+    public void NormalModeComplete()
+    {
+        PlayerPrefs.SetInt(normalModeComplete, 1);
+    }
 }
