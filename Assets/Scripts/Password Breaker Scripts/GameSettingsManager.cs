@@ -28,7 +28,7 @@ public class GameSettingsManager : MonoBehaviour
         //NoSQL database variable initialisation / management
         if (!PlayerPrefs.HasKey(difficultyKey)) PlayerPrefs.SetFloat(difficultyKey,0);
         if (!PlayerPrefs.HasKey("ReturnToScene")) PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex + 1);
-        if (PlayerPrefs.GetInt("PBModeSelection") == 0) PlayerPrefs.SetInt("ReturnToScene", SceneManager.sceneCountInBuildSettings - 1);
+        if (PlayerPrefs.GetInt("PBModeSelection") == 0) PlayerPrefs.SetInt("ReturnToScene", SceneManager.sceneCountInBuildSettings - 2);
         scene = PlayerPrefs.GetInt("ReturnToScene");
         //called to keep settings value continuety
         slider.value = PlayerPrefs.GetFloat(difficultyKey);
@@ -38,7 +38,7 @@ public class GameSettingsManager : MonoBehaviour
 
     private void CheckTargetScene() {
         // if the scene is not the immediate next buildIndex && scene is not the endless mode buildIndex
-        if (scene > SceneManager.GetActiveScene().buildIndex + 1 && scene < SceneManager.sceneCountInBuildSettings - 1) {
+        if (scene > SceneManager.GetActiveScene().buildIndex + 1 && scene < SceneManager.sceneCountInBuildSettings - 2) {
             doneText.text = "Back";
         }
     }

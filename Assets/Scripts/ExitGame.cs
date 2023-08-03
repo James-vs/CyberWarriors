@@ -17,4 +17,10 @@ public class ExitGame : MonoBehaviour
         Debug.Log("Game Select Scene");
         SceneManager.LoadScene(0);
     }
+
+    public void ModeSelect()
+    {
+        Debug.Log("Mode Select Scene");
+        SceneManager.LoadScene(23);
+    }
 }
