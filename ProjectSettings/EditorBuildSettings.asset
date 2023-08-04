@@ -72,6 +72,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Secureme/SecuremeEnd.unity
     guid: 65f1028f3d32bb545a4533d849804b07
   - enabled: 1
+    path: Assets/Scenes/Password Breaker/PBControls.unity
+    guid: 84e6ad9287f95e34994f6234b3ba9dde
+  - enabled: 1
     path: Assets/Scenes/Password Breaker/PBWelcome.unity
     guid: f79bd18567b95de40b39f3d60528f4e5
   - enabled: 1

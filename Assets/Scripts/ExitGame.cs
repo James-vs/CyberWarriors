@@ -10,7 +10,7 @@ public class ExitGame : MonoBehaviour
 
     public void Home(){
         Debug.Log("Home");
-        SceneManager.LoadScene(22);
+        SceneManager.LoadScene(23);
     }
 
     public void GameSelect() {
@@ -21,6 +21,6 @@ public class ExitGame : MonoBehaviour
     public void ModeSelect()
     {
         Debug.Log("Mode Select Scene");
-        SceneManager.LoadScene(23);
+        SceneManager.LoadScene(24);
     }
 }
