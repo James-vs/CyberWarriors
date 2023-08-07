@@ -17,4 +17,10 @@ public class LoadNextScene : MonoBehaviour
             }
         }
     }
+
+    public void ChangeScene(string sceneName) 
+    {
+        Debug.Log("Name of scene: " + sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
 }
