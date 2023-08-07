@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 8876737747404396065, guid: c774475ecb2734b449816bd081655190, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2777118945367766059, guid: bf2070dc241826d478f0e5026ae31445, type: 3}
+      objectReference: {fileID: -4095035178222441475, guid: 2d9235bbedababf4e8e2038fc23402cd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -843,6 +843,7 @@ MonoBehaviour:
   livesBonusText: {fileID: 2850626051979463920}
   overallScoreText: {fileID: 2850626051979463919}
   PMBonusText: {fileID: 68873871}
+  PMCount: 0
 --- !u!1 &1226731200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5837249690288009586, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
