@@ -23,4 +23,9 @@ public class ExitGame : MonoBehaviour
         Debug.Log("Mode Select Scene");
         SceneManager.LoadScene(24);
     }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("PBLevelSelect", LoadSceneMode.Single);
+    }
 }

@@ -1121,14 +1121,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvasL4Plus
       objectReference: {fileID: 0}
-    - target: {fileID: 799102883511424566, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 35.248047
-      objectReference: {fileID: 0}
-    - target: {fileID: 799102883511424566, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 1324781106440799354, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1141,6 +1133,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1040331650}
+    - target: {fileID: 2244662701627892716, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1040331650}
+    - target: {fileID: 2244662701627892716, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 2862480784969387424, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: PMManager
       value: 
@@ -1149,6 +1149,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3074849751561049693, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1040331650}
+    - target: {fileID: 3074849751561049693, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 3500299534833922839, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1156,14 +1164,6 @@ PrefabInstance:
     - target: {fileID: 3500299534833922839, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Home
-      objectReference: {fileID: 0}
-    - target: {fileID: 4322023602242137688, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.648315
-      objectReference: {fileID: 0}
-    - target: {fileID: 4322023602242137688, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -29.228394
       objectReference: {fileID: 0}
     - target: {fileID: 5676523595989930589, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
