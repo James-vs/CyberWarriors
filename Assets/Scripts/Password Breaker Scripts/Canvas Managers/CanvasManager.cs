@@ -9,6 +9,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] protected GameObject PauseUI;
     [SerializeField] protected GameObject EndScreen;
     [SerializeField] protected GameObject SettingsWarning;
+    [SerializeField] protected int LevelNumber;
     protected bool IsPaused = false;
 
     // Start is called before the first frame update
@@ -61,6 +62,7 @@ public class CanvasManager : MonoBehaviour
     /// </summary>
     public void Home() {
         Time.timeScale = 1f;
+        PlayerPrefs.SetInt("ReturnToScene", 100);
     }
 
     /// <summary>
@@ -86,6 +88,8 @@ public class CanvasManager : MonoBehaviour
         PauseUI.SetActive(false);
         EndScreen.SetActive(true);
         Time.timeScale = 0f;
+        if (PlayerPrefs.GetInt("PBProgress") < LevelNumber) PlayerPrefs.SetInt("PBProgress", LevelNumber); // save game progress
+        Debug.Log("PBProgress var value: " + PlayerPrefs.GetInt("PBProgress"));
     }
 
     public void OpenSettingsWarning(bool value) => SettingsWarning.SetActive(value);

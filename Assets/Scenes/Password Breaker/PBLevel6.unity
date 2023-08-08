@@ -887,6 +887,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LevelSelect
       objectReference: {fileID: 0}
+    - target: {fileID: 5023935833559980991, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: LevelNumber
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5616240386185296076, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_Name
       value: Pause

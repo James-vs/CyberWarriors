@@ -734,7 +734,7 @@ MonoBehaviour:
   scoreManager: {fileID: 0}
   canvasManager: {fileID: 0}
   normalModeComplete: PBNormModeComplete
-  resetNormalModeComplete: 0
+  resetNormalModeComplete: 1
   blockCount: 0
   totalBlocks: 1
 --- !u!114 &1287577223

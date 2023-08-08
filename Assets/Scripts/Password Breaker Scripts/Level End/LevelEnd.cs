@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Unity.Collections.AllocatorManager;
 
 public class LevelEnd : MonoBehaviour
 {
