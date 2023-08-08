@@ -10,18 +10,18 @@ public class ExitGame : MonoBehaviour
 
     public void Home(){
         Debug.Log("Home");
-        SceneManager.LoadScene(23);
+        SceneManager.LoadScene("PBWelcome", LoadSceneMode.Single);
     }
 
     public void GameSelect() {
         Debug.Log("Game Select Scene");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameSelect", LoadSceneMode.Single);
     }
 
     public void ModeSelect()
     {
         Debug.Log("Mode Select Scene");
-        SceneManager.LoadScene(24);
+        SceneManager.LoadScene("PBModeSelect", LoadSceneMode.Single);
     }
 
     public void LevelSelect()

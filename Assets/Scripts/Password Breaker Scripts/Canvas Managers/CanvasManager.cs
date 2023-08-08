@@ -8,6 +8,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] protected GameObject GameUIBackground;
     [SerializeField] protected GameObject PauseUI;
     [SerializeField] protected GameObject EndScreen;
+    [SerializeField] protected GameObject SettingsWarning;
     protected bool IsPaused = false;
 
     // Start is called before the first frame update
@@ -86,4 +87,7 @@ public class CanvasManager : MonoBehaviour
         EndScreen.SetActive(true);
         Time.timeScale = 0f;
     }
+
+    public void OpenSettingsWarning(bool value) => SettingsWarning.SetActive(value);
+    
 }

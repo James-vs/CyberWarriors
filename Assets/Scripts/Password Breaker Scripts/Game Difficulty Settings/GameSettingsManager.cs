@@ -37,7 +37,7 @@ public class GameSettingsManager : MonoBehaviour
 
     private void CheckTargetScene() {
         // if the scene is not the immediate next buildIndex && scene is not the endless mode buildIndex
-        if (scene > SceneManager.GetActiveScene().buildIndex + 1 && scene < SceneManager.sceneCountInBuildSettings - 2) {
+        if (scene > SceneManager.GetActiveScene().buildIndex + 2 && scene < SceneManager.sceneCountInBuildSettings - 2) {
             doneText.text = "Back";
         }
     }

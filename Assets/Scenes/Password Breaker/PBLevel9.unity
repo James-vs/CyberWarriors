@@ -1121,6 +1121,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvasL4Plus
       objectReference: {fileID: 0}
+    - target: {fileID: 928958845633833197, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1040331651}
+    - target: {fileID: 928958845633833197, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 1324781106440799354, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1164,14 +1172,6 @@ PrefabInstance:
     - target: {fileID: 3500299534833922839, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Home
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676523595989930589, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1040331651}
-    - target: {fileID: 5676523595989930589, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6940771458432378722, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1264,14 +1264,6 @@ PrefabInstance:
     - target: {fileID: 7979677402646890463, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096249880340058592, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1040331651}
-    - target: {fileID: 8096249880340058592, guid: 904b40ea8b0d1b441a6e08ec7bf8092a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

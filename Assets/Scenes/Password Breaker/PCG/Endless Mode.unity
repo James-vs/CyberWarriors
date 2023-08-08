@@ -798,13 +798,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 965680505293330223, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1963981213}
+    - target: {fileID: 965680505293330223, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 1049050644502185669, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 9126015861989134327}
     - target: {fileID: 1049050644502185669, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Home
+      value: ModeSelect
       objectReference: {fileID: 0}
     - target: {fileID: 1547004608609726482, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_Name
@@ -817,14 +825,6 @@ PrefabInstance:
     - target: {fileID: 1589763140473398724, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 1634661924364783841, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1963981213}
-    - target: {fileID: 1634661924364783841, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 2125422747164592024, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -876,19 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 9126015861989134327}
     - target: {fileID: 3606003010808182201, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Home
+      value: ModeSelect
       objectReference: {fileID: 0}
     - target: {fileID: 3606003010808182201, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5320564602566525171, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1963981213}
-    - target: {fileID: 5320564602566525171, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6495679801408881931, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -896,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 9126015861989134327}
     - target: {fileID: 6495679801408881931, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Home
+      value: ModeSelect
       objectReference: {fileID: 0}
     - target: {fileID: 6592490291152248314, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_Name
@@ -905,14 +897,6 @@ PrefabInstance:
     - target: {fileID: 8061364786112310916, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8629043136537122036, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1963981213}
-    - target: {fileID: 8629043136537122036, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8061364786112310916, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
@@ -1654,6 +1638,6 @@ SceneRoots:
   - {fileID: 1118138033}
   - {fileID: 968309024}
   - {fileID: 2937293959452797304}
-  - {fileID: 1759691350921463216}
   - {fileID: 106498819}
+  - {fileID: 1759691350921463216}
   - {fileID: 5648915401118821092}

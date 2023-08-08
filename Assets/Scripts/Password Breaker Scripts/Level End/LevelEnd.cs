@@ -43,7 +43,7 @@ public class LevelEnd : MonoBehaviour
     public void OpenSettings() {
         PlayerPrefs.SetInt("ReturnToScene", SceneManager.GetActiveScene().buildIndex);
         Debug.Log("Return to scene " + SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene(24);
+        SceneManager.LoadScene("PBSettings", LoadSceneMode.Single);
     }
 
     public void FirstTimeSettings() {

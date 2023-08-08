@@ -154,6 +154,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1319041983313404382, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 815358055}
+    - target: {fileID: 1319041983313404382, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 4367566764211900595, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -161,14 +169,6 @@ PrefabInstance:
     - target: {fileID: 4367566764211900595, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LevelSelect
-      objectReference: {fileID: 0}
-    - target: {fileID: 4956079471872484615, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 815358055}
-    - target: {fileID: 4956079471872484615, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 5616240386185296079, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,14 +273,6 @@ PrefabInstance:
     - target: {fileID: 5829899912058364663, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Home
-      objectReference: {fileID: 0}
-    - target: {fileID: 6848895408058903143, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 815358055}
-    - target: {fileID: 6848895408058903143, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 7271186807911751641, guid: 3e213be98545bde4097d81f2ce05f610, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
