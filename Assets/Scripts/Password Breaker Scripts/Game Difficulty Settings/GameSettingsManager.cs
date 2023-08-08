@@ -87,6 +87,13 @@ public class GameSettingsManager : MonoBehaviour
 
     public void ReturnToScene() {
         Debug.Log("Return back to scene: " + scene);
-        SceneManager.LoadScene(scene);
+        if (PlayerPrefs.GetInt("ReturnToScene") == 100)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        } 
+        else 
+        { 
+            SceneManager.LoadScene(scene);
+        }
     }
 }
