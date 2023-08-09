@@ -14,31 +14,49 @@ public class EnableLevels : MonoBehaviour
     [SerializeField] Button Level10;
     [SerializeField] Button Level11;*/
     [SerializeField] GameObject[] LevelUnlockList;
+    [SerializeField] protected string pBProgress = "PBProgress";
+    [SerializeField] protected string pBDevMode = "PBDevMode";
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!PlayerPrefs.HasKey("PBProgress")) 
+        Debug.Log("Dev Mode: " + PlayerPrefs.GetInt(pBDevMode));
+        if (!PlayerPrefs.HasKey(pBProgress))
         {
-            PlayerPrefs.SetInt("PBProgress", 0);
+            PlayerPrefs.SetInt(pBProgress, 0);
         }
-        else 
+        
+        if (PlayerPrefs.GetInt(pBDevMode) == 1)
         {
-            for (int i = 1; i <= PlayerPrefs.GetInt("PBProgress"); i++)
+            UnlockLevelButtons(LevelUnlockList.Length);
+        } 
+        else
+        {
+            UnlockLevelButtons(PlayerPrefs.GetInt(pBProgress));
+        }
+        
+    }
+
+    /// <summary>
+    /// function to enable level select buttons according to user progress or development mode status
+    /// </summary>
+    /// <param name="value">number of LS buttons to enable</param>
+    private void UnlockLevelButtons(int value)
+    {
+        for (int i = 1; i <= value; i++)
+        {
+            if (i > LevelUnlockList.Length) break;
+            Debug.Log("Unlocked level " + i);
+            var element = LevelUnlockList[i - 1];
+            if (element.GetComponent<Button>() != null)
             {
-                if (i > LevelUnlockList.Length) break;
-                Debug.Log("Unlocked level " + i);
-                var element = LevelUnlockList[i - 1];
-                if (element.GetComponent<Button>() != null)
-                {
-                    element.SetActive(true);
-                }
-                else
-                {
-                    element.SetActive(false);
-                }
+                element.SetActive(true);
             }
-        }        
+            else
+            {
+                element.SetActive(false);
+            }
+        }
     }
 }

@@ -68,17 +68,15 @@ public class CanvasManager : MonoBehaviour
     /// <summary>
     /// function to restart the level
     /// </summary>
-    public void Retry() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    public void Retry() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    
 
     /// <summary>
     /// function to start the next scene
     /// </summary>
-    public void NextScene() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    public void NextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
+    
     /// <summary>
     /// function to display the level complete screen
     /// </summary>
@@ -92,6 +90,10 @@ public class CanvasManager : MonoBehaviour
         Debug.Log("PBProgress var value: " + PlayerPrefs.GetInt("PBProgress"));
     }
 
+    /// <summary>
+    /// function to enable the warning pop up for navigating to settings
+    /// </summary>
+    /// <param name="value">bool for SetActive method of warning pop up</param>
     public void OpenSettingsWarning(bool value) => SettingsWarning.SetActive(value);
     
 }
