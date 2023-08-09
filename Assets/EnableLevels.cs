@@ -3,16 +3,6 @@ using UnityEngine.UI;
 
 public class EnableLevels : MonoBehaviour
 {
-    /*[SerializeField] GameObject blockerL2;
-    [SerializeField] GameObject blockerL3;
-    [SerializeField] Button Level4;
-    [SerializeField] GameObject blockerL5;
-    [SerializeField] Button Level6;
-    [SerializeField] GameObject blockerL7;
-    [SerializeField] Button Level8;
-    [SerializeField] GameObject blockerL9;
-    [SerializeField] Button Level10;
-    [SerializeField] Button Level11;*/
     [SerializeField] GameObject[] LevelUnlockList;
     [SerializeField] protected string pBProgress = "PBProgress";
     [SerializeField] protected string pBDevMode = "PBDevMode";
@@ -21,7 +11,7 @@ public class EnableLevels : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Dev Mode: " + PlayerPrefs.GetInt(pBDevMode));
+        //Debug.Log("Dev Mode: " + PlayerPrefs.GetInt(pBDevMode));
         if (!PlayerPrefs.HasKey(pBProgress))
         {
             PlayerPrefs.SetInt(pBProgress, 0);

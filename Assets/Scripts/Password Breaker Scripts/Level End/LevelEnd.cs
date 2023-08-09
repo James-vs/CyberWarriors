@@ -113,16 +113,17 @@ public class LevelEnd : MonoBehaviour
     /// <param name="val">bool true/on or false/off</param>
     public void DevModeOn(Toggle toggle)
     {
-        Debug.Log("Dev Mode toggle changed to: " + toggle.isOn);
         if (toggle.isOn)
         {
             PlayerPrefs.SetInt(devModeString, 1);
-            Debug.Log("Dev Mode value changed to: " + PlayerPrefs.GetInt(devModeString));
+            //Debug.Log("Dev Mode value changed to: " + PlayerPrefs.GetInt(devModeString));
         } 
         else
         {
             PlayerPrefs.SetInt(devModeString, 0);
-            Debug.Log("Dev Mode value changed to: " + PlayerPrefs.GetInt(devModeString));
+            //Debug.Log("Dev Mode value changed to: " + PlayerPrefs.GetInt(devModeString));
         }
+        
+        Debug.Log("Dev Mode toggle changed to: " + PlayerPrefs.GetInt(devModeString));
     }
 }
