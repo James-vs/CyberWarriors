@@ -79,6 +79,7 @@ public class LevelEnd : MonoBehaviour
         if (choice) 
         {
             PlayerPrefs.SetInt("PBModeSelection", 1);
+            PlayerPrefs.SetInt("ReturnToScene", 100);
         } else
         {
             PlayerPrefs.SetInt("PBModeSelection", 0);
