@@ -13,6 +13,8 @@ public class LevelEnd : MonoBehaviour
     protected bool levelEnded = false;
     [SerializeField] protected string devModeString = "PBDevMode";
     [SerializeField] protected string pBProgress = "PBProgress";
+    [SerializeField] protected string pBHighScoreBase = "PBHighScoreLevel";
+    [SerializeField] protected int numberOfLevels = 11;
 
     // Start is called before the first frame update
     void Start() => Debug.Log("LevelEnd script start");
@@ -32,6 +34,7 @@ public class LevelEnd : MonoBehaviour
     public virtual void EndLevel() {
         Debug.Log("Level ended");
         canvasManager.LevelComplete();
+        scoreManager.SetHighScore();
         levelEnded = true;
     }
 
@@ -93,6 +96,11 @@ public class LevelEnd : MonoBehaviour
         {
             PlayerPrefs.SetInt(normalModeComplete, 0);
             PlayerPrefs.SetInt(pBProgress, 0);
+            for (int i = 0; i < numberOfLevels; i++)
+            {
+                PlayerPrefs.DeleteKey(pBHighScoreBase + "" + (i + 1));
+                //Debug.Log("Player Prefs Keys for highscores: " + pBHighScoreBase + "" + (i + 1)); - for testing
+            }
         }
         if (!PlayerPrefs.HasKey(normalModeComplete))
         {

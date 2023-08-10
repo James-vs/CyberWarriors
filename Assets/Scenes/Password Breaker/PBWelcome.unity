@@ -734,11 +734,13 @@ MonoBehaviour:
   scoreManager: {fileID: 0}
   canvasManager: {fileID: 0}
   normalModeComplete: PBNormModeComplete
-  resetNormalModeComplete: 1
+  resetNormalModeComplete: 0
   blockCount: 0
   totalBlocks: 1
   devModeString: PBDevMode
   pBProgress: PBProgress
+  pBHighScoreBase: PBHighScoreLevel
+  numberOfLevels: 11
 --- !u!114 &1287577223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -864,6 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   devToggle: {fileID: 1515533192}
   levelEnd: {fileID: 1287577221}
+  devModeString: PBDevMode
 --- !u!1 &1707581897
 GameObject:
   m_ObjectHideFlags: 0

@@ -1131,6 +1131,7 @@ MonoBehaviour:
   difficulty: 0
   multiplier: 1
   difficultyKey: PBDifficulty
+  pBHighScoreString: PBHighScoreLevel10
   gameUIScoreText: {fileID: 1682657280}
   multiplierText: {fileID: 1682657279}
   pauseScoreText: {fileID: 1029209361}

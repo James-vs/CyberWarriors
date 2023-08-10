@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] protected int multiplier = 1;
     private bool newReset = true;
     public string difficultyKey = "PBDifficulty";
+    [SerializeField] protected string pBHighScoreString = "PBHighScoreLevel1";
 
     [Header("Game UI Text Objects")]
     [SerializeField] protected TextMeshProUGUI gameUIScoreText;
@@ -124,6 +125,8 @@ public class ScoreManager : MonoBehaviour
         gameUIScoreText.text = "Score: " + score;
         multiplierText.text = "x" + multiplier;
         overallScoreText.text = "" + overallScore;
+        
+        
         difficultyBonusText.text = "" + GetDifficultyWeight();
         livesBonusText.text = "" + livesWeight;
     }
@@ -153,5 +156,20 @@ public class ScoreManager : MonoBehaviour
     public void SetBaseScore(int baseScore) 
     { 
         score = baseScore;
+    }
+
+    /// <summary>
+    /// function to check for and set the highscore
+    /// </summary>
+    public void SetHighScore()
+    {
+        if (PlayerPrefs.HasKey(pBHighScoreString))
+        {
+            if (overallScore > PlayerPrefs.GetInt(pBHighScoreString)) PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+        }
     }
 }

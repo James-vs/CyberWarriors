@@ -2262,6 +2262,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5616240387296130337}
     - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
+      propertyPath: pBHighScoreString
+      value: PBHighScoreLevel3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776165036753536488, guid: ca927a1ceade8b0489a8ae83391c0ed6, type: 3}
       propertyPath: difficultyBonusText
       value: 
       objectReference: {fileID: 5616240387296130340}
