@@ -87,11 +87,10 @@ public class LevelEnd : MonoBehaviour
 
 
     /// <summary>
-    /// function to handle initialising the game normal mode
+    /// function to handle initialising the game for first time players
     /// </summary>
     public void InitialiseNormalModeNoSQLValue()
     {
-        //PlayerPrefs.DeleteKey(normalModeComplete); // for development purposes only
         if (resetNormalModeComplete)
         {
             PlayerPrefs.SetInt(normalModeComplete, 0);
@@ -101,6 +100,7 @@ public class LevelEnd : MonoBehaviour
                 PlayerPrefs.DeleteKey(pBHighScoreBase + "" + (i + 1));
                 //Debug.Log("Player Prefs Keys for highscores: " + pBHighScoreBase + "" + (i + 1)); - for testing
             }
+            PlayerPrefs.DeleteKey(pBHighScoreBase + "Endess");
         }
         if (!PlayerPrefs.HasKey(normalModeComplete))
         {

@@ -58,7 +58,8 @@ public class EndlessManager : LevelEnd
     /// </summary>
     public override void EndLevel()
     {
-        base.EndLevel();     
+        base.EndLevel();
+        smEndless.SetHighScore();
         Debug.Log("smEndless end value: " + smEndless.GetOverallScore());
     }
 
@@ -69,6 +70,7 @@ public class EndlessManager : LevelEnd
     {
         Debug.Log("Level ended");
         canvasManagerEndless.GameOver();
+        smEndless.SetHighScore();
         levelEnded = true;
     }
 

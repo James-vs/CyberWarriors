@@ -161,7 +161,7 @@ public class ScoreManager : MonoBehaviour
     /// <summary>
     /// function to check for and set the highscore
     /// </summary>
-    public void SetHighScore()
+    public virtual void SetHighScore()
     {
         if (PlayerPrefs.HasKey(pBHighScoreString))
         {

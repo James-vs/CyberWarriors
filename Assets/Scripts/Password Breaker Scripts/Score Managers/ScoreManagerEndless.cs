@@ -64,4 +64,21 @@ public class ScoreManagerEndless : ScoreManagerwPM
     {
         this.pMExists = value;
     }
+
+    public override void SetHighScore()
+    {
+        pBHighScoreString = "PBHighScoreLevelEndless";
+        //base.SetHighScore();
+        // do i need this override? no?
+        if (PlayerPrefs.HasKey(pBHighScoreString))
+        {
+            if (overallScore > PlayerPrefs.GetInt(pBHighScoreString)) PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+            Debug.Log("New Highscore: " + overallScore);
+        }
+        else
+        {
+            Debug.Log("New Highscore: " + overallScore);
+            PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+        }
+    }
 }

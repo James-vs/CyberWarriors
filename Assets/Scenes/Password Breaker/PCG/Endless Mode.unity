@@ -1205,6 +1205,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1759691350921463217}
     - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: pBHighScoreBase
+      value: PBHighScoreLevelEndless
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: scoreManagerwPM
       value: 
       objectReference: {fileID: 0}
