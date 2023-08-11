@@ -1199,13 +1199,13 @@ RectTransform:
   - {fileID: 246764422}
   - {fileID: 594795888}
   - {fileID: 2094160088}
-  - {fileID: 2014943431}
   - {fileID: 1976947502}
   - {fileID: 707792730}
   - {fileID: 1802836477}
   - {fileID: 1785434108}
   - {fileID: 1764952275}
   - {fileID: 993845648}
+  - {fileID: 2014943431}
   - {fileID: 1261964719}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1244,11 +1244,11 @@ RectTransform:
   m_Children:
   - {fileID: 934899803}
   - {fileID: 1914221377}
-  - {fileID: 691812869}
   - {fileID: 2127970331}
   - {fileID: 1567918616}
   - {fileID: 1881483147}
   - {fileID: 482651301}
+  - {fileID: 691812869}
   - {fileID: 1235978023}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1362,11 +1362,11 @@ RectTransform:
   m_Children:
   - {fileID: 1082417592}
   - {fileID: 1684979488}
-  - {fileID: 1871100270}
   - {fileID: 1772565718}
   - {fileID: 1788977245}
   - {fileID: 1436699903}
   - {fileID: 825765356}
+  - {fileID: 1871100270}
   - {fileID: 338807149}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4309,9 +4309,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 972373223}
-  - {fileID: 329306333}
   - {fileID: 1935120286}
   - {fileID: 562523745}
+  - {fileID: 329306333}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4349,11 +4349,11 @@ RectTransform:
   m_Children:
   - {fileID: 191855067}
   - {fileID: 307435240}
-  - {fileID: 1410928931}
   - {fileID: 1549826882}
   - {fileID: 276443077}
   - {fileID: 449800333}
   - {fileID: 168211075}
+  - {fileID: 1410928931}
   - {fileID: 1520933863}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7863,9 +7863,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 607964789}
-  - {fileID: 1021482730}
   - {fileID: 992252882}
   - {fileID: 1240371323}
+  - {fileID: 1021482730}
   - {fileID: 753101684}
   m_Father: {fileID: 1709065053}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -281,10 +281,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2010385136}
     m_Modifications:
-    - target: {fileID: -6482779795905610009, guid: 12485ad951c48d94e931bef8a98e24ae, type: 3}
-      propertyPath: go
-      value: 
-      objectReference: {fileID: 7546378709889650843, guid: 3b70d373b413c4742a3394984895319f, type: 3}
     - target: {fileID: 8909172527481163628, guid: 12485ad951c48d94e931bef8a98e24ae, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1027,10 +1023,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2010385136}
     m_Modifications:
-    - target: {fileID: 4661229535457786397, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
-      propertyPath: go
-      value: 
-      objectReference: {fileID: 7546378709889650843, guid: 91bc2ff4244b48548b6afd2d293182ed, type: 3}
     - target: {fileID: 5791532942943086892, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
       propertyPath: m_Name
       value: MFASimplePass 1
@@ -1172,10 +1164,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2010385136}
     m_Modifications:
-    - target: {fileID: -7970721446161544774, guid: fb3fcebbbb3c6094d82b8ec1d15c4394, type: 3}
-      propertyPath: go
-      value: 
-      objectReference: {fileID: 7546378709889650843, guid: 475d7a08e17524548847433703cf0646, type: 3}
     - target: {fileID: 6583892206587839438, guid: fb3fcebbbb3c6094d82b8ec1d15c4394, type: 3}
       propertyPath: m_RootOrder
       value: 1
