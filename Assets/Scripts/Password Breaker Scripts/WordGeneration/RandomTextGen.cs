@@ -10,6 +10,7 @@ public class RandomTextGen : MonoBehaviour
     public TextMeshPro text;
     public TextAsset wordData;
     protected int lines;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class RandomTextGen : MonoBehaviour
         Debug.Log("No. of lines: " + lines);
         int number = rand.Next(1,lines-1);
         
-        List<string> names = new List<string>();
+        //List<string> names = new List<string>();
 
         string[] row = data[number].Split(new char[] { ',' } );
 
@@ -42,11 +43,5 @@ public class RandomTextGen : MonoBehaviour
 
         text.text = n.name;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

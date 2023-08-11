@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - Paddle
   - PassMan
+  - Input Window
   layers:
   - Default
   - TransparentFX
