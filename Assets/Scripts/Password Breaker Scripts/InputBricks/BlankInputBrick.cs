@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using System.Text.RegularExpressions;
 
 public class BlankInputBrick : MonoBehaviour
@@ -39,6 +38,7 @@ public class BlankInputBrick : MonoBehaviour
             { 
                 InputWindow.transform.GetChild(i).gameObject.SetActive(true);
             }
+            InputWindow.GetComponent<InputWindow>().GetBlankInputBrick(this);
         }
     }
 
@@ -61,9 +61,12 @@ public class BlankInputBrick : MonoBehaviour
             this.GetComponent<SpriteRenderer>().color = strong;
             
         } 
-        else if (Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")) //inputPassword.Length >= 8 && 
+        else if (Regex.IsMatch(inputPassword, @"^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$")) //inputPassword.Length >= 8 && 
         {
-            //@"^([a-zA-Z0-9]+[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]+)$"
+            //@"^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$"
+
+            //^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$
+            // ^ regex matches case where password uses either capital letters, OR digits OR special characters as well as all of them at once
 
 
             this.GetComponent<SpriteRenderer>().color = medium;
@@ -82,7 +85,7 @@ public class BlankInputBrick : MonoBehaviour
         Debug.Log("Inputted text: " + inputPassword);
     }
 
-    public void GetInputString(string newPassword)
+    public void SetInputString(string newPassword)
     {
         inputPassword = newPassword;
     }
