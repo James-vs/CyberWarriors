@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 
 public class BlankInputBrick : MonoBehaviour
 {
@@ -17,17 +18,16 @@ public class BlankInputBrick : MonoBehaviour
     void Start()
     {
         InputWindow = GameObject.FindGameObjectWithTag("Input Window");
+
+        // need to double check that these are the correct colours (same as the normal bricks)
         weak = Color.red;
         medium = Color.yellow;
         strong = Color.green;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// function that 'opens' the input window once a brick is selected
+    /// </summary>
     private void OnMouseDown()
     {
         if (!hasNewPassword)
@@ -42,6 +42,9 @@ public class BlankInputBrick : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// function handling what happens to the blank brick once it recieves a password
+    /// </summary>
     public void CloseInputWindow()
     {
         Time.timeScale = 1.0f;
@@ -56,35 +59,33 @@ public class BlankInputBrick : MonoBehaviour
 
         if (inputPassword.Length >= 12 && Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]).{12,}$")) //inputPassword.Length >= 8 && 
         {
-            
-            
-            this.GetComponent<SpriteRenderer>().color = strong;
+            GetComponent<SpriteRenderer>().color = strong;
+            this.AddComponent<StrongPassDestroyer>();
             
         } 
         else if (Regex.IsMatch(inputPassword, @"^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$")) //inputPassword.Length >= 8 && 
         {
-            //@"^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$"
-
             //^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$
             // ^ regex matches case where password uses either capital letters, OR digits OR special characters as well as all of them at once
-
-
-            this.GetComponent<SpriteRenderer>().color = medium;
+            GetComponent<SpriteRenderer>().color = medium;
+            this.AddComponent<MediumPassDestroyer>();
 
         }
         else if (Regex.IsMatch(inputPassword, @"^[a-zA-Z0-9]+$"))
         {
-            //@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-            //
+            GetComponent<SpriteRenderer>().color = weak;
+            this.AddComponent<SimplePassDestroyer>();
 
-            this.GetComponent<SpriteRenderer>().color = weak;
-            
         }
         
         
         Debug.Log("Inputted text: " + inputPassword);
     }
 
+    /// <summary>
+    /// function to set the textUI global var to a new input
+    /// </summary>
+    /// <param name="newPassword">the new password string</param>
     public void SetInputString(string newPassword)
     {
         inputPassword = newPassword;

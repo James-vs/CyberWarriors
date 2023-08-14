@@ -4,26 +4,26 @@ public class InputWindow : MonoBehaviour
 {
     [SerializeField] protected BlankInputBrick brick;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// function to pass the new inputted password from the input window to the blank brick's script
+    /// </summary>
+    /// <param name="password">string being transfered between scripts</param>
     public void PassInputString(string password) => brick.SetInputString(password);
 
+
+    /// <summary>
+    /// function to get the script from the blank brick GO in order to share the input with it
+    /// </summary>
+    /// <param name="blank"></param>
     public void GetBlankInputBrick(BlankInputBrick blank)
     {
         brick = blank;
     }
 
 
+    /// <summary>
+    /// function to handle closing off the input window
+    /// </summary>
     public void Close()
     {
         brick.CloseInputWindow();
