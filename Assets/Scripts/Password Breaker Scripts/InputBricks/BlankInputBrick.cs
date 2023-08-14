@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class BlankInputBrick : MonoBehaviour
 {
@@ -9,11 +10,17 @@ public class BlankInputBrick : MonoBehaviour
     protected string inputPassword;
     protected bool hasNewPassword = false;
     [SerializeField] protected TextMeshPro brickText;
+    [SerializeField] protected Color32 weak;
+    [SerializeField] protected Color32 medium;
+    [SerializeField] protected Color32 strong;
 
     // Start is called before the first frame update
     void Start()
     {
         InputWindow = GameObject.FindGameObjectWithTag("Input Window");
+        weak = Color.red;
+        medium = Color.yellow;
+        strong = Color.green;
     }
 
     // Update is called once per frame
@@ -42,8 +49,36 @@ public class BlankInputBrick : MonoBehaviour
         {
             InputWindow.transform.GetChild(i).gameObject.SetActive(false);
         }
+
         brickText.text = inputPassword;
+        brickText.color = Color.white;
         hasNewPassword = true;
+
+        if (inputPassword.Length >= 12 && Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]).{12,}$")) //inputPassword.Length >= 8 && 
+        {
+            
+            
+            this.GetComponent<SpriteRenderer>().color = strong;
+            
+        } 
+        else if (Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")) //inputPassword.Length >= 8 && 
+        {
+            //@"^([a-zA-Z0-9]+[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]+)$"
+
+
+            this.GetComponent<SpriteRenderer>().color = medium;
+
+        }
+        else if (Regex.IsMatch(inputPassword, @"^[a-zA-Z0-9]+$"))
+        {
+            //@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+            //
+
+            this.GetComponent<SpriteRenderer>().color = weak;
+            
+        }
+        
+        
         Debug.Log("Inputted text: " + inputPassword);
     }
 
