@@ -16,7 +16,7 @@ public class GenerateCreativeLevel : GenerateLevel
         passwordInputCount++;
         if (passwordInputCount == spawnCount)
         {
-            startButton.enabled = true;
+            startButton.interactable = true;
             creativeBallInitialiser.AllBricksCreated();
         }
     }
@@ -24,6 +24,7 @@ public class GenerateCreativeLevel : GenerateLevel
     new void Start()
     {
         base.Start();
-        startButton.enabled = false;
+        startButton.gameObject.SetActive(true);
+        startButton.interactable = false;
     }
 }
