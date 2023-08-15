@@ -148,13 +148,13 @@ MonoBehaviour:
   brickText: {fileID: 4372917389193700642}
   weak:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278386943
   medium:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278246911
   strong:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4278320937
 --- !u!1 &6631065083551100616
 GameObject:
   m_ObjectHideFlags: 0

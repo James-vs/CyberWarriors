@@ -27,5 +27,6 @@ public class InputWindow : MonoBehaviour
     public void Close()
     {
         brick.CloseInputWindow();
+
     }
 }

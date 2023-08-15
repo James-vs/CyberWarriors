@@ -3,21 +3,21 @@ using UnityEngine;
 public class BallInitialiser : MonoBehaviour
 {
 
-    private Rigidbody2D rb {get; set;}
+    protected Rigidbody2D rb;
     [Header("Max Speed")]
-    [SerializeField] private float speed = 7f;
+    [SerializeField] protected float speed = 7f;
 
     [Header("Initial Trajectory")]
     // variables for testing ball-wall ricochet angle 
-    [SerializeField] private bool randomTrajectory = true;
-    [SerializeField] private float xTrajectory = 1f;
-    [SerializeField] private float yTrajectory = 0f;
+    [SerializeField] protected bool randomTrajectory = true;
+    [SerializeField] protected float xTrajectory = 1f;
+    [SerializeField] protected float yTrajectory = 0f;
     
     [Header("Settings Handling")]
-    [SerializeField] private string difficultyKey = "PBDifficulty";
+    [SerializeField] protected string difficultyKey = "PBDifficulty";
 
     //Get the physics component of the ball
-    private void Awake() {
+    protected void Awake() {
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,7 +36,7 @@ public class BallInitialiser : MonoBehaviour
     }
 
     // function to generate random starting trajectory for the ball
-    private void SetRandomTrajectory () {
+    protected void SetRandomTrajectory () {
         Vector2 force = Vector2.zero;
         force.x = Random.Range(-0.5f,0.5f);
         force.y = -1f;
@@ -46,7 +46,7 @@ public class BallInitialiser : MonoBehaviour
     }
 
     // used for testing ball-wall ricochet angle 
-    private void SetSpecificTrajectory () {
+    protected void SetSpecificTrajectory () {
         Vector2 force = Vector2.zero;
         force.x = xTrajectory;
         force.y = yTrajectory;
@@ -61,10 +61,10 @@ public class BallInitialiser : MonoBehaviour
     }
 
     // using FixedUpdate to maintain constant ball speed
-    private void FixedUpdate() => CheckSpeed();
+    protected void FixedUpdate() => CheckSpeed();
 
     // check the velocity of the ball is constant, adjust it otherwise
-    private void CheckSpeed() {
+    protected void CheckSpeed() {
         // keep the velocity magnitude approx. the original speed of the ball
         if (rb.velocity.magnitude > speed + 0.5f) {
             // clamp the velocity magnitude under the max speed
@@ -75,7 +75,10 @@ public class BallInitialiser : MonoBehaviour
         }
     }
 
-    private void ApplySettings() {
+    /// <summary>
+    /// function to apply difficulty adjustments
+    /// </summary>
+    protected void ApplySettings() {
         // only affects speed of the ball 
         if (PlayerPrefs.GetFloat(difficultyKey) == 0) {
             return;
@@ -90,7 +93,7 @@ public class BallInitialiser : MonoBehaviour
     /// function to handle perpendicular collisions in all directions 
     /// </summary>
     /// <param name="other">other object's collider</param>
-    private void OnCollisionEnter2D(Collision2D other) {
+    protected void OnCollisionEnter2D(Collision2D other) {
         float rightRicochet = Vector2.SignedAngle(Vector2.right, rb.velocity);
         float leftRicochet = Vector2.SignedAngle(Vector2.left, rb.velocity);
         float upRicochet = Vector2.SignedAngle(Vector2.up, rb.velocity);
