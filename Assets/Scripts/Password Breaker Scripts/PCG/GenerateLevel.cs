@@ -41,8 +41,9 @@ public class GenerateLevel : MonoBehaviour
     [Range(1,100)]
     public float smoothness;
 
+
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         brickValue = Bricks.Length / 2;
         prent = Instantiate(new GameObject("Parent"), new Vector3Int(0,0,0), Quaternion.identity);
@@ -70,7 +71,7 @@ public class GenerateLevel : MonoBehaviour
 
     
 
-    private void InitialiseLevel()
+    protected void InitialiseLevel()
     {
         ShuffleBricksArray(); // randomise list of bricks to increase diversity between levels
 
@@ -97,7 +98,7 @@ public class GenerateLevel : MonoBehaviour
     }
 
 
-    private void ShuffleBricksArray()
+    protected void ShuffleBricksArray()
     {
         var rng = new System.Random();
         GameObject[] shuffledBricks = Bricks.OrderBy(a => rng.Next()).ToArray();
@@ -169,7 +170,7 @@ public class GenerateLevel : MonoBehaviour
 
     }
 
-    private void MaybeSpawnPMInCenter()
+    protected void MaybeSpawnPMInCenter()
     {
         if (UnityEngine.Random.value < passManInCenterChance)
         {
@@ -229,7 +230,7 @@ public class GenerateLevel : MonoBehaviour
         }
     }
 
-    private void SpawnPasswordManager()
+    protected void SpawnPasswordManager()
     {
         for (int x = grid.GetLength(0) - 1; x >= 0 ; x--)
         {
@@ -337,7 +338,7 @@ public class GenerateLevel : MonoBehaviour
     }
 
 
-    private bool SpawnSingleBrick(Vector3Int vector)
+    protected bool SpawnSingleBrick(Vector3Int vector)
     {
         if (grid[vector.x, vector.y] != Grid.BRICK && grid[vector.x, vector.y] != Grid.PASSMAN && (vector.x - 1 >= 0 && vector.y >= 0) && (vector.x + 1 < mapWidth && vector.y < mapHeight))
         {
@@ -374,14 +375,14 @@ public class GenerateLevel : MonoBehaviour
     }
 
 
-    private int GenerateInteger(int x, int y) {
+    protected int GenerateInteger(int x, int y) {
         float pnoise = Mathf.PerlinNoise1D(x+y / smoothness);
         int value = Mathf.RoundToInt((Bricks.Length - 1) * pnoise);
         if (pnoise < 0.1f) return 0;
         return value;
     }
 
-    private void ChanceToRemove()
+    protected void ChanceToRemove()
     {
         int updateCount = Walkers.Count;
         for (int i = 0; i < updateCount; i++)
@@ -394,7 +395,7 @@ public class GenerateLevel : MonoBehaviour
         }
     }
 
-    private void ChanceToRedirect()
+    protected void ChanceToRedirect()
     {
         for (int i = 0; i < Walkers.Count; i++)
         {
@@ -407,7 +408,7 @@ public class GenerateLevel : MonoBehaviour
         }
     }
 
-    private void ChanceToCreate()
+    protected void ChanceToCreate()
     {
         int updatedCount = Walkers.Count;
         for (int i = 0; i < updatedCount; i++)
@@ -423,7 +424,7 @@ public class GenerateLevel : MonoBehaviour
         }
     }
 
-    private void UpdatePosition()
+    protected void UpdatePosition()
     {
         for (int i = 0; i < Walkers.Count; i++)
         {
@@ -435,7 +436,7 @@ public class GenerateLevel : MonoBehaviour
         }
     }
 
-    private Vector2 GetDirection()
+    protected Vector2 GetDirection()
     {
         int direction = Mathf.FloorToInt(UnityEngine.Random.value * 3.99f);
 

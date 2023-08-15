@@ -450,7 +450,31 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399019934}
+        m_TargetAssemblyTypeName: InputWindow, Assembly-CSharp
+        m_MethodName: ListenForEnter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399019934}
+        m_TargetAssemblyTypeName: InputWindow, Assembly-CSharp
+        m_MethodName: PassInputString
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -778,7 +802,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3940887901964104176, guid: 7866e0330c97f234a8dcb6eeedda7cd9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1464,6 +1489,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1250235895937885427, guid: 9ed33d10d61141746bc43c4b488ee591, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250235895937885427, guid: 9ed33d10d61141746bc43c4b488ee591, type: 3}
       propertyPath: mapHeight
       value: 8
       objectReference: {fileID: 0}
@@ -1498,7 +1527,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 679436738822599487, guid: 9ed33d10d61141746bc43c4b488ee591, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1816548420}
   m_SourcePrefab: {fileID: 100100000, guid: 9ed33d10d61141746bc43c4b488ee591, type: 3}
 --- !u!1001 &1117597844
 PrefabInstance:
@@ -1896,6 +1928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brick: {fileID: 0}
+  generate: {fileID: 1816548420}
 --- !u!224 &1444963686 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7824429864148594461, guid: 5c20ebdc7730efb4ea51467af33033c9, type: 3}
@@ -2476,6 +2509,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1816548420}
+        m_TargetAssemblyTypeName: GenerateCreativeLevel, Assembly-CSharp
+        m_MethodName: PasswordInputted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1803318356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,6 +2559,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803318353}
   m_CullTransparentMesh: 1
+--- !u!1 &1816548417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 679436738822599487, guid: 9ed33d10d61141746bc43c4b488ee591, type: 3}
+  m_PrefabInstance: {fileID: 981784088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1816548420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816548417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9317de5e8a4614ca36cac0942b99f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapWidth: 20
+  mapHeight: 8
+  widthOffset: -10
+  heightOffset: -1
+  resettable: 0
+  PassManager: {fileID: 7849948444938370243, guid: 3d10118d2c629364da765b2efc252753, type: 3}
+  Firewall: {fileID: 4829406114342023481, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
+  Bricks:
+  - {fileID: 3199513652158479233, guid: 7a41b46823051e145829ebcdd3107151, type: 3}
+  endlessManager: {fileID: 1680672201}
+  brickCount: 0
+  spawnCount: 0
+  brickValue: 3
+  passManInCenter: 0
+  maxWalkers: 3
+  fillPercentage: 0.4
+  passManInCenterChance: 0.3
+  firewallSpawnChance: 0.15
+  waitTime: 0.1
+  smoothness: 11.1
+  startButton: {fileID: 256947653}
+  creativeBallInitialiser: {fileID: 465079058}
+  passwordInputCount: 0
 --- !u!1 &1897342886
 GameObject:
   m_ObjectHideFlags: 0

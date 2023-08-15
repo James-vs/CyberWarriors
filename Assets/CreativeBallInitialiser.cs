@@ -9,7 +9,7 @@ public class CreativeBallInitialiser : BallInitialiser
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("BallInitialiser script start");
+        Debug.Log("CreativeBallInitialiser script start");
         //handle settings
         ApplySettings();
     }
@@ -17,7 +17,7 @@ public class CreativeBallInitialiser : BallInitialiser
     // Update is called once per frame
     void Update()
     {
-        if (startLevel) StartMovement();
+        //if (startLevel) StartMovement();
     }
 
     /// <summary>
@@ -40,6 +40,11 @@ public class CreativeBallInitialiser : BallInitialiser
     /// </summary>
     public void StartLevel()
     {
-        StartMovement();
+        if (startLevel) StartMovement();
+    }
+
+    public void AllBricksCreated()
+    {
+        startLevel = true;
     }
 }

@@ -3,6 +3,8 @@ using UnityEngine;
 public class InputWindow : MonoBehaviour
 {
     [SerializeField] protected BlankInputBrick brick;
+    [SerializeField] protected GenerateCreativeLevel generate;
+    protected bool listenForEnter = false;
 
     /// <summary>
     /// function to pass the new inputted password from the input window to the blank brick's script
@@ -28,5 +30,20 @@ public class InputWindow : MonoBehaviour
     {
         brick.CloseInputWindow();
 
+    }
+
+    private void Update()
+    {
+        if (listenForEnter && Input.GetKey(KeyCode.Return))
+        {
+            Close();
+            listenForEnter = false;
+            generate.PasswordInputted();
+        }
+    }
+
+    public void ListenForEnter()
+    {
+        listenForEnter = true;
     }
 }
