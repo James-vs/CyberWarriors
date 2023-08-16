@@ -10,6 +10,7 @@ public class BallInitialiser : MonoBehaviour
     [Header("Initial Trajectory")]
     // variables for testing ball-wall ricochet angle 
     [SerializeField] protected bool randomTrajectory = true;
+    [SerializeField] private static bool pMInvoke = false;
     [SerializeField] protected float xTrajectory = 1f;
     [SerializeField] protected float yTrajectory = 0f;
     
@@ -25,13 +26,20 @@ public class BallInitialiser : MonoBehaviour
     void Start()
     {
         Debug.Log("BallInitialiser script start");
+        Debug.Log("pMInvoke value: " + pMInvoke);
         //handle settings
         ApplySettings();
 
-        if (randomTrajectory) {
-            Invoke(nameof(SetRandomTrajectory), 1.5f);
-        } else {
-            Invoke(nameof(SetSpecificTrajectory), 1.5f);
+        if (!pMInvoke)
+        {
+            if (randomTrajectory)
+            {
+                Invoke(nameof(SetRandomTrajectory), 1.5f);
+            }
+            else
+            {
+                Invoke(nameof(SetSpecificTrajectory), 1.5f);
+            }
         }
     }
 
@@ -44,6 +52,24 @@ public class BallInitialiser : MonoBehaviour
         rb.AddForce(force.normalized * speed * 50); 
         // constant 50 found to achieve optimal ball velocity
     }
+
+    // function to generate random starting trajectory for the ball
+    public void SetRandomTrajectory(float xForce, float yForce)
+    {
+        
+        Vector2 force = Vector2.zero;
+        force.x = xForce;
+        force.y = yForce;
+
+        rb.AddForce(force.normalized * speed * 50);
+        // constant 50 found to achieve optimal ball velocity
+    }
+
+    /// <summary>
+    /// function to disable auto-invoke for all balls
+    /// </summary>
+    /// <param name="value">auto-invoke on or off</param>
+    public static void AutoInvokeBall(bool value) => pMInvoke = value;
 
     // used for testing ball-wall ricochet angle 
     protected void SetSpecificTrajectory () {
