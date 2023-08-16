@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public class BlankInputBrick : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class BlankInputBrick : MonoBehaviour
     protected string inputPassword;
     protected bool hasNewPassword = false;
     [SerializeField] protected TextMeshPro brickText;
+    [SerializeField] protected GameObject mediumMFA;
     [SerializeField] protected Color32 weak;
     [SerializeField] protected Color32 medium;
     [SerializeField] protected Color32 strong;
+    [SerializeField] protected static float mFAChance = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -60,27 +63,24 @@ public class BlankInputBrick : MonoBehaviour
         {
             if (inputPassword.Length >= 12 && Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]).{12,}$")) //inputPassword.Length >= 8 && 
             {
-                GetComponent<SpriteRenderer>().color = strong;
-                this.AddComponent<StrongPassDestroyer>();
-                ValidInput();
+                ChangeToMFA(3);
 
             } 
             else if (Regex.IsMatch(inputPassword, @"^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$")) //inputPassword.Length >= 8 && 
             {
                 //^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$
                 // ^ regex matches case where password uses either capital letters, OR digits OR special characters as well as all of them at once
-                GetComponent<SpriteRenderer>().color = medium;
-                this.AddComponent<MediumPassDestroyer>();
-                ValidInput();
+                ChangeToMFA(2);
+
 
             }
             else if (Regex.IsMatch(inputPassword, @"^[a-zA-Z0-9]+$"))
             {
-                GetComponent<SpriteRenderer>().color = weak;
-                this.AddComponent<SimplePassDestroyer>();
-                ValidInput();
+                ChangeToMFA(1);
 
-            } else if (Regex.IsMatch(inputPassword, @"^\s*"))
+
+            }
+            else if (Regex.IsMatch(inputPassword, @"^\s*"))
             {
                 Debug.Log("Invalid input");
 
@@ -91,6 +91,72 @@ public class BlankInputBrick : MonoBehaviour
 
     }
 
+
+
+    protected void ChangeToMFA(int type)
+    {
+        if (UnityEngine.Random.value > mFAChance)
+        { 
+            if (type == 1)
+            {
+                GetComponent<SpriteRenderer>().color = weak;
+                this.AddComponent<SimplePassDestroyer>();
+                ValidInput();
+                var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
+                newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
+                gameObject.SetActive(false);
+                //this.AddComponent<SimplePassDestroyer>();
+                //ValidInput();
+            }
+            else if (type == 2)
+            {
+                GetComponent<SpriteRenderer>().color = medium;
+                this.AddComponent<MediumPassDestroyer>();
+                ValidInput();
+                var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
+                newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
+                gameObject.SetActive(false);
+                //this.AddComponent<MediumPassDestroyer>();
+                //ValidInput();
+            }
+            else if (type == 3)
+            {
+                GetComponent<SpriteRenderer>().color = strong;
+                this.AddComponent<StrongPassDestroyer>();
+                ValidInput();
+                var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
+                newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
+                gameObject.SetActive(false);
+                //this.AddComponent<StrongPassDestroyer>();
+                //ValidInput();
+            }
+        }
+        else
+        {
+            if (type == 1)
+            {
+                GetComponent<SpriteRenderer>().color = weak;
+                this.AddComponent<SimplePassDestroyer>();
+                ValidInput();
+            }
+            else if (type == 2)
+            {
+                GetComponent<SpriteRenderer>().color = medium;
+                this.AddComponent<MediumPassDestroyer>();
+                ValidInput();
+            } 
+            else if (type == 3)
+            {
+                GetComponent<SpriteRenderer>().color = strong;
+                this.AddComponent<StrongPassDestroyer>();
+                ValidInput();
+            }
+        }
+    }
+    
+    /// <summary>
+    /// function to handle UI for a valid input
+    /// </summary>
     public void ValidInput()
     {
         brickText.text = inputPassword;

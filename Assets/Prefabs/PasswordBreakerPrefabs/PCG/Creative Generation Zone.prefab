@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9188071561630972856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3525575361437120216}
+  - component: {fileID: 5480526683945346041}
+  m_Layer: 0
+  m_Name: Creative Generation Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3525575361437120216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188071561630972856}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5480526683945346041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188071561630972856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9317de5e8a4614ca36cac0942b99f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapWidth: 20
+  mapHeight: 8
+  widthOffset: -10
+  heightOffset: -1
+  resettable: 0
+  PassManager: {fileID: 7849948444938370243, guid: 3d10118d2c629364da765b2efc252753, type: 3}
+  Firewall: {fileID: 4829406114342023481, guid: 4b9993096eb94c641a7591944495b1dd, type: 3}
+  Bricks:
+  - {fileID: 3199513652158479233, guid: 7a41b46823051e145829ebcdd3107151, type: 3}
+  endlessManager: {fileID: 0}
+  brickCount: 0
+  spawnCount: 0
+  brickValue: 3
+  passManInCenter: 0
+  maxWalkers: 3
+  fillPercentage: 0.4
+  passManInCenterChance: 0.3
+  firewallSpawnChance: 0.15
+  waitTime: 0.1
+  smoothness: 11.1
+  startButton: {fileID: 0}
+  creativeBallInitialiser: {fileID: 0}
+  passwordInputCount: 0
