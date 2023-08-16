@@ -146,7 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brickText: {fileID: 4372917389193700642}
+  strongMFA: {fileID: 8909172527481163629, guid: 19086798f5551a0408990d29234a6773, type: 3}
   mediumMFA: {fileID: 6583892206587839439, guid: 9e7de85b47e497141bac5406e5aa247c, type: 3}
+  simpleMFA: {fileID: 5791532942943086892, guid: 8d9a695fd88f1124fa81dad7979ff8b5, type: 3}
   weak:
     serializedVersion: 2
     rgba: 4278386943

@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
-using Unity.Mathematics;
 
 public class BlankInputBrick : MonoBehaviour
 {
@@ -12,7 +10,9 @@ public class BlankInputBrick : MonoBehaviour
     protected string inputPassword;
     protected bool hasNewPassword = false;
     [SerializeField] protected TextMeshPro brickText;
+    [SerializeField] protected GameObject strongMFA;
     [SerializeField] protected GameObject mediumMFA;
+    [SerializeField] protected GameObject simpleMFA;
     [SerializeField] protected Color32 weak;
     [SerializeField] protected Color32 medium;
     [SerializeField] protected Color32 strong;
@@ -63,50 +63,44 @@ public class BlankInputBrick : MonoBehaviour
         {
             if (inputPassword.Length >= 12 && Regex.IsMatch(inputPassword, @"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""]).{12,}$")) //inputPassword.Length >= 8 && 
             {
-                ChangeToMFA(3);
+                ChanceForMFA(3);
 
             } 
             else if (Regex.IsMatch(inputPassword, @"^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$")) //inputPassword.Length >= 8 && 
             {
                 //^(?=.*?[a-z])((?=.*?[A-Z])|(?=.*?[0-9])|(?=.*?[!£$%^&\*()_+\-={}\[\];'#:@~,\./<>?|\\`¬""])).{8,}$
                 // ^ regex matches case where password uses either capital letters, OR digits OR special characters as well as all of them at once
-                ChangeToMFA(2);
-
-
+                ChanceForMFA(2);
             }
             else if (Regex.IsMatch(inputPassword, @"^[a-zA-Z0-9]+$"))
             {
-                ChangeToMFA(1);
-
-
+                ChanceForMFA(1);
             }
             else if (Regex.IsMatch(inputPassword, @"^\s*"))
             {
+                // need to create logic for an error case
                 Debug.Log("Invalid input");
-
             }
         }
-
-        //InputWindow.GetComponentInChildren<InputField>().text = "";
-
     }
 
 
-
-    protected void ChangeToMFA(int type)
+    /// <summary>
+    /// funciton to change UI brick elements
+    /// </summary>
+    /// <param name="type">Number indicating the type of brick to spawn</param>
+    protected void ChanceForMFA(int type)
     {
-        if (UnityEngine.Random.value > mFAChance)
+        if (Random.value > mFAChance)
         { 
             if (type == 1)
             {
                 GetComponent<SpriteRenderer>().color = weak;
                 this.AddComponent<SimplePassDestroyer>();
                 ValidInput();
-                var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
-                newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
+                var newMFABrick = Instantiate(simpleMFA, transform.position, transform.rotation);
+                newMFABrick.GetComponent<MFACreativeSimple>().SaveDetails(gameObject);
                 gameObject.SetActive(false);
-                //this.AddComponent<SimplePassDestroyer>();
-                //ValidInput();
             }
             else if (type == 2)
             {
@@ -116,19 +110,15 @@ public class BlankInputBrick : MonoBehaviour
                 var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
                 newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
                 gameObject.SetActive(false);
-                //this.AddComponent<MediumPassDestroyer>();
-                //ValidInput();
             }
             else if (type == 3)
             {
                 GetComponent<SpriteRenderer>().color = strong;
                 this.AddComponent<StrongPassDestroyer>();
                 ValidInput();
-                var newMFABrick = Instantiate(mediumMFA, transform.position, transform.rotation);
-                newMFABrick.GetComponent<MFACreativeMedium>().SaveDetails(gameObject);
+                var newMFABrick = Instantiate(strongMFA, transform.position, transform.rotation);
+                newMFABrick.GetComponent<MFACreativeStrong>().SaveDetails(gameObject);
                 gameObject.SetActive(false);
-                //this.AddComponent<StrongPassDestroyer>();
-                //ValidInput();
             }
         }
         else

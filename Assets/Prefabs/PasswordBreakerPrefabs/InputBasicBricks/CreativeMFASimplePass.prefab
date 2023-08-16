@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5791532942943086893}
   - component: {fileID: 5791532942943086890}
   - component: {fileID: 5074746363178775244}
-  - component: {fileID: 4661229535457786397}
+  - component: {fileID: 1115051343995658943}
   m_Layer: 0
   m_Name: CreativeMFASimplePass
   m_TagString: Untagged
@@ -304,7 +304,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0157614, y: 1.0378277}
   m_EdgeRadius: 0
---- !u!114 &4661229535457786397
+--- !u!114 &1115051343995658943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +313,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5791532942943086892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58863a9d2a698b648b80c44579a94dcf, type: 3}
+  m_Script: {fileID: 11500000, guid: 010708b4a10fb34459c88e9f5c6f0143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 7546378709889650843, guid: 42add116aa678b642b2cd30a01e4e4e4, type: 3}

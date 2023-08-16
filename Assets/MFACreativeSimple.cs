@@ -1,28 +1,20 @@
 using UnityEngine;
 
-public class MFACreativeMedium : MFACreativeBrick
+public class MFACreativeSimple : MFACreativeBrick
 {
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("MFACreativeMedium script start");
-        collisionCount = 1f;
+        Debug.Log("MFACreativeSimple script start");
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Ball")) return;
         if (collisionCount == 0)
-        { 
+        {
             Destroy(gameObject);
             InputBrick.SetActive(true);
-        }
-        else
-        {
-            var tmpCount = collisionCount;
-            collisionCount = tmpCount - 1f;
-            SpriteRenderer brick = GetComponent<SpriteRenderer>();
-            brick.color = new Color32(140, 121, 0, 255);
         }
     }
 
@@ -35,5 +27,4 @@ public class MFACreativeMedium : MFACreativeBrick
     {
         InputBrick = inputBrick;
     }
-
 }

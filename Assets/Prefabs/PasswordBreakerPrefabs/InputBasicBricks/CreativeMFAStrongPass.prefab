@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8909172527481163628}
   - component: {fileID: 8909172527481163627}
   - component: {fileID: 7895104116761728141}
-  - component: {fileID: -6482779795905610009}
+  - component: {fileID: 4890333460072781977}
   m_Layer: 0
   m_Name: CreativeMFAStrongPass
   m_TagString: Untagged
@@ -304,7 +304,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0065947, y: 1.023741}
   m_EdgeRadius: 0
---- !u!114 &-6482779795905610009
+--- !u!114 &4890333460072781977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +313,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8909172527481163629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9757e5d9f0020a14e8e59095a3a74967, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e7ed589f922024fb81493095db6d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  go: {fileID: 7546378709889650843, guid: f2b4f9a66875eca49a1cc74437190af7, type: 3}
