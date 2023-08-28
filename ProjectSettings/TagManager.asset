@@ -9,6 +9,7 @@ TagManager:
   - Paddle
   - PassMan
   - Input Window
+  - Blank Brick
   layers:
   - Default
   - TransparentFX

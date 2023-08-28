@@ -40,7 +40,7 @@ public class BlankInputBrick : MonoBehaviour
             Time.timeScale = 0f;
             for (int i = 0; i < InputWindow.transform.childCount; i++) 
             { 
-                InputWindow.transform.GetChild(i).gameObject.SetActive(true);
+                if (!InputWindow.transform.GetChild(i).gameObject.CompareTag("Finish")) InputWindow.transform.GetChild(i).gameObject.SetActive(true);
             }
             InputWindow.GetComponent<InputWindow>().GetBlankInputBrick(this);
         }
@@ -49,15 +49,12 @@ public class BlankInputBrick : MonoBehaviour
     /// <summary>
     /// function handling what happens to the blank brick once it recieves a password
     /// </summary>
-    public void CloseInputWindow()
+    public void CloseInputWindow(GameObject window) // create an override for this so that the Input window can be fed into this function
     {
+        
+        if (window == null) window = InputWindow;
         Time.timeScale = 1.0f;
-        InputWindow.GetComponentInChildren<TMP_InputField>().text = "";
-
-        for (int i = 0; i < InputWindow.transform.childCount; i++)
-        {
-            InputWindow.transform.GetChild(i).gameObject.SetActive(false);
-        }
+        window.GetComponentInChildren<TMP_InputField>().text = "";
 
         if (inputPassword != null)
         {
@@ -80,7 +77,13 @@ public class BlankInputBrick : MonoBehaviour
             {
                 // need to create logic for an error case
                 Debug.Log("Invalid input");
+                // create a function in InputWindow to display an error message
             }
+        }
+        
+        for (int i = 0; i < window.transform.childCount; i++)
+        {
+            window.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 
@@ -162,5 +165,15 @@ public class BlankInputBrick : MonoBehaviour
     public void SetInputString(string newPassword)
     {
         inputPassword = newPassword;
+    }
+
+
+    /// <summary>
+    /// getter method for the password (can be null)
+    /// </summary>
+    /// <returns>saved password or null</returns>
+    public string GetPassword()
+    {
+        return inputPassword;
     }
 }
