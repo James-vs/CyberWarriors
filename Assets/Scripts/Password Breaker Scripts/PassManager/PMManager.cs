@@ -71,33 +71,21 @@ public class PMManager : MonoBehaviour
         eventSystem.GetComponent<ScoreManagerwPM>().UpdatePMBonus();
 
         // spawn more balls and increase the level ball count
-        //ball.GetComponent<BallInitialiser>().AutoInvokeBall(true);
         GameObject ballManager = GameObject.Find("BottomWall");
-        var ball1 = Instantiate(ball, new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z), transform.rotation);
+        Instantiate(ball, new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z), transform.rotation);
         ballManager.GetComponent<BallManager>().IncreaseBallCount();
-        var ball2 = Instantiate(ball, new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z), transform.rotation);
+        Instantiate(ball, new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z), transform.rotation);
         ballManager.GetComponent<BallManager>().IncreaseBallCount();
-        var ball3 = Instantiate(ball, new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z), transform.rotation);
+        Instantiate(ball, new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z), transform.rotation);
         ballManager.GetComponent<BallManager>().IncreaseBallCount();
-        var ball4 = Instantiate(ball, new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z), transform.rotation);
+        Instantiate(ball, new Vector3(transform.position.x, transform.position.y + 1.25f, transform.position.z), transform.rotation);
         ballManager.GetComponent<BallManager>().IncreaseBallCount();
-        var ball5 = Instantiate(ball, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        Instantiate(ball, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
         ballManager.GetComponent<BallManager>().IncreaseBallCount();
-        void Ball1Trajectory() => ball1.GetComponent<BallInitialiser>().SetRandomTrajectory(Random.Range(-1f, 0f), Random.Range(-1f, 1f));
-        void Ball2Trajectory() => ball2.GetComponent<BallInitialiser>().SetRandomTrajectory(Random.Range(0f, 1f), Random.Range(-1f, 1f));
-        void Ball3Trajectory() => ball3.GetComponent<BallInitialiser>().SetRandomTrajectory(Random.Range(-1f, 1f), Random.Range(-1f, 0f));
-        void Ball4Trajectory() => ball4.GetComponent<BallInitialiser>().SetRandomTrajectory(Random.Range(-1f, 1f), Random.Range(0f, 1f));
-        void Ball5Trajectory() => ball5.GetComponent<BallInitialiser>().SetRandomTrajectory(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        Invoke(nameof(Ball1Trajectory), 1.5f);
-        Invoke(nameof(Ball2Trajectory), 1.5f);
-        Invoke(nameof(Ball3Trajectory), 1.5f);
-        Invoke(nameof(Ball4Trajectory), 1.5f);
-        Invoke(nameof(Ball5Trajectory), 1.5f);
 
         // find and scale the paddle game object
         var paddle = GameObject.Find("Paddle");
-        paddle.transform.localScale = new Vector3(6f,0.3f,1f);
-        //eventSystem.GetComponent<LevelEnd>().IncreaseBlockCount();
+        paddle.transform.localScale = new Vector3(6f, 0.3f, 1f);
 
     }
 
