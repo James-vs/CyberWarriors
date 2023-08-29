@@ -444,7 +444,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1287577222}
         m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
-        m_MethodName: GameSelect
+        m_MethodName: Home
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -738,6 +738,11 @@ MonoBehaviour:
   resetNormalModeComplete: 0
   blockCount: 0
   totalBlocks: 1
+  devModeString: PBDevMode
+  pBProgress: PBProgress
+  pBHighScoreBase: PBHighScoreLevel
+  numberOfLevels: 11
+  sessionController: {fileID: 0}
 --- !u!114 &1287577222
 MonoBehaviour:
   m_ObjectHideFlags: 0

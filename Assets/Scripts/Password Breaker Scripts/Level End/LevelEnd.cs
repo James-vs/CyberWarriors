@@ -15,9 +15,22 @@ public class LevelEnd : MonoBehaviour
     [SerializeField] protected string pBProgress = "PBProgress";
     [SerializeField] protected string pBHighScoreBase = "PBHighScoreLevel";
     [SerializeField] protected int numberOfLevels = 11;
+    [SerializeField] protected static bool GameStarted = false;
+    [SerializeField] protected GameObject sessionController;
 
     // Start is called before the first frame update
-    void Start() => Debug.Log("LevelEnd script start");
+    void Start()
+    {
+        Debug.Log("LevelEnd script start");
+        if (!GameStarted) 
+        {
+            if (sessionController != null)
+            {
+                sessionController.GetComponent<SessionController>().RequestSession();
+                GameStarted = true;
+            }
+        }
+    }
     
 
     //method called at the beginning of each frame
