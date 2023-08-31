@@ -11,6 +11,7 @@ public class SessionController : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void RequestWebSession();
+    [SerializeField] private string pBSessionID = "";
 
     // Call THIS function at the start of your game to request that the frontend sends a sessionID
     public void RequestSession()
@@ -25,7 +26,9 @@ public class SessionController : MonoBehaviour
     public void OnSessionReceived(string sessionID)
     {
         // You can do what you want with the sessionID here. Ideally you should store it somewhere so that you can use it to make calls to the API later.
-        Debug.Log($"Session received: {sessionID}");
+        pBSessionID = sessionID;
+
+        Debug.Log($"Session received: {pBSessionID}");
     }
 }
 
