@@ -49,7 +49,7 @@ public class SessionController : MonoBehaviour
         //request.SetRequestHeader("secret", pBSecretKey);
         //request.SetRequestHeader("session", pBSessionID);
         yield return getRequest.SendWebRequest();
-        var deserialisedGetData = JsonUtility.FromJson<UserData>(getRequest.downloadHandler.text);
+        var deserialisedGetData = JsonUtility.FromJson<UserData>(System.Text.Encoding.UTF8.GetString(getRequest.downloadHandler.data, 3, getRequest.downloadHandler.data.Length - 3));
 
         Debug.Log(deserialisedGetData + "");
     }

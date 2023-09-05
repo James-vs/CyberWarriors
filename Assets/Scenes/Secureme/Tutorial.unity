@@ -1960,7 +1960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931506, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 910
+      value: 929
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931506, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_LocalScale.x
@@ -2004,7 +2004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931506, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66
+      value: -75.5
       objectReference: {fileID: 0}
     - target: {fileID: 6648139336355931506, guid: 3dd71d1b7b89a4c47b56c8a4482efc77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2995,7 +2995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cff228744516074b87d03e24c5ea662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windows: {fileID: 0}
 --- !u!224 &6649462083758923440
 RectTransform:
   m_ObjectHideFlags: 0
