@@ -8,6 +8,10 @@ public class BrowserManager : MonoBehaviour
     [SerializeField] protected Button tab1Button;
     [SerializeField] protected Button tab2Button;
 
+    private void Start()
+    {
+        SwitchToTab1();
+    }
 
     //function to switch to tab 2
     public virtual void SwitchToTab2() {
