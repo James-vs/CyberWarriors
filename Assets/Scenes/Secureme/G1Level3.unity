@@ -2421,27 +2421,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1500
+      value: -420
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 910
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2473,11 +2473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -207
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 3699156135275225318, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2533,15 +2533,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5781361779499903613, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5781361779499903613, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.993147
       objectReference: {fileID: 0}
     - target: {fileID: 5781361779499903613, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.6900803
       objectReference: {fileID: 0}
     - target: {fileID: 6054403240258982501, guid: b13db42067f93b74b8edf4c684f1d34d, type: 3}
       propertyPath: playerPrefsVarName
