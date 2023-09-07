@@ -212,6 +212,7 @@ public class StSLevel1Manager : StSManager
 
     //functions to handle button colour changing + boolean value changing
     public void Match11() {
+        Debug.Log("Match11 function");
         float select = MatchItemList(m1First,1,match1_1,button1_1,btn1_1Original);
         if (select == 1) {
             match1_1 = true;
@@ -221,6 +222,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match12() {
+        Debug.Log("Match12 function");
         float select = MatchItemList(m1First,2,match1_2,button1_2,btn1_2Original);
         if (select == 1) {
             match1_2 = true;
@@ -230,6 +232,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match21 () {
+        Debug.Log("Match21 function");
         float select = MatchItemList(m2First,1,match2_1,button2_1,btn2_1Original);
         if (select == 1) {
             match2_1 = true;
@@ -239,6 +242,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match22 () {
+        Debug.Log("Match22 function");
         float select = MatchItemList(m2First,2,match2_2,button2_2,btn2_2Original);
         if (select == 1) {
             match2_2 = true;
@@ -248,6 +252,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match31 () {
+        Debug.Log("Match31 function");
         float select = MatchItemList(m3First,1,match3_1,button3_1,btn3_1Original);
         if (select == 1) {
             match3_1 = true;
@@ -257,6 +262,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match32 () {
+        Debug.Log("Match32 function");
         float select = MatchItemList(m3First,2,match3_2,button3_2,btn3_2Original);
         if (select == 1) {
             match3_2 = true;
@@ -266,6 +272,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match41 () {
+        Debug.Log("Match41 function");
         float select = MatchItemList(m4First,1,match4_1,object4_1.transform.GetChild(0).gameObject,img4_1Original);
         if (select == 1) {
             match4_1 = true;
@@ -275,6 +282,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match42 () {
+        Debug.Log("Match42 function");
         float select = MatchItemList(m4First,2,match4_2,object4_2.transform.GetChild(0).gameObject,img4_2Original);
         if (select == 1) {
             match4_2 = true;
@@ -284,6 +292,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match51 () {
+        Debug.Log("Match51 function");
         float select = MatchItemList(m5First,1,match5_1,object5_1.transform.GetChild(0).gameObject,img5_1Original);
         if (select == 1) {
             match5_1 = true;
@@ -293,6 +302,7 @@ public class StSLevel1Manager : StSManager
     }
 
     public void Match52 () {
+        Debug.Log("Match52 function");
         float select = MatchItemList(m5First,2,match5_2,object5_2.transform.GetChild(0).gameObject,img5_2Original);
         if (select == 1) {
             match5_2 = true;

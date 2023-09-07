@@ -1200,7 +1200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780148509887890566, guid: 97d28969215d1444795748040490a999, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -961.3507
+      value: -961.47424
       objectReference: {fileID: 0}
     - target: {fileID: 3780678076209941821, guid: 97d28969215d1444795748040490a999, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2409,7 +2409,7 @@ MonoBehaviour:
   success: {fileID: 1514944835}
   fail: {fileID: 670097028}
   loadNextScene: {fileID: 1287230037}
-  gameOver: 1
+  gameOver: 0
   matchesUI: {fileID: 56414126}
   timer: {fileID: 56414125}
   outOfTime: 0
@@ -2420,6 +2420,16 @@ MonoBehaviour:
   m3First: 0
   m4First: 0
   m5First: 0
+  match1_1: 0
+  match1_2: 0
+  match2_1: 0
+  match2_2: 0
+  match3_1: 0
+  match3_2: 0
+  match4_1: 0
+  match4_2: 0
+  match5_1: 0
+  match5_2: 0
   button1_1: {fileID: 1301634557}
   button1_2: {fileID: 371224023}
   button2_1: {fileID: 845327851}
