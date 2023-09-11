@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Text;
+using System;
 
 // The GameObject that this is attached to MUST be called "SessionController".
 public class SessionController : MonoBehaviour
@@ -16,8 +17,15 @@ public class SessionController : MonoBehaviour
     private static extern void RequestWebSession();
     [SerializeField] private string pBSessionID = "";
     [SerializeField] private string pBPlayPrefSessionKey = "PBSessionKey";
+    [SerializeField] protected string isUserDevString = "PBIsUserDev";
+    [SerializeField] protected DevModeToggle toggle;
     [SerializeField] private string pBSecretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
     [SerializeField] private string pBUrl = "https://cybersec-web-app-backend-production.up.railway.app";
+
+    private void Start()
+    {
+        
+    }
 
     // Call THIS function at the start of your game to request that the frontend sends a sessionID
     public void RequestSession()
@@ -42,34 +50,77 @@ public class SessionController : MonoBehaviour
 
     private IEnumerator MakeRequests()
     {
-        // GET
+        // GET User Data
         // var request = new UnityWebRequest(path, type.ToString());
-        var getRequest = new UnityWebRequest(pBUrl + "/api/user", "GET");
-        AttachHeader(getRequest, "secret", pBSecretKey);
-        AttachHeader(getRequest, "session", pBSessionID);
-        AttachHeader(getRequest, "Content-Type", "application/json");
+        var getUserDataRequest = CreateRequest(pBUrl + "/api/user", RequestType.GET);
+        AttachHeader(getUserDataRequest, "secret", pBSecretKey);
+        AttachHeader(getUserDataRequest, "session", pBSessionID);
+        AttachHeader(getUserDataRequest, "Content-Type", "application/json");
         //getRequest.SetRequestHeader("Content-Type", "application/json");
         //request.SetRequestHeader("secret", pBSecretKey);
         //request.SetRequestHeader("session", pBSessionID);
 
-        getRequest.downloadHandler = new DownloadHandlerBuffer();
+        //getRequest.downloadHandler = new DownloadHandlerBuffer();
 
-        yield return getRequest.SendWebRequest();
+        yield return getUserDataRequest.SendWebRequest();
         //var deserialisedGetData = JsonUtility.FromJson<UserData>(System.Text.Encoding.UTF8.GetString(getRequest.downloadHandler.data, 3, getRequest.downloadHandler.data.Length - 3));
-        
+        UserData userData = JsonUtility.FromJson<UserData>(getUserDataRequest.downloadHandler.text);
 
-        if (getRequest.responseCode == 200 )
+        if (getUserDataRequest.responseCode == 200 )
         {
             //successful request
-            Debug.Log(getRequest.downloadHandler.text + "");
+            Debug.Log(getUserDataRequest.downloadHandler.text);
+            Debug.Log("User Data Recieved");
+            Debug.Log("id: " + userData.id +
+                "\nusername: " + userData.username +
+                "\nisDeveloper: " + userData.isDeveloper +
+                "\nscore: " + userData.score);
+            SetIsDeveloper(userData);
+            toggle.CheckForDevUser();
         } 
         else
         {
             //unsuccessful
-            Debug.Log("Bombaclart");
+            Debug.Log("Bombaclart User Data");
+        }
+
+
+        // GET Leaderboard Data
+        var getLeaderboardDataRequest = CreateRequest(pBUrl + "/api/leaderboard", RequestType.GET);
+        AttachHeader(getLeaderboardDataRequest, "secret", pBSecretKey);
+        AttachHeader(getLeaderboardDataRequest, "session", pBSessionID);
+        AttachHeader(getLeaderboardDataRequest, "Content-Type", "application/json");
+
+        yield return getLeaderboardDataRequest.SendWebRequest();
+
+        if (getLeaderboardDataRequest .responseCode == 200 ) 
+        {
+            //successful request
+            Debug.Log(getLeaderboardDataRequest.downloadHandler.text);
+        }
+        else
+        {
+            //unsuccessful
+            Debug.Log("Bombaclart Leaderboard Data");
         }
         
 
+    }
+
+    /// <summary>
+    /// method to set the isDeveloper playerprefs value according to the userdata given
+    /// </summary>
+    /// <param name="userData">user data recieved from website</param>
+    private void SetIsDeveloper(UserData userData)
+    {
+        if (userData.isDeveloper)
+        {
+            PlayerPrefs.SetInt(isUserDevString, 1);
+        } 
+        else
+        {
+            PlayerPrefs.SetInt(isUserDevString, 0);
+        }
     }
 
 
@@ -91,10 +142,18 @@ public class SessionController : MonoBehaviour
         return request;
     }
 
+
+    /// <summary>
+    /// method to attach a header to a web request
+    /// </summary>
+    /// <param name="request">the UnityWebRequest object</param>
+    /// <param name="key">the header name</param>
+    /// <param name="value">the header value/data</param>
     private void AttachHeader(UnityWebRequest request, string key, string value)
     {
         request.SetRequestHeader(key, value);
     }
+
 
     /*
     private UnityWebRequest GetUserInformation() 
