@@ -17,7 +17,7 @@ public class SessionController : MonoBehaviour
     [SerializeField] private string pBSessionID = "";
     [SerializeField] private string pBPlayPrefSessionKey = "PBSessionKey";
     [SerializeField] private string pBSecretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
-    [SerializeField] private string pBUrl = "https://cybersec-web-app-frontend-production.up.railway.app/";
+    [SerializeField] private string pBUrl = "https://cybersec-web-app-backend-production.up.railway.app";
 
     // Call THIS function at the start of your game to request that the frontend sends a sessionID
     public void RequestSession()
@@ -43,15 +43,33 @@ public class SessionController : MonoBehaviour
     private IEnumerator MakeRequests()
     {
         // GET
-        var getRequest = CreateRequest(pBUrl + "api/user");
+        // var request = new UnityWebRequest(path, type.ToString());
+        var getRequest = new UnityWebRequest(pBUrl + "/api/user", "GET");
         AttachHeader(getRequest, "secret", pBSecretKey);
         AttachHeader(getRequest, "session", pBSessionID);
+        AttachHeader(getRequest, "Content-Type", "application/json");
+        //getRequest.SetRequestHeader("Content-Type", "application/json");
         //request.SetRequestHeader("secret", pBSecretKey);
         //request.SetRequestHeader("session", pBSessionID);
-        yield return getRequest.SendWebRequest();
-        var deserialisedGetData = JsonUtility.FromJson<UserData>(System.Text.Encoding.UTF8.GetString(getRequest.downloadHandler.data, 3, getRequest.downloadHandler.data.Length - 3));
 
-        Debug.Log(deserialisedGetData + "");
+        getRequest.downloadHandler = new DownloadHandlerBuffer();
+
+        yield return getRequest.SendWebRequest();
+        //var deserialisedGetData = JsonUtility.FromJson<UserData>(System.Text.Encoding.UTF8.GetString(getRequest.downloadHandler.data, 3, getRequest.downloadHandler.data.Length - 3));
+        
+
+        if (getRequest.responseCode == 200 )
+        {
+            //successful request
+            Debug.Log(getRequest.downloadHandler.text + "");
+        } 
+        else
+        {
+            //unsuccessful
+            Debug.Log("Bombaclart");
+        }
+        
+
     }
 
 
@@ -67,7 +85,8 @@ public class SessionController : MonoBehaviour
         }
 
         request.downloadHandler = new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
+        
+        //request.SetRequestHeader("Accept", "application/json");
 
         return request;
     }

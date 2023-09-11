@@ -5,70 +5,70 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameSelect.unity
     guid: c7fe8937108386b4aa6e93eb3658b5cf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/SecuremeWelcome.unity
     guid: 9d0e3e9b21c62b846be2ef36e5e849e9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/SecuremeDesktop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/Tutorial.unity
     guid: 3c378c9b840d70149a348259b26681c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/Tutorial Debrief.unity
     guid: e24cb6e4990153346b9bf7aa25b2e44e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level1.unity
     guid: a80638f2a1adb3947a897a4c57deffd7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level1 Debrief.unity
     guid: 8feb8b732d27db54dbcecb429fa8e13c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level2.unity
     guid: 93f48c277df01624da24866d7b6c51ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level2 Debrief.unity
     guid: da74424d7cb2d7549b865c2eb00b2157
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level3.unity
     guid: 3190d028f22b7b54bb6a282c763e6f61
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level3 Debrief.unity
     guid: c726fa76d7654b14d84ec1ce2c381d71
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/App Permissions brief.unity
     guid: 75aa81fbc2a9287429291e0043a148c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level4.unity
     guid: 7ed9e7cbec55a664fbd6e793c4baa5fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G1Level4 Debrief.unity
     guid: 55284e8689593244c832b69c2bd690f0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/FirstGameQuiz.unity
     guid: 324e71d80fe75d24f8af5101e01545d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/SecuremeDesktop2.unity
     guid: a1a579eb0baa2074b9752a4fd5e2f34c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G2Level1.unity
     guid: 54cd863e52fd3fe4eb4b47cb47b16bb5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G2Level1 Debrief.unity
     guid: 0cb20a3408be32d4b8c33f6202c693ca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G3Level1.unity
     guid: 57da231231dd5bd4ebf5b30f2a6e9a4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/G3Level1 Debrief.unity
     guid: 53ad683740cf79d44a5ceac9bb679118
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/SecondGameQuiz.unity
     guid: 9b2a1d357ee7f3a46af3e4874830e17d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Secureme/SecuremeEnd.unity
     guid: 65f1028f3d32bb545a4533d849804b07
   - enabled: 1

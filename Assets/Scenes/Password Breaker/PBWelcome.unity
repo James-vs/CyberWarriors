@@ -387,6 +387,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecdb004f642e6c4ca5703361d6ffc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pBSessionID: 
+  pBPlayPrefSessionKey: PBSessionKey
+  pBSecretKey: a19b9b6866c5422bd7a1753da27fd8afc8f5d139
+  pBUrl: https://cybersec-web-app-backend-production.up.railway.app
 --- !u!4 &708200548
 Transform:
   m_ObjectHideFlags: 0
