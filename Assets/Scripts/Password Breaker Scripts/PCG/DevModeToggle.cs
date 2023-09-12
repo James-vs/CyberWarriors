@@ -7,13 +7,14 @@ public class DevModeToggle : MonoBehaviour
     [SerializeField] protected LevelEnd levelEnd;
     [SerializeField] protected string devModeString = "PBDevMode";
     [SerializeField] protected string isUserDevString = "PBIsUserDev";
+    [SerializeField] protected static bool devModeEnabled = false;
 
     // Start is called before the first frame update
     void Start()
     {
         //Debug.Log("Dev Mode Value: " + PlayerPrefs.GetInt(devModeString));
         //CheckForDevUser();
-        devToggle.gameObject.SetActive(false);
+        if (!devModeEnabled) devToggle.gameObject.SetActive(false);
 
         
     }
@@ -22,7 +23,8 @@ public class DevModeToggle : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(isUserDevString) == 1)
         {
-            devToggle.gameObject.SetActive(true);
+            devModeEnabled = true;
+            //devToggle.gameObject.SetActive(true);
             CheckForDevMode();
             devToggle = GetComponent<Toggle>();
             // add listener for when the state of the toggle changes and output this to levelEnd DevModeOn() function
@@ -33,7 +35,7 @@ public class DevModeToggle : MonoBehaviour
         } 
         else
         {
-            devToggle.gameObject.SetActive(false);
+            //devToggle.gameObject.SetActive(false);
         }
     }
 
