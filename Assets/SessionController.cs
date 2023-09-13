@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using UnityEngine.Networking;
 using System.Collections;
 using System.Text;
-using System;
 
 // The GameObject that this is attached to MUST be called "SessionController".
 public class SessionController : MonoBehaviour
@@ -21,11 +20,21 @@ public class SessionController : MonoBehaviour
     [SerializeField] protected DevModeToggle toggle;
     [SerializeField] private string pBSecretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
     [SerializeField] private string pBUrl = "https://cybersec-web-app-backend-production.up.railway.app";
+    //remove below code when publishing game to website / make sure it is false
+    [SerializeField] protected bool editorDevMode = false;
 
     private void Start()
     {
-        
+        //remove below code when publishing game to website / make sure editorDevMode is false
+        if (editorDevMode)
+        {
+            Debug.Log("editorDevMode detected");
+            toggle.gameObject.SetActive(true);
+            toggle.EnableDevMode();
+            toggle.CheckForDevUser();
+        }
     }
+
 
     // Call THIS function at the start of your game to request that the frontend sends a sessionID
     public void RequestSession()
@@ -36,6 +45,8 @@ public class SessionController : MonoBehaviour
         // below code used for testing purposes, should be deleted later
         StartCoroutine(MakeRequests());
     }
+
+
 
     // This method is called when a sessionID is sent by the frontend
     // Do NOT rename this function.
@@ -51,18 +62,14 @@ public class SessionController : MonoBehaviour
     private IEnumerator MakeRequests()
     {
         // GET User Data
-        // var request = new UnityWebRequest(path, type.ToString());
         var getUserDataRequest = CreateRequest(pBUrl + "/api/user", RequestType.GET);
         AttachHeader(getUserDataRequest, "secret", pBSecretKey);
         AttachHeader(getUserDataRequest, "session", pBSessionID);
         AttachHeader(getUserDataRequest, "Content-Type", "application/json");
-        //getRequest.SetRequestHeader("Content-Type", "application/json");
-        //request.SetRequestHeader("secret", pBSecretKey);
-        //request.SetRequestHeader("session", pBSessionID);
-
-        //getRequest.downloadHandler = new DownloadHandlerBuffer();
 
         yield return getUserDataRequest.SendWebRequest();
+
+
         //var deserialisedGetData = JsonUtility.FromJson<UserData>(System.Text.Encoding.UTF8.GetString(getRequest.downloadHandler.data, 3, getRequest.downloadHandler.data.Length - 3));
         UserData userData = JsonUtility.FromJson<UserData>(getUserDataRequest.downloadHandler.text);
 
@@ -84,6 +91,9 @@ public class SessionController : MonoBehaviour
         {
             //unsuccessful
             Debug.Log("Bombaclart User Data");
+            if (editorDevMode) toggle.gameObject.SetActive(true);
+
+
         }
 
 
@@ -105,9 +115,8 @@ public class SessionController : MonoBehaviour
             //unsuccessful
             Debug.Log("Bombaclart Leaderboard Data");
         }
-        
-
     }
+
 
     /// <summary>
     /// method to set the isDeveloper playerprefs value according to the userdata given
@@ -127,6 +136,13 @@ public class SessionController : MonoBehaviour
 
 
     //attempting method to send web requests from youtube
+    /// <summary>
+    /// function to create a UnityWebRequest GO 
+    /// </summary>
+    /// <param name="path">Target URL</param>
+    /// <param name="type">Request Type (default == GET)</param>
+    /// <param name="data">Data to send (defaut == null)</param>
+    /// <returns>UnityWebRequest GO</returns>
     private UnityWebRequest CreateRequest(string path, RequestType type = RequestType.GET, object data = null)
     {
         var request = new UnityWebRequest(path, type.ToString());
@@ -138,8 +154,6 @@ public class SessionController : MonoBehaviour
         }
 
         request.downloadHandler = new DownloadHandlerBuffer();
-        
-        //request.SetRequestHeader("Accept", "application/json");
 
         return request;
     }
@@ -156,57 +170,9 @@ public class SessionController : MonoBehaviour
         request.SetRequestHeader(key, value);
     }
 
-
-    /*
-    private UnityWebRequest GetUserInformation() 
-    {
-        var request = new UnityWebRequest(pBUrl + "api/user", "GET");
-
-        request.downloadHandler = new DownloadHandlerBuffer();
-
-        request.SetRequestHeader("Content-Type", "application/json");
-        request.SetRequestHeader("secret", pBSecretKey);
-        request.SetRequestHeader("session", pBSessionID);
-
-        return request;
-    }
-
-
-    private IEnumerator MakeRequests(RequestType type)
-    {
-        // NOTE: you cannot convert JsonUtility.FromJson... data to string using .ToString()
-        string deserialisedData = null;
-        switch (type)
-        {
-            case RequestType.USERDATA:
-                // this chunk doesn't work!...
-
-                Debug.Log("Attempting request for user data");
-                var userDataRequest = GetUserInformation();
-                yield return userDataRequest.SendWebRequest();
-                deserialisedData = JsonUtility.FromJson<string>(userDataRequest.downloadHandler.text);
-                Debug.Log("data recieved: "+JsonUtility.FromJson<string>(userDataRequest.downloadHandler.text));
-                break;
-            
-            default:
-                Debug.Log("Incorrect RequestType value given to MakeRequests() function");
-                break;  
-        }
-
-        if (deserialisedData != null) 
-        {
-            Debug.Log("User Data Recieved");
-            /*Debug.Log("id: " + deserialisedData.id +
-                "\nusername: " + deserialisedData.username +
-                "\nisDeveloper: " + deserialisedData.isDeveloper +
-                "\nscore: " + deserialisedData.score);//
-        }
-        else
-        {
-            Debug.Log("Bombaclart");
-        }
-    } */
-
+    /// <summary>
+    /// New enum data type for type of request
+    /// </summary>
     public enum RequestType
     {
         GET = 0,
@@ -215,7 +181,7 @@ public class SessionController : MonoBehaviour
     }
 
     /// <summary>
-    /// class for recieving data from user data get request
+    /// class for recieving data from user data GET request
     /// </summary>
     public class UserData
     {
@@ -224,7 +190,5 @@ public class SessionController : MonoBehaviour
         public bool isDeveloper;
         public int score;
     }
-
-
 }
 
