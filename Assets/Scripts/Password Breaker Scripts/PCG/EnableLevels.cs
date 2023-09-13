@@ -10,6 +10,7 @@ public class EnableLevels : MonoBehaviour
     [SerializeField] protected string pBProgress = "PBProgress";
     [SerializeField] protected string pBDevMode = "PBDevMode";
     [SerializeField] protected string pBHighScoreBase = "PBHighScoreLevel";
+    [SerializeField] protected string pBTotalHighscore = "PBTotalHighscore";
 
 
     // Start is called before the first frame update
@@ -22,7 +23,12 @@ public class EnableLevels : MonoBehaviour
         }
 
         // Display highscore for level 1 if it exists
-        if (PlayerPrefs.HasKey(pBHighScoreBase + "1")) HighScoreLevel1.text = "" + PlayerPrefs.GetInt(pBHighScoreBase + "1");
+        if (PlayerPrefs.HasKey(pBHighScoreBase + "1"))
+        {
+            int tempScore = PlayerPrefs.GetInt(pBHighScoreBase + "1");
+            HighScoreLevel1.text = "" + tempScore;
+            PlayerPrefs.SetInt(pBTotalHighscore, tempScore);
+        }
         
         // Display all levels if Developer mode is on
         if (PlayerPrefs.GetInt(pBDevMode) == 1)
@@ -49,7 +55,14 @@ public class EnableLevels : MonoBehaviour
             Debug.Log("Unlocked level " + i);
             // display highscore for completed levels > 1
             var playerPrefsKey = pBHighScoreBase + "" + (i+1);
-            if (PlayerPrefs.HasKey(playerPrefsKey)) HighScoreTexts[i-1].text = "" + PlayerPrefs.GetInt(playerPrefsKey);
+            if (PlayerPrefs.HasKey(playerPrefsKey))
+            {
+                var levelScore = PlayerPrefs.GetInt(playerPrefsKey);
+                HighScoreTexts[i - 1].text = "" + levelScore;
+                //UpdateTotalHighscore(playerPrefsKey);
+                PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(pBTotalHighscore) + levelScore);
+            }
+
             var element = LevelUnlockList[i - 1];
             if (element.GetComponent<Button>() != null)
             {
@@ -59,6 +72,8 @@ public class EnableLevels : MonoBehaviour
             {
                 element.SetActive(false);
             }
+
+            Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore)); 
         }
     }
 
@@ -71,6 +86,24 @@ public class EnableLevels : MonoBehaviour
         for (int i = 0; i < HighScoreTexts.Length; i++) 
         {
             
+        }
+    }
+
+
+    // maybe will delete this function...
+    /// <summary>
+    /// function to update the total game highscore
+    /// </summary>
+    /// <param name="levelKey">single level key to add its value to the total</param>
+    private void UpdateTotalHighscore(string levelKey)
+    {
+        if (PlayerPrefs.HasKey(pBTotalHighscore))
+        {
+            //sljdnajdgnd
+        }
+        else
+        {
+            PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(levelKey));
         }
     }
 }

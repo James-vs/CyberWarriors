@@ -14,7 +14,7 @@ public class SessionController : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void RequestWebSession();
-    [SerializeField] private string pBSessionID = "";
+    [SerializeField] private static string pBSessionID = "";
     [SerializeField] private string pBPlayPrefSessionKey = "PBSessionKey";
     [SerializeField] protected string isUserDevString = "PBIsUserDev";
     [SerializeField] protected DevModeToggle toggle;
@@ -26,7 +26,7 @@ public class SessionController : MonoBehaviour
     private void Start()
     {
         //remove below code when publishing game to website / make sure editorDevMode is false
-        if (editorDevMode)
+        if (editorDevMode && toggle != null)
         {
             Debug.Log("editorDevMode detected");
             toggle.gameObject.SetActive(true);
@@ -85,15 +85,12 @@ public class SessionController : MonoBehaviour
             SetIsDeveloper(userData);
             if (userData.isDeveloper) toggle.gameObject.SetActive(true);
             toggle.CheckForDevUser();
-            
         } 
         else
         {
             //unsuccessful
-            Debug.Log("Bombaclart User Data");
+            Debug.Log("User Data not recieved");
             if (editorDevMode) toggle.gameObject.SetActive(true);
-
-
         }
 
 
@@ -113,7 +110,7 @@ public class SessionController : MonoBehaviour
         else
         {
             //unsuccessful
-            Debug.Log("Bombaclart Leaderboard Data");
+            Debug.Log("Leaderboard Data not recieved");
         }
     }
 

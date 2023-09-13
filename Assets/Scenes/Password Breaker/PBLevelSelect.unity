@@ -253,6 +253,7 @@ MonoBehaviour:
   pBProgress: PBProgress
   pBDevMode: PBDevMode
   pBHighScoreBase: PBHighScoreLevel
+  pBTotalHighscore: PBTotalHighscore
 --- !u!1 &71974281
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class LevelEnd : MonoBehaviour
     [SerializeField] protected static bool GameStarted = false;
     [SerializeField] protected GameObject sessionController;
 
+
     // Start is called before the first frame update
     void Start()
     {
