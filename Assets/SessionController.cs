@@ -118,8 +118,10 @@ public class SessionController : MonoBehaviour
 
     private IEnumerator MakeScorePostRequest()
     {
-        // GET User Data
-        var postUserScore = CreateRequest(pBUrl + "/api/user", RequestType.POST, "{score: " + PlayerPrefs.GetInt(pBTotalHighscore) + "}");
+        // POST User Score
+        ScorePostData scorePostData = new ScorePostData() { score = PlayerPrefs.GetInt(pBTotalHighscore) };
+        Debug.Log("{score: " + scorePostData.score + "}");
+        var postUserScore = CreateRequest(pBUrl + "/api/score", RequestType.POST, scorePostData);
         AttachHeader(postUserScore, "secret", pBSecretKey);
         AttachHeader(postUserScore, "session", pBSessionID);
         AttachHeader(postUserScore, "Content-Type", "application/json");
@@ -204,18 +206,26 @@ public class SessionController : MonoBehaviour
     public enum RequestType
     {
         GET = 0,
-        POST = 1,
-        PUT = 2
+        POST = 1
     }
 
     /// <summary>
-    /// class for recieving data from user data GET request
+    /// class for user data GET request
     /// </summary>
     public class UserData
     {
         public string id;
         public string username;
         public bool isDeveloper;
+        public int score;
+    }
+
+
+    /// <summary>
+    /// class for POST score data
+    /// </summary>
+    public class ScorePostData
+    {
         public int score;
     }
 }

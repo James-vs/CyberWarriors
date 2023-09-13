@@ -802,7 +802,7 @@ MonoBehaviour:
   pBProgress: PBProgress
   pBHighScoreBase: PBHighScoreLevel
   numberOfLevels: 11
-  sessionController: {fileID: 0}
+  sessionController: {fileID: 6606525225222557112}
 --- !u!114 &1287577223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,6 +1584,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6577560845464897196, guid: 1d2a12133b6a6304da2eaada91e5804b, type: 3}
   m_PrefabInstance: {fileID: 3820764035201957977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6606525225222557112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606525225463777372, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+  m_PrefabInstance: {fileID: 241255908}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
