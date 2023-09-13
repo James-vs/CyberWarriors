@@ -14,7 +14,9 @@ public class SessionController : MonoBehaviour
 {
     [DllImport("__Internal")]
     private static extern void RequestWebSession();
-    [SerializeField] private static string pBSessionID = "";
+
+    [SerializeField] protected string pBTotalHighscore = "PBTotalHighscore";
+    private static string pBSessionID = "";
     [SerializeField] private string pBPlayPrefSessionKey = "PBSessionKey";
     [SerializeField] protected string isUserDevString = "PBIsUserDev";
     [SerializeField] protected DevModeToggle toggle;
@@ -113,6 +115,35 @@ public class SessionController : MonoBehaviour
             Debug.Log("Leaderboard Data not recieved");
         }
     }
+
+    private IEnumerator MakeScorePostRequest()
+    {
+        // GET User Data
+        var postUserScore = CreateRequest(pBUrl + "/api/user", RequestType.POST, "{score: " + PlayerPrefs.GetInt(pBTotalHighscore) + "}");
+        AttachHeader(postUserScore, "secret", pBSecretKey);
+        AttachHeader(postUserScore, "session", pBSessionID);
+        AttachHeader(postUserScore, "Content-Type", "application/json");
+
+        yield return postUserScore.SendWebRequest();
+
+        if (postUserScore.responseCode == 200 )
+        {
+            //successful post
+            Debug.Log(postUserScore.downloadHandler.text);
+        }
+        else
+        {
+            //unsuccessful
+            Debug.Log("Score Post confirmation not recieved");
+        }
+    }
+
+
+    /// <summary>
+    /// function to start coroutine to send post request to server
+    /// </summary>
+    public void UploadScore() => StartCoroutine(MakeScorePostRequest());
+
 
 
     /// <summary>

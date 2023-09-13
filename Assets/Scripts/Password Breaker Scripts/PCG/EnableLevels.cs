@@ -7,6 +7,7 @@ public class EnableLevels : MonoBehaviour
     [SerializeField] protected GameObject[] LevelUnlockList;
     [SerializeField] protected TextMeshProUGUI[] HighScoreTexts;
     [SerializeField] protected TextMeshProUGUI HighScoreLevel1;
+    [SerializeField] protected GameObject sessionController;
     [SerializeField] protected string pBProgress = "PBProgress";
     [SerializeField] protected string pBDevMode = "PBDevMode";
     [SerializeField] protected string pBHighScoreBase = "PBHighScoreLevel";
@@ -73,7 +74,8 @@ public class EnableLevels : MonoBehaviour
                 element.SetActive(false);
             }
 
-            Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore)); 
+            Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore));
+            sessionController.GetComponent<SessionController>().UploadScore();
         }
     }
 
