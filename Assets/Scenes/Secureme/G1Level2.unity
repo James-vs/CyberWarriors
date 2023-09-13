@@ -826,10 +826,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: StSLevel1Manager, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 3695058839130192880, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3695058839320706501, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
       propertyPath: m_Name
       value: G1Level2 1
@@ -996,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594421388973575996, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1131.142
+      value: -1139.0731
       objectReference: {fileID: 0}
     - target: {fileID: 8192733348686886688, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1026,21 +1022,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 8280597142132086244, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8457773698995282994, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 342.4995
-      objectReference: {fileID: 0}
-    - target: {fileID: 8766375037504039422, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8766375037504039422, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8956413425001507800, guid: c4892f50d68699648b7cc375a51a0f33, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

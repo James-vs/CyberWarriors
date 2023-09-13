@@ -91,7 +91,7 @@ public class SessionController : MonoBehaviour
         else
         {
             //unsuccessful
-            Debug.Log("User Data not recieved");
+            Debug.Log("User Data not recieved; Response code: " + getUserDataRequest.responseCode);
             if (editorDevMode) toggle.gameObject.SetActive(true);
         }
 
@@ -112,7 +112,7 @@ public class SessionController : MonoBehaviour
         else
         {
             //unsuccessful
-            Debug.Log("Leaderboard Data not recieved");
+            Debug.Log("Leaderboard Data not recieved; Response code: " + getLeaderboardDataRequest.responseCode);
         }
     }
 
@@ -136,7 +136,7 @@ public class SessionController : MonoBehaviour
         else
         {
             //unsuccessful
-            Debug.Log("Score Post confirmation not recieved");
+            Debug.Log("Score Post confirmation not recieved; Response code: " + postUserScore.responseCode);
         }
     }
 
