@@ -70,7 +70,7 @@ public class ScoreManagerEndless : ScoreManagerwPM
         pBHighScoreString = "PBHighScoreLevelEndless";
         //base.SetHighScore();
         // do i need this override? no?
-        if (PlayerPrefs.HasKey(pBHighScoreString))
+        /*if (PlayerPrefs.HasKey(pBHighScoreString))
         {
             if (overallScore > PlayerPrefs.GetInt(pBHighScoreString)) PlayerPrefs.SetInt(pBHighScoreString, overallScore);
             Debug.Log("New Highscore: " + overallScore);
@@ -79,6 +79,23 @@ public class ScoreManagerEndless : ScoreManagerwPM
         {
             Debug.Log("New Highscore: " + overallScore);
             PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+        }*/
+
+        if (PlayerPrefs.HasKey(pBHighScoreString))
+        {
+            var levelHighScore = PlayerPrefs.GetInt(pBHighScoreString);
+            if (overallScore > levelHighScore)
+            {
+                var initialTHighscore = PlayerPrefs.GetInt(pBTotalHighscore);
+                PlayerPrefs.SetInt(pBTotalHighscore, initialTHighscore + (overallScore - levelHighScore));
+                PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+            }
         }
+        else
+        {
+            PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(pBTotalHighscore) + overallScore);
+            PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+        }
+        sessionController.GetComponent<SessionController>().UploadScore();
     }
 }

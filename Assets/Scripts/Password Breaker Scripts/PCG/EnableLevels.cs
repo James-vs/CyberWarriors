@@ -28,7 +28,7 @@ public class EnableLevels : MonoBehaviour
         {
             int tempScore = PlayerPrefs.GetInt(pBHighScoreBase + "1");
             HighScoreLevel1.text = "" + tempScore;
-            PlayerPrefs.SetInt(pBTotalHighscore, tempScore);
+            //PlayerPrefs.SetInt(pBTotalHighscore, tempScore);
         }
         
         // Display all levels if Developer mode is on
@@ -61,7 +61,7 @@ public class EnableLevels : MonoBehaviour
                 var levelScore = PlayerPrefs.GetInt(playerPrefsKey);
                 HighScoreTexts[i - 1].text = "" + levelScore;
                 //UpdateTotalHighscore(playerPrefsKey);
-                PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(pBTotalHighscore) + levelScore);
+                //PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(pBTotalHighscore) + levelScore);
             }
 
             var element = LevelUnlockList[i - 1];
@@ -73,10 +73,10 @@ public class EnableLevels : MonoBehaviour
             {
                 element.SetActive(false);
             }
-
-            Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore));
-            sessionController.GetComponent<SessionController>().UploadScore();
         }
+        
+        Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore));
+        //sessionController.GetComponent<SessionController>().UploadScore();
     }
 
     /// <summary>

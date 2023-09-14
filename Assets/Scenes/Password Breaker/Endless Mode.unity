@@ -490,6 +490,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1594164234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606525225463777372, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_Name
+      value: SessionController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+--- !u!1 &1594164235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606525225463777372, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+  m_PrefabInstance: {fileID: 1594164234}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1675459108 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9045660454395565720, guid: cce8fc4cf5a3e6a479d69856e137f18e, type: 3}
@@ -1213,6 +1275,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: sessionController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996765850157537456, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: canvasManagerEndless
       value: 
       objectReference: {fileID: 1759691350921463217}
@@ -1260,6 +1326,10 @@ PrefabInstance:
       propertyPath: endLivesBonusText
       value: 
       objectReference: {fileID: 1248112095}
+    - target: {fileID: 5630537090132018580, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
+      propertyPath: sessionController
+      value: 
+      objectReference: {fileID: 1594164235}
     - target: {fileID: 5630537090132018580, guid: 384ca7d4ecaf94e4e89e272dccb4f9eb, type: 3}
       propertyPath: difficultyBonusText
       value: 
@@ -1645,3 +1715,4 @@ SceneRoots:
   - {fileID: 106498819}
   - {fileID: 1759691350921463216}
   - {fileID: 5648915401118821092}
+  - {fileID: 1594164234}

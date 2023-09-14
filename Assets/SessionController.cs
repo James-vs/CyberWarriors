@@ -24,6 +24,10 @@ public class SessionController : MonoBehaviour
     [SerializeField] private string pBUrl = "https://cybersec-web-app-backend-production.up.railway.app";
     //remove below code when publishing game to website / make sure it is false
     [SerializeField] protected bool editorDevMode = false;
+    private int userScore = 0;
+    private int initialPPScore = 0;
+    private static bool hasInitialScore = false;
+
 
     private void Start()
     {
@@ -35,6 +39,14 @@ public class SessionController : MonoBehaviour
             toggle.EnableDevMode();
             toggle.CheckForDevUser();
         }
+
+        if (!hasInitialScore)
+        {
+            initialPPScore = PlayerPrefs.GetInt(pBTotalHighscore);
+            hasInitialScore = true;
+        }
+
+
     }
 
 
@@ -84,6 +96,7 @@ public class SessionController : MonoBehaviour
                 "\nusername: " + userData.username +
                 "\nisDeveloper: " + userData.isDeveloper +
                 "\nscore: " + userData.score);
+            userScore = userData.score;
             SetIsDeveloper(userData);
             if (userData.isDeveloper) toggle.gameObject.SetActive(true);
             toggle.CheckForDevUser();
@@ -119,7 +132,7 @@ public class SessionController : MonoBehaviour
     private IEnumerator MakeScorePostRequest()
     {
         // POST User Score
-        ScorePostData scorePostData = new ScorePostData() { score = PlayerPrefs.GetInt(pBTotalHighscore) };
+        ScorePostData scorePostData = new ScorePostData() { score = (userScore - initialPPScore) + PlayerPrefs.GetInt(pBTotalHighscore) };
         Debug.Log("{score: " + scorePostData.score + "}");
         var postUserScore = CreateRequest(pBUrl + "/api/score", RequestType.POST, scorePostData);
         AttachHeader(postUserScore, "secret", pBSecretKey);

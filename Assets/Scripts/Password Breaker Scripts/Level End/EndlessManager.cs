@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EndlessManager : LevelEnd
 {
@@ -80,7 +79,7 @@ public class EndlessManager : LevelEnd
     public override void IncreaseBlockCount()
     {
         this.blockCount += 1f;
-        smEndless.UpdateBricksBrokenScore(((int)blockCount));
+        smEndless.UpdateBricksBrokenScore((int)blockCount);
     }
 
     public override void RestartLevel()

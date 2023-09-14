@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     private bool newReset = true;
     public string difficultyKey = "PBDifficulty";
     [SerializeField] protected string pBHighScoreString = "PBHighScoreLevel1";
+    [SerializeField] protected string pBTotalHighscore = "PBTotalHighscore";
+    [SerializeField] protected GameObject sessionController;
 
     [Header("Game UI Text Objects")]
     [SerializeField] protected TextMeshProUGUI gameUIScoreText;
@@ -165,11 +167,19 @@ public class ScoreManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey(pBHighScoreString))
         {
-            if (overallScore > PlayerPrefs.GetInt(pBHighScoreString)) PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+            var levelHighScore = PlayerPrefs.GetInt(pBHighScoreString);
+            if (overallScore > levelHighScore)
+            {
+                var initialTHighscore = PlayerPrefs.GetInt(pBTotalHighscore);
+                PlayerPrefs.SetInt(pBTotalHighscore, initialTHighscore + (overallScore - levelHighScore));
+                PlayerPrefs.SetInt(pBHighScoreString, overallScore);
+            }
         }
         else
         {
+            PlayerPrefs.SetInt(pBTotalHighscore, PlayerPrefs.GetInt(pBTotalHighscore)+ overallScore);
             PlayerPrefs.SetInt(pBHighScoreString, overallScore);
         }
+        sessionController.GetComponent<SessionController>().UploadScore();
     }
 }

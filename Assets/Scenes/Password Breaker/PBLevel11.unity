@@ -1225,6 +1225,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6583892206587839438, guid: fb3fcebbbb3c6094d82b8ec1d15c4394, type: 3}
   m_PrefabInstance: {fileID: 998352469}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1109635174
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6126882476765879795, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6606525225463777372, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: m_Name
+      value: SessionController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+--- !u!1 &1109635175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6606525225463777372, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+  m_PrefabInstance: {fileID: 1109635174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1118037428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5791532942943086893, guid: 1048df035b852d243bdcf7aca3a287ca, type: 3}
@@ -1857,6 +1919,8 @@ MonoBehaviour:
   multiplier: 1
   difficultyKey: PBDifficulty
   pBHighScoreString: PBHighScoreLevel11
+  pBTotalHighscore: PBTotalHighscore
+  sessionController: {fileID: 1109635175}
   gameUIScoreText: {fileID: 826155098}
   multiplierText: {fileID: 826155097}
   pauseScoreText: {fileID: 249111772}
@@ -2439,3 +2503,4 @@ SceneRoots:
   - {fileID: 1361957738}
   - {fileID: 249111765}
   - {fileID: 695465221}
+  - {fileID: 1109635174}
