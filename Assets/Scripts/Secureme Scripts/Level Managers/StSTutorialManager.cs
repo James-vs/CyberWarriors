@@ -17,7 +17,11 @@ public class StSTutorialManager : StSManager
     private Color btn1_2Original;
     private Color btn2_1Original;
     private Color btn2_2Original;
-    
+    private (bool, GameObject)[] matchList2;
+    private (bool, GameObject)[] matchList1;
+    [SerializeField] protected FlashEffect flashEffect;
+    private static bool bombaclart = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +33,14 @@ public class StSTutorialManager : StSManager
         btn2_2Original = button2_2.GetComponent<Image>().color;
         CheckForHighscore(highScoreKey);
         ResetScore();
+        //matchList1 = new (bool,GameObject)[] {(match1_1,button1_1), (match1_2,button1_2)};
+        //matchList2 = new (bool,GameObject)[] {(match2_1,button2_1), (match2_2,button2_2)};
+    }
+
+
+    public void Something (int num)
+    {
+        //if (num == 0)
     }
 
     // Update is called once per frame
@@ -65,7 +77,36 @@ public class StSTutorialManager : StSManager
         } else {
             Match1Found();
             Match2Found();
+            if (!bombaclart) CheckForMissMatch();
             return false;
+        }
+    }
+
+    //function to handle mismatches
+    public void CheckForMissMatch()
+    {
+        //Debug.Log("CheckForMissMatch ran");
+        // need to get a Call by Reference ting going here but dunno how :'(
+
+        matchList1 = new (bool, GameObject)[] { (match1_1, button1_1), (match1_2, button1_2) };
+        matchList2 = new (bool, GameObject)[] { (match2_1, button2_1), (match2_2, button2_2) };
+
+        for (int i = 0; i < matchList1.Length; i++)
+        {
+            for (int j = 0; j < matchList2.Length; j++)
+            {
+                if (i == j) continue;
+                Debug.Log(i + " : " + j);
+                Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
+                if (matchList1[i].Item1 && matchList2[j].Item1)
+                {
+                    Debug.Log("Missmatch found");
+                    flashEffect.StartFlash(ref matchList1[i].Item2, ref matchList2[j].Item2, 1f);
+                    bombaclart = true;
+                    return;
+                }
+            }
+            
         }
     }
 
