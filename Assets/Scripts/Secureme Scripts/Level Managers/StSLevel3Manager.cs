@@ -101,7 +101,7 @@ public class StSLevel3Manager : StSLevel2Manager
 
 
     //function to check for matches for all visible pairs
-    public new void AllMatched() {
+    /*public new void AllMatched() {
         if (goodCookieChoice) {
             Match1Found();
             Match4Found();
@@ -112,7 +112,7 @@ public class StSLevel3Manager : StSLevel2Manager
             Match4Found();
             Match5Found();
         }
-    }
+    }*/
 
 
 

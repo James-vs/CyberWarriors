@@ -130,6 +130,40 @@ public class StSLevel2Manager : StSLevel1Manager
         //Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, m21 = {match2_1}, m22 = {match2_2}");
     }
 
+    protected override void ResetBool(int matchList, int match)
+    {
+        Debug.Log($"matchlist = {matchList}, match = {match}");
+        // Chunky switch statement that resets the match___ variable associated with the match and matchlist number provided.
+        // Had to use this method - couldn't figure out how to call the match bools by reference rather than value in CheckForMissMatch()
+        switch (matchList)
+        {
+            case 1:
+                switch (match)
+                {
+                    case 1: match1_1 = false; break;
+                    case 2: match2_1 = false; break;
+                    //case 3: match3_1 = false; break;
+                    case 3: match4_1 = false; break;
+                    case 4: match5_1 = false; break;
+                    default: Debug.Log("Matches Error"); break;
+                }
+                break;
+            case 2:
+                switch (match)
+                {
+                    case 1: match1_2 = false; break;
+                    case 2: match2_2 = false; break;
+                    //case 3: match3_2 = false; break;
+                    case 3: match4_2 = false; break;
+                    case 4: match5_2 = false; break;
+                    default: Debug.Log("Matches Error"); break;
+                }
+                break;
+                //default:
+                //Debug.Log("MatchList Error"); break;
+        }
+    }
+
 
     /// <summary>
     /// function to check if the best cookie setting has been selected and adjust settings and ui accordingly

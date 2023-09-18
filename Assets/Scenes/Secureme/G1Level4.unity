@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 1921765271}
   - component: {fileID: 1921765276}
   - component: {fileID: 1921765277}
+  - component: {fileID: 1921765278}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -654,6 +655,25 @@ MonoBehaviour:
   object4_2: {fileID: 1496596710}
   object5_1: {fileID: 1603828362}
   object5_2: {fileID: 168091783}
+  flashEffect: {fileID: 1921765278}
+--- !u!114 &1921765278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921765270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf50104a9abbf34082c4e8499c664dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fObject1: {fileID: 0}
+  fObject2: {fileID: 0}
+  originalColor1: {r: 0, g: 0, b: 0, a: 0}
+  originalColor2: {r: 0, g: 0, b: 0, a: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  duration: 0
 --- !u!1 &2118059002
 GameObject:
   m_ObjectHideFlags: 0

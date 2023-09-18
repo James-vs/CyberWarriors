@@ -170,8 +170,9 @@ public class StSLevel1Manager : StSManager
 
 
 
-    protected void ResetBool(int matchList, int match)
+    protected virtual void ResetBool(int matchList, int match)
     {
+        Debug.Log($"matchlist = {matchList}, match = {match}");
         // Chunky switch statement that resets the match___ variable associated with the match and matchlist number provided.
         // Had to use this method - couldn't figure out how to call the match bools by reference rather than value in CheckForMissMatch()
         switch (matchList)
