@@ -38,7 +38,10 @@ public class StSLevel1Manager : StSManager
     protected Color img4_2Original;
     protected Color img5_1Original;
     protected Color img5_2Original;
-    
+    protected (bool, GameObject, Color)[] matchList2;
+    protected (bool, GameObject, Color)[] matchList1;
+    [SerializeField] protected FlashEffect flashEffect;
+
 
 
     // Start is called before the first frame update
@@ -106,12 +109,98 @@ public class StSLevel1Manager : StSManager
 
 
     //function to check for matches for all pairs
-    public void AllMatched() {    
+    public virtual void AllMatched() {    
         Match1Found();
         Match2Found();
         Match3Found();
         Match4Found();
         Match5Found();
+        CheckForMissMatch();
+    }
+
+
+
+    //function to handle miss matches
+    protected virtual void CheckForMissMatch()
+    {
+        matchList1 = new (bool, GameObject, Color)[] { 
+            (match1_1, button1_1, btn1_1Original), 
+            (match2_1, button2_1, btn2_1Original),
+            (match3_1, button3_1, btn3_1Original),
+            (match4_1, object4_1, img4_1Original),
+            (match5_1, object5_1, img5_1Original)
+        };
+        matchList2 = new (bool, GameObject, Color)[] { 
+            (match1_2, button1_2, btn1_2Original), 
+            (match2_2, button2_2, btn2_2Original),
+            (match3_2, button3_2, btn3_2Original),
+            (match4_2, object4_2, img4_2Original),
+            (match5_2, object5_2, img5_2Original)
+        };
+
+        for (int i = 0; i < matchList1.Length; i++)
+        {
+            for (int j = 0; j < matchList2.Length; j++)
+            {
+                if (i == j) continue;
+                Debug.Log(i + " : " + j);
+                Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
+                var element1 = matchList1[i]; var element2 = matchList2[j];
+                if (element1.Item1 && element2.Item1)
+                {
+                    Debug.Log("Missmatch found");
+                    flashEffect.StartFlash(ref element1.Item2, ref element2.Item2, element1.Item3, element2.Item3, 1f);
+
+                    element1.Item1 = false; element2.Item1 = false;
+                    //bombaclart = true;
+                    ResetBool(1, i + 1);
+                    ResetBool(2, j + 1);
+                    Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, " +
+                        $"m21 = {match2_1}, m22 = {match2_2}" +
+                        $"m31 = {match3_1}, m32 = {match3_2}" +
+                        $"m41 = {match4_1}, m42 = {match4_2}" +
+                        $"m51 = {match5_1}, m52 = {match5_2}");
+                    return;
+                }
+            }
+        }
+
+        //Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, m21 = {match2_1}, m22 = {match2_2}");
+    }
+
+
+
+    protected void ResetBool(int matchList, int match)
+    {
+        // Chunky switch statement that resets the match___ variable associated with the match and matchlist number provided.
+        // Had to use this method - couldn't figure out how to call the match bools by reference rather than value in CheckForMissMatch()
+        switch (matchList)
+        {
+            case 1:
+                switch (match)
+                {
+                    case 1: match1_1 = false; break;
+                    case 2: match2_1 = false; break;
+                    case 3: match3_1 = false; break;
+                    case 4: match4_1 = false; break;
+                    case 5: match5_1 = false; break;
+                    default: Debug.Log("Matches Error"); break;
+                }
+                break;
+            case 2:
+                switch (match)
+                {
+                    case 1: match1_2 = false; break;
+                    case 2: match2_2 = false; break;
+                    case 3: match3_2 = false; break;
+                    case 4: match4_2 = false; break;
+                    case 5: match5_2 = false; break;
+                    default: Debug.Log("Matches Error"); break;
+                }
+                break;
+                //default:
+                //Debug.Log("MatchList Error"); break;
+        }
     }
 
 

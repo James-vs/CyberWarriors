@@ -24,12 +24,42 @@ public class FlashEffect : MonoBehaviour
 
     public IEnumerator FlashObject()
     {
-        fObject1.GetComponent<Image>().color = flashColor;
-        fObject2.GetComponent<Image>().color = flashColor;
+        if (fObject1.GetComponent<Image>() != null)
+        {
+            fObject1.GetComponent<Image>().color = flashColor;
+        } 
+        else
+        {
+            fObject1.transform.GetChild(0).GetComponent<Image>().color = flashColor;
+        }
+
+        if (fObject2.GetComponent<Image>() != null)
+        {
+            fObject2.GetComponent<Image>().color = flashColor;
+        }
+        else
+        {
+            fObject2.transform.GetChild(0).GetComponent<Image>().color = flashColor;
+        }
 
         yield return new WaitForSeconds(duration);
 
-        fObject1.GetComponent<Image>().color = originalColor1;
-        fObject2.GetComponent<Image>().color = originalColor2;
+        if (fObject1.GetComponent<Image>() != null)
+        {
+            fObject1.GetComponent<Image>().color = originalColor1;
+        }
+        else
+        {
+            fObject1.transform.GetChild(0).GetComponent<Image>().color = originalColor1;
+        }
+
+        if (fObject2.GetComponent<Image>() != null)
+        {
+            fObject2.GetComponent<Image>().color = originalColor2;
+        }
+        else
+        {
+            fObject2.transform.GetChild(0).GetComponent<Image>().color = originalColor2;
+        }
     }
 }

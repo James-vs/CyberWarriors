@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SidePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 9146313571698575680, guid: 6c9344319a6a5454c90074758382597c, type: 3}
+      propertyPath: m_text
+      value: You matched the location data shared between the websites
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -961,13 +965,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf50104a9abbf34082c4e8499c664dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fObject: {fileID: 0}
-  originalColor:
-    serializedVersion: 2
-    rgba: 0
-  flashColor:
-    serializedVersion: 2
-    rgba: 0
+  fObject1: {fileID: 0}
+  fObject2: {fileID: 0}
+  originalColor1: {r: 0, g: 0, b: 0, a: 0}
+  originalColor2: {r: 0, g: 0, b: 0, a: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0
 --- !u!114 &1308076434 stripped
 MonoBehaviour:

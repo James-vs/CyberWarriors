@@ -2325,6 +2325,7 @@ GameObject:
   - component: {fileID: 1287230033}
   - component: {fileID: 1287230037}
   - component: {fileID: 1287230038}
+  - component: {fileID: 1287230039}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2420,16 +2421,6 @@ MonoBehaviour:
   m3First: 0
   m4First: 0
   m5First: 0
-  match1_1: 0
-  match1_2: 0
-  match2_1: 0
-  match2_2: 0
-  match3_1: 0
-  match3_2: 0
-  match4_1: 0
-  match4_2: 0
-  match5_1: 0
-  match5_2: 0
   button1_1: {fileID: 1301634557}
   button1_2: {fileID: 371224023}
   button2_1: {fileID: 845327851}
@@ -2440,6 +2431,25 @@ MonoBehaviour:
   object4_2: {fileID: 1062462331}
   object5_1: {fileID: 1417519886}
   object5_2: {fileID: 1510839884}
+  flashEffect: {fileID: 1287230039}
+--- !u!114 &1287230039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287230032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf50104a9abbf34082c4e8499c664dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fObject1: {fileID: 0}
+  fObject2: {fileID: 0}
+  originalColor1: {r: 0, g: 0, b: 0, a: 0}
+  originalColor2: {r: 0, g: 0, b: 0, a: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  duration: 0
 --- !u!1 &1301634557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5897270589269685248, guid: 97d28969215d1444795748040490a999, type: 3}
