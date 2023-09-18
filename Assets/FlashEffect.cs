@@ -11,12 +11,12 @@ public class FlashEffect : MonoBehaviour
     [SerializeField] protected Color flashColor = Color.red;
     [SerializeField] protected float duration;
 
-    public void StartFlash(ref GameObject go1, ref GameObject go2, float time)
+    public void StartFlash(ref GameObject go1, ref GameObject go2, Color oc1, Color oc2, float time)
     {
         fObject1 = go1;
         fObject2 = go2;
-        originalColor1 = fObject1.GetComponent<Image>().color;
-        originalColor2 = fObject2.GetComponent<Image>().color;
+        originalColor1 = oc1;
+        originalColor2 = oc2;
         duration = time;
         StartCoroutine(FlashObject());
     }
