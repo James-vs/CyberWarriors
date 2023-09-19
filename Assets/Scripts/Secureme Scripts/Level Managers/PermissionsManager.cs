@@ -5,6 +5,8 @@ public class PermissionsManager : StSLevel1Manager
 {
     private bool fake1 = false;
     private bool fake2 = false;
+    [SerializeField] protected GameObject fake1Object;
+    [SerializeField] protected GameObject fake2Object;
 
 
     // Start is called before the first frame update
@@ -12,8 +14,6 @@ public class PermissionsManager : StSLevel1Manager
     {
         Debug.Log("StSLevel1Manager running");
         //get the buttons' original colors
-        //assign button1 to button3_2 to remove unassigned reference exception
-        button3_2 = button1_1;
         GetButtonOriginColours();
         CheckForHighscore(highScoreKey);
         ResetScore();
@@ -45,11 +45,13 @@ public class PermissionsManager : StSLevel1Manager
         btn1_2Original = button1_2.transform.GetChild(0).GetComponent<Image>().color;
         btn2_1Original = button2_1.transform.GetChild(0).GetComponent<Image>().color;
         btn2_2Original = button2_2.transform.GetChild(0).GetComponent<Image>().color;
-        btn3_1Original = button3_1.transform.GetChild(0).GetComponent<Image>().color;
         img4_1Original = object4_1.transform.GetChild(0).GetComponent<Image>().color;
         img4_2Original = object4_2.transform.GetChild(0).GetComponent<Image>().color;
         img5_1Original = object5_1.transform.GetChild(0).GetComponent<Image>().color;
         img5_2Original = object5_2.transform.GetChild(0).GetComponent<Image>().color;
+
+        // colour for fakes
+        btn3_1Original = button3_1.transform.GetChild(0).GetComponent<Image>().color;
     }
 
 
@@ -88,12 +90,16 @@ public class PermissionsManager : StSLevel1Manager
             (match4_1, object4_1, img4_1Original),
             (match5_1, object5_1, img5_1Original)
         };
+
+        // this assignment needs rethinking...
         matchList2 = new (bool, GameObject, Color)[] {
             (match1_2, button1_2, btn1_2Original),
             (match2_2, button2_2, btn2_2Original),
-            //(match3_2, button3_2, btn3_2Original),
             (match4_2, object4_2, img4_2Original),
-            (match5_2, object5_2, img5_2Original)
+            (match5_2, object5_2, img5_2Original),
+            (match3_2, button3_2, btn3_1Original),
+            (fake1, fake1Object, btn3_1Original),
+            (fake2, fake2Object, btn3_1Original)
         };
 
         for (int i = 0; i < matchList1.Length; i++)
@@ -101,8 +107,8 @@ public class PermissionsManager : StSLevel1Manager
             for (int j = 0; j < matchList2.Length; j++)
             {
                 if (i == j) continue;
-                Debug.Log(i + " : " + j);
-                Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
+                //Debug.Log(i + " : " + j);
+                //Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
                 var element1 = matchList1[i]; var element2 = matchList2[j];
                 if (element1.Item1 && element2.Item1)
                 {
@@ -114,9 +120,9 @@ public class PermissionsManager : StSLevel1Manager
                     ResetBool(1, i + 1);
                     ResetBool(2, j + 1);
                     Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, " +
-                        $"m21 = {match2_1}, m22 = {match2_2}" +
-                        $"m31 = {match3_1}, m32 = {match3_2}" +
-                        $"m41 = {match4_1}, m42 = {match4_2}" +
+                        $"m21 = {match2_1}, m22 = {match2_2}," +
+                        //$"m31 = {match3_1}, m32 = {match3_2}" +
+                        $"m41 = {match4_1}, m42 = {match4_2}," +
                         $"m51 = {match5_1}, m52 = {match5_2}");
                     return;
                 }
@@ -154,6 +160,9 @@ public class PermissionsManager : StSLevel1Manager
                     //case 3: match3_2 = false; break;
                     case 3: match4_2 = false; break;
                     case 4: match5_2 = false; break;
+                    case 5: match3_2 = false; break;
+                    case 6: fake1 = false; break;
+                    case 7: fake2 = false; break;
                     default: Debug.Log("Matches Error"); break;
                 }
                 break;
@@ -261,6 +270,7 @@ public class PermissionsManager : StSLevel1Manager
 
     // functions to simulate a real match item by changing the color when selected
     public void FakeMatch1(GameObject obj) {
+        if (button3_2 == null) button3_2 = obj;
         float select = MatchItemList(m3First,2,match3_2,obj,btn3_1Original);
         if (select == 1) {
             match3_2 = true;
@@ -270,6 +280,7 @@ public class PermissionsManager : StSLevel1Manager
     }
 
     public void FakeMatch2(GameObject obj) {
+        if (fake1Object == null) fake1Object = obj;
         float select = MatchItemList(m3First,2,fake1,obj,btn3_1Original);
         if (select == 1) {
             fake1 = true;
@@ -279,6 +290,7 @@ public class PermissionsManager : StSLevel1Manager
     }
 
     public void FakeMatch3(GameObject obj) {
+        if (fake2Object == null) fake2Object = obj;
         float select = MatchItemList(m3First,2,fake2,obj,btn3_1Original);
         if (select == 1) {
             fake2 = true;

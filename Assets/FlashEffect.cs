@@ -47,19 +47,23 @@ public class FlashEffect : MonoBehaviour
         if (fObject1.GetComponent<Image>() != null)
         {
             fObject1.GetComponent<Image>().color = originalColor1;
+            Debug.Log("fObject1 switched back to original colour");
         }
         else
         {
             fObject1.transform.GetChild(0).GetComponent<Image>().color = originalColor1;
+            Debug.Log("fObject1 switched back to original colour");
         }
 
         if (fObject2.GetComponent<Image>() != null)
         {
             fObject2.GetComponent<Image>().color = originalColor2;
+            Debug.Log("fObject2 switched back to original colour");
         }
         else
         {
             fObject2.transform.GetChild(0).GetComponent<Image>().color = originalColor2;
+            Debug.Log("fObject2 switched back to original colour");
         }
     }
 }
