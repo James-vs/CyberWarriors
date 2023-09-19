@@ -5508,7 +5508,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -12015,6 +12015,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2914122875083452296}
     m_Modifications:
+    - target: {fileID: 82893869341131773, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82893869341131773, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82893869341131773, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82893869341131773, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 120607352727448839, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -415.15234
@@ -12030,6 +12046,22 @@ PrefabInstance:
     - target: {fileID: 1459064116418264788, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492282617072799790, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492282617072799790, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492282617072799790, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492282617072799790, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1582813883567619234, guid: 11e08f9c17028ae498a415cdf62d3b0c, type: 3}
       propertyPath: m_SizeDelta.x
