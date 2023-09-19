@@ -100,23 +100,6 @@ public class StSLevel3Manager : StSLevel2Manager
 
 
 
-    //function to check for matches for all visible pairs
-    /*public new void AllMatched() {
-        if (goodCookieChoice) {
-            Match1Found();
-            Match4Found();
-            Match5Found();
-        } else {
-            Match1Found();
-            Match2Found();
-            Match4Found();
-            Match5Found();
-        }
-    }*/
-
-
-
-
     // function to return bool list of all elements from relative page number
     public new bool[] getItemPageList(float page) {
         if (goodCookieChoice) {

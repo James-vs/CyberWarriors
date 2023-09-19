@@ -70,7 +70,6 @@ public class StSTutorialManager : StSManager
         } else {
             Match1Found();
             Match2Found();
-            //if (!bombaclart) 
             CheckForMissMatch();
             return false;
         }
@@ -87,55 +86,43 @@ public class StSTutorialManager : StSManager
             for (int j = 0; j < matchList2.Length; j++)
             {
                 if (i == j) continue;
-                Debug.Log(i + " : " + j);
-                Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
+                //Debug.Log(i + " : " + j);
+                //Debug.Log(matchList1[i].Item1.ToString() + " : " + matchList2[j].Item1.ToString());
                 var element1 = matchList1[i]; var element2 = matchList2[j];
                 if (element1.Item1 && element2.Item1)
                 {
                     Debug.Log("Missmatch found");
-                    flashEffect.StartFlash(ref element1.Item2, ref element2.Item2, element1.Item3, element2.Item3, 1f);
-
-                    element1.Item1 = false; element2.Item1 = false;
-                    //bombaclart = true;
+                    flashEffect.StartFlash(element1.Item2, element2.Item2, element1.Item3, element2.Item3, 1f);
                     ResetBool(1, i+1);
                     ResetBool(2, j+1);
-                    Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, m21 = {match2_1}, m22 = {match2_2}");
+                    //Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, m21 = {match2_1}, m22 = {match2_2}");
                     return;
                 }
             }
         }
-
-        //Debug.Log($"Match values after Missmatch: m11 = {match1_1}, m12 = {match1_2}, m21 = {match2_1}, m22 = {match2_2}");
     }
 
+    /// <summary>
+    /// function to reset the match boolean variables of miss-matched elements
+    /// </summary>
+    /// <param name="matchList">the page the element is on</param>
+    /// <param name="match">the index position of the match in the matchlist</param>
     protected void ResetBool(int matchList, int match)
     {
-        // Chunky switch statement that resets the match___ variable associated with the match and matchlist number provided.
-        // Had to use this method - couldn't figure out how to call the match bools by reference rather than value in CheckForMissMatch()
         switch (matchList)
         {
-            case 1:
-                switch (match)
-                {
-                    case 1:
-                        match1_1 = false; break;
-                    case 2:
-                        match1_2 = false; break;
-                    default: Debug.Log("Matches Error"); break;
-                }
-                break;
-            case 2:
-                switch (match)
-                {
-                    case 1:
-                        match2_1 = false; break;
-                    case 2:
-                        match2_2 = false; break;
+            case 1: switch (match) {
+                    case 1: match1_1 = false; break;
+                    case 2: match2_1 = false; break;
                     //default: Debug.Log("Matches Error"); break;
                 }
                 break;
-            //default:
-                //Debug.Log("MatchList Error"); break;
+            case 2: switch (match) {
+                    case 1: match1_2 = false; break;
+                    case 2: match2_2 = false; break;
+                    //default: Debug.Log("Matches Error"); break;
+                }
+                break;
         }
     }
 
@@ -181,7 +168,7 @@ public class StSTutorialManager : StSManager
 
 
 
-    //functions to handle button colour changing + boolean value changing
+    //functions to handle button colour + boolean value changing (not including miss-matches)
     public void Match11() {
         float isMatch = Match(m1First,match2_1,match1_1);
         if (isMatch == 1) {
