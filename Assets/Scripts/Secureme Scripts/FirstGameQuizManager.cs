@@ -21,8 +21,9 @@ public class FirstGameQuizManager : MonoBehaviour
     protected bool ans1correct;
     protected bool ans2correct;
     protected bool ans3correct;
+    [SerializeField] private string emailsEnabled = "SMEmailsUnlocked";
 
-    
+
 
 
     // function to pass the answer into this script from the input field
@@ -128,6 +129,14 @@ public class FirstGameQuizManager : MonoBehaviour
             yourAns3.transform.GetChild(0).GetComponent<Image>().color = Color.red;
 
         }
+    }
+
+    /// <summary>
+    /// function to unlock the next game for the player
+    /// </summary>
+    public void UnlockEmailsGame()
+    {
+        PlayerPrefs.SetInt(emailsEnabled, 1);
     }
         
 }

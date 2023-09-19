@@ -2439,6 +2439,7 @@ MonoBehaviour:
   yourAns1: {fileID: 38802168}
   yourAns2: {fileID: 2038476164}
   yourAns3: {fileID: 122720858}
+  emailsEnabled: SMEmailsUnlocked
 --- !u!114 &721459175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,11 +2828,23 @@ MonoBehaviour:
       - m_Target: {fileID: 721459175}
         m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: SecuremeDesktop
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 721459174}
+        m_TargetAssemblyTypeName: FirstGameQuizManager, Assembly-CSharp
+        m_MethodName: UnlockEmailsGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8299,7 +8312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Game
+  m_text: DONE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
