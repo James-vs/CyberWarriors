@@ -21,7 +21,7 @@ public class FirstGameQuizManager : MonoBehaviour
     protected bool ans1correct;
     protected bool ans2correct;
     protected bool ans3correct;
-    [SerializeField] private string emailsEnabled = "SMEmailsUnlocked";
+    [SerializeField] private string gameProgression = "SMProgression";
 
 
 
@@ -136,7 +136,7 @@ public class FirstGameQuizManager : MonoBehaviour
     /// </summary>
     public void UnlockEmailsGame()
     {
-        PlayerPrefs.SetInt(emailsEnabled, 1);
+        PlayerPrefs.SetInt(gameProgression, 1);
     }
         
 }

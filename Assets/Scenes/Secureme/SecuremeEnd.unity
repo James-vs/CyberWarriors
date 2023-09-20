@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 1648480443}
   - component: {fileID: 1648480442}
   - component: {fileID: 1648480445}
+  - component: {fileID: 1648480446}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -564,6 +565,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469164530622f4f40b8c163725413fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1648480446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648480441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263113df0a4331440a846a672a953636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameProgression: SMProgression
 --- !u!1 &1733292283
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +671,18 @@ MonoBehaviour:
           m_IntArgument: -21
           m_FloatArgument: 0
           m_StringArgument: SecuremeWelcome
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1648480446}
+        m_TargetAssemblyTypeName: SMGameComplete, Assembly-CSharp
+        m_MethodName: GameCompleted
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1733292286

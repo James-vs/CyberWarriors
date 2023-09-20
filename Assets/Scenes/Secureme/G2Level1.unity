@@ -3493,6 +3493,7 @@ MonoBehaviour:
   success: {fileID: 7313616055479591061}
   fail: {fileID: 7313616056289562884}
   doneButton: {fileID: 1455664590}
+  antiEnabled: SMAntiUnlocked
 --- !u!1 &2042154175
 GameObject:
   m_ObjectHideFlags: 0
@@ -5042,11 +5043,23 @@ MonoBehaviour:
       - m_Target: {fileID: 1921765276}
         m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
         m_MethodName: ChangeScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: SecuremeDesktop
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1921765277}
+        m_TargetAssemblyTypeName: EmailManager, Assembly-CSharp
+        m_MethodName: UnlockAntiMalwareGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
