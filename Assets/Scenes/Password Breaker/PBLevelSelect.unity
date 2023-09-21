@@ -8316,6 +8316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MediumPasswords
       objectReference: {fileID: 0}
+    - target: {fileID: 5213888469093010492, guid: d90211b7e2c46ca499f6029cfcbe17aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6717938205816566127, guid: d90211b7e2c46ca499f6029cfcbe17aa, type: 3}
       propertyPath: m_Sprite
       value: 

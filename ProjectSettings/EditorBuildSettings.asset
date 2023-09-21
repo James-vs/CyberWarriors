@@ -50,9 +50,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Secureme/FirstGameQuiz.unity
     guid: 324e71d80fe75d24f8af5101e01545d7
-  - enabled: 0
-    path: Assets/Scenes/Secureme/SecuremeDesktop2.unity
-    guid: a1a579eb0baa2074b9752a4fd5e2f34c
   - enabled: 1
     path: Assets/Scenes/Secureme/G2Level1.unity
     guid: 54cd863e52fd3fe4eb4b47cb47b16bb5
