@@ -15,7 +15,8 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected bool outOfTime = false;
     [SerializeField] protected string scoreKey;
     [SerializeField] protected string highScoreKey;
-    
+    [SerializeField] protected string browserProgression = "SMBProgression";
+
 
     //function to end the game if the timer runs out
     public void OutOfTime (bool value) {

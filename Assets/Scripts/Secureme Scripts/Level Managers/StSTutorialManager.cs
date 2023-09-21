@@ -20,6 +20,7 @@ public class StSTutorialManager : StSManager
     private (bool, GameObject, Color)[] matchList2;
     private (bool, GameObject, Color)[] matchList1;
     [SerializeField] protected FlashEffect flashEffect;
+    //[SerializeField] private string browserProgression = "SMBProgression";
 
 
     // Start is called before the first frame update
@@ -45,6 +46,7 @@ public class StSTutorialManager : StSManager
                 success.SetActive(true);
                 gameOver = true;
                 timer.StopTimer();
+                PlayerPrefs.SetInt(browserProgression, 1);
                 SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {

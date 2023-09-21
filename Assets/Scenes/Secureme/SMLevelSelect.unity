@@ -3312,8 +3312,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 29.4
+  m_fontSizeBase: 29.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6438,7 +6438,7 @@ MonoBehaviour:
   - stslevel3highscore
   - appPermL4highscore
   sMTotalHighscore: SMTotalHighscore
-  gameProgression: SMProgression
+  browserProgression: SMBProgression
 --- !u!1 &1850525362
 GameObject:
   m_ObjectHideFlags: 0
