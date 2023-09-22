@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] protected string tipToShow;
+    [SerializeField] protected string tipToShow = "Back";
     [SerializeField] protected float delayTime = 0.5f;
 
 

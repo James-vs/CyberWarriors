@@ -6,7 +6,7 @@ using System;
 
 public class HoverTipManager : MonoBehaviour
 {
-    [SerializeField] protected TextMeshProUGUI tipText;
+    protected TextMeshProUGUI tipText;
     [SerializeField] protected GameObject tipWindow;
 
     public static Action<string, Vector2> OnMouseHover;
