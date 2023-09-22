@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1287230037}
         m_TargetAssemblyTypeName: LoadNextScene, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 5
