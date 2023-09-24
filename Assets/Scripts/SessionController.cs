@@ -15,13 +15,14 @@ public class SessionController : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void RequestWebSession();
 
-    [SerializeField] protected string pBTotalHighscore = "PBTotalHighscore";
-    private static string pBSessionID = "";
-    [SerializeField] private string pBPlayPrefSessionKey = "PBSessionKey";
+    //[Header("Password Breaker Variables")]
+    [SerializeField] protected string totalHighscore = "PBTotalHighscore";
+    private static string sessionID = "";
+    [SerializeField] private string playPrefSessionKey = "PBSessionKey";
     [SerializeField] protected string isUserDevString = "PBIsUserDev";
+    [SerializeField] private string secretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
     [SerializeField] protected DevModeToggle toggle;
-    [SerializeField] private string pBSecretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
-    [SerializeField] private string pBUrl = "https://cybersec-web-app-backend-production.up.railway.app";
+    [SerializeField] private string url = "https://cybersec-web-app-backend-production.up.railway.app";
     //remove below code when publishing game to website / make sure it is false
     [SerializeField] protected bool editorDevMode = false;
     private int userScore = 0;
@@ -42,7 +43,7 @@ public class SessionController : MonoBehaviour
 
         if (!hasInitialScore)
         {
-            initialPPScore = PlayerPrefs.GetInt(pBTotalHighscore);
+            initialPPScore = PlayerPrefs.GetInt(totalHighscore);
             hasInitialScore = true;
         }
 
@@ -67,18 +68,18 @@ public class SessionController : MonoBehaviour
     public void OnSessionReceived(string sessionID)
     {
         // You can do what you want with the sessionID here. Ideally you should store it somewhere so that you can use it to make calls to the API later.
-        pBSessionID = sessionID;
-        PlayerPrefs.SetString(pBPlayPrefSessionKey, pBSessionID);
-        Debug.Log($"Session received: {pBSessionID}");
+        SessionController.sessionID = sessionID;
+        PlayerPrefs.SetString(playPrefSessionKey, SessionController.sessionID);
+        Debug.Log($"Session received: {SessionController.sessionID}");
     }
 
 
     private IEnumerator MakeRequests()
     {
         // GET User Data
-        var getUserDataRequest = CreateRequest(pBUrl + "/api/user", RequestType.GET);
-        AttachHeader(getUserDataRequest, "secret", pBSecretKey);
-        AttachHeader(getUserDataRequest, "session", pBSessionID);
+        var getUserDataRequest = CreateRequest(url + "/api/user", RequestType.GET);
+        AttachHeader(getUserDataRequest, "secret", secretKey);
+        AttachHeader(getUserDataRequest, "session", sessionID);
         AttachHeader(getUserDataRequest, "Content-Type", "application/json");
 
         yield return getUserDataRequest.SendWebRequest();
@@ -110,9 +111,9 @@ public class SessionController : MonoBehaviour
 
 
         // GET Leaderboard Data
-        var getLeaderboardDataRequest = CreateRequest(pBUrl + "/api/leaderboard", RequestType.GET);
-        AttachHeader(getLeaderboardDataRequest, "secret", pBSecretKey);
-        AttachHeader(getLeaderboardDataRequest, "session", pBSessionID);
+        var getLeaderboardDataRequest = CreateRequest(url + "/api/leaderboard", RequestType.GET);
+        AttachHeader(getLeaderboardDataRequest, "secret", secretKey);
+        AttachHeader(getLeaderboardDataRequest, "session", sessionID);
         AttachHeader(getLeaderboardDataRequest, "Content-Type", "application/json");
 
         yield return getLeaderboardDataRequest.SendWebRequest();
@@ -132,11 +133,11 @@ public class SessionController : MonoBehaviour
     private IEnumerator MakeScorePostRequest()
     {
         // POST User Score
-        ScorePostData scorePostData = new ScorePostData() { score = (userScore - initialPPScore) + PlayerPrefs.GetInt(pBTotalHighscore) };
+        ScorePostData scorePostData = new ScorePostData() { score = (userScore - initialPPScore) + PlayerPrefs.GetInt(totalHighscore) };
         Debug.Log("{score: " + scorePostData.score + "}");
-        var postUserScore = CreateRequest(pBUrl + "/api/score", RequestType.POST, scorePostData);
-        AttachHeader(postUserScore, "secret", pBSecretKey);
-        AttachHeader(postUserScore, "session", pBSessionID);
+        var postUserScore = CreateRequest(url + "/api/score", RequestType.POST, scorePostData);
+        AttachHeader(postUserScore, "secret", secretKey);
+        AttachHeader(postUserScore, "session", sessionID);
         AttachHeader(postUserScore, "Content-Type", "application/json");
 
         yield return postUserScore.SendWebRequest();
