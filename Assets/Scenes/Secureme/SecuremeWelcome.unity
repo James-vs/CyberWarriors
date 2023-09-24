@@ -1108,6 +1108,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 829662693413309206, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
+      propertyPath: secretKey
+      value: e7Bu#PZ9sRQp93xghd7ZxFX$4NUnPnKZ@2LKignr
+      objectReference: {fileID: 0}
+    - target: {fileID: 829662693413309206, guid: 056f1139cd8a4294cbcdbd35eb2214e2, type: 3}
       propertyPath: pBSecretKey
       value: e7Bu#PZ9sRQp93xghd7ZxFX$4NUnPnKZ@2LKignr
       objectReference: {fileID: 0}
