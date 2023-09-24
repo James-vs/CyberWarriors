@@ -1592,6 +1592,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088349396}
   m_CullTransparentMesh: 1
+--- !u!1 &1124673979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5502028104920928831, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
+  m_PrefabInstance: {fileID: 5502028106558780927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153503718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +1795,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5502028105608793234, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
   m_PrefabInstance: {fileID: 5502028106558780927}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1232955616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5502028106335356486, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
+  m_PrefabInstance: {fileID: 5502028106558780927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1237330051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5502028105598279036, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
@@ -1943,6 +1953,11 @@ CanvasRenderer:
 --- !u!1 &1245006421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5502028105584476074, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
+  m_PrefabInstance: {fileID: 5502028106558780927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1267033615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5502028106476475083, guid: 71d449909bd0f8c42ab49e7d853499ff, type: 3}
   m_PrefabInstance: {fileID: 5502028106558780927}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1277154606
@@ -3740,6 +3755,11 @@ MonoBehaviour:
   email1: {fileID: 1206486373}
   email2: {fileID: 1218558317}
   email3: {fileID: 985401884}
+  email1BtnBackground: {fileID: 1232955616}
+  email2BtnBackground: {fileID: 1267033615}
+  email3BtnBackground: {fileID: 1124673979}
+  emailBtnBorder: {r: 201, g: 240, b: 255, a: 255}
+  emailBtnOpenBorder: {r: 0, g: 0.7254902, b: 1, a: 255}
   isScam1: {fileID: 397935480}
   isScam2: {fileID: 239401240}
   isScam3: {fileID: 1277154606}
