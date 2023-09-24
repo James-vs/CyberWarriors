@@ -99,8 +99,12 @@ public class SessionController : MonoBehaviour
                 "\nscore: " + userData.score);
             userScore = userData.score;
             SetIsDeveloper(userData);
-            if (userData.isDeveloper) toggle.gameObject.SetActive(true);
-            toggle.CheckForDevUser();
+
+            if (toggle != null)
+            {
+                toggle.gameObject.SetActive(userData.isDeveloper);
+                toggle.CheckForDevUser();
+            }
         } 
         else
         {
