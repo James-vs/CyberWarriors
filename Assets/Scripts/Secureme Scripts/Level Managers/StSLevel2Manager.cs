@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StSLevel2Manager : StSLevel1Manager
@@ -243,9 +244,32 @@ public class StSLevel2Manager : StSLevel1Manager
         float score = matches * (1000 + (timer.GetValue() * 10)) + cookieScore;
         PlayerPrefs.SetFloat(scoreKey,score);
 
-        if (PlayerPrefs.GetFloat(highScoreKey) < score) {
+        /*if (PlayerPrefs.GetFloat(highScoreKey) < score) {
             PlayerPrefs.SetFloat(highScoreKey,score);
+        }*/
+
+        float initialTotalHighScore = 0;
+        //if (PlayerPrefs.HasKey(sMTotalHighscore)) initialTotalHighScore = PlayerPrefs.GetInt(sMTotalHighscore);
+
+        //float score = matches * (1000 + (timer.GetValue() * 10));
+        //PlayerPrefs.SetFloat(scoreKey, score);
+
+        if (PlayerPrefs.HasKey(highScoreKey))
+        {
+            var originalHighscore = PlayerPrefs.GetFloat(highScoreKey);
+
+            if (originalHighscore < score)
+            {
+                PlayerPrefs.SetFloat(highScoreKey, score);
+                PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + (score - originalHighscore)));
+            }
         }
+        else
+        {
+            PlayerPrefs.SetFloat(highScoreKey, score);
+            PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + score));
+        }
+        //sessionController.GetComponent<SessionController>().UploadScore();
     }
 
 }

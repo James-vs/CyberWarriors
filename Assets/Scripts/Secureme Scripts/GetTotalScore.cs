@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class GetTotalScore : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GetTotalScore : MonoBehaviour
     [SerializeField] private string l2ScoreKey;
     [SerializeField] private string l3ScoreKey;
     [SerializeField] private string l4ScoreKey;
+    [SerializeField] private string TotalScoreKey = "SMTotalHighscore";
     private string[] allScoresKeys;
 
     // Start is called before the first frame update
@@ -28,6 +30,17 @@ public class GetTotalScore : MonoBehaviour
         {
             total += PlayerPrefs.GetFloat(scoreKey);
         }
-        return total;
+
+        int totalScore = PlayerPrefs.GetInt(TotalScoreKey);
+
+        if (totalScore <= Convert.ToInt32(total))
+        {
+            return total;
+        }
+        else
+        {
+            return totalScore;
+        }
+        
     }
 }

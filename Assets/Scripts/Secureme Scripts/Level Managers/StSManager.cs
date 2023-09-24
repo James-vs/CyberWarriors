@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class StSManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected string scoreKey;
     [SerializeField] protected string highScoreKey;
     [SerializeField] protected string browserProgression = "SMBProgression";
+    [SerializeField] protected string sMTotalHighscore = "SMTotalHighscore";
+    //[SerializeField] protected GameObject sessionController;
 
 
     //function to end the game if the timer runs out
@@ -42,12 +45,28 @@ public class StSManager : MonoBehaviour
 
     // function to save the score + append the highscore
     protected void SaveScore(string scoreKey, string highScoreKey, int matches){
+        float initialTotalHighScore = 0;
+        if (PlayerPrefs.HasKey(sMTotalHighscore)) initialTotalHighScore = PlayerPrefs.GetInt(sMTotalHighscore);
+
         float score = matches * (1000 + (timer.GetValue() * 10));
         PlayerPrefs.SetFloat(scoreKey,score);
 
-        if (PlayerPrefs.GetFloat(highScoreKey) < score) {
-            PlayerPrefs.SetFloat(highScoreKey,score);
+        if (PlayerPrefs.HasKey(highScoreKey))
+        {
+            var originalHighscore = PlayerPrefs.GetFloat(highScoreKey);
+
+            if (originalHighscore < score) {
+                PlayerPrefs.SetFloat(highScoreKey,score);
+                PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + (score - originalHighscore)));
+            }
         }
+        else
+        {
+            PlayerPrefs.SetFloat(highScoreKey, score);
+            PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + score));
+        }
+        //sessionController.GetComponent<SessionController>().UploadScore();
+
     }
 
     // function to check if a highscore PlayerPrefs key exists, creates one if not

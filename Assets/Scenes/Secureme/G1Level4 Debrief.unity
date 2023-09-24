@@ -1815,7 +1815,6 @@ GameObject:
   - component: {fileID: 1921765273}
   - component: {fileID: 1921765272}
   - component: {fileID: 1921765271}
-  - component: {fileID: 1921765274}
   - component: {fileID: 1921765275}
   - component: {fileID: 1921765277}
   - component: {fileID: 1921765276}
@@ -1876,22 +1875,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1921765274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921765270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d0ccb7308c41b4a8b8ddfc7c48b8bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 950679425}
-  highScoreText: {fileID: 899566418}
-  scoreKey: appPermL4score
-  highScoreKey: appPermL4highscore
 --- !u!114 &1921765275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newHighScore: {fileID: 13701534}
   scoreKey: appPermL4score
-  highScoreKey: appPermL4score
+  highScoreKey: appPermL4highscore
 --- !u!114 &1921765276
 MonoBehaviour:
   m_ObjectHideFlags: 0
