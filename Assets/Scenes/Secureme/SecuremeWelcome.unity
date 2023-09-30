@@ -575,6 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d70b1730fcc3f949abf126ceccb2b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResetPlayerPrefs: 0
   sessionController: {fileID: 1668118713}
 --- !u!1 &1265223645
 GameObject:

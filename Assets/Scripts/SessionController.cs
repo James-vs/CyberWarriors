@@ -138,11 +138,16 @@ public class SessionController : MonoBehaviour
     {
         // POST User Score
         ScorePostData scorePostData = new ScorePostData() { score = (userScore - initialPPScore) + PlayerPrefs.GetInt(totalHighscore) };
+        Debug.Log("userScore: " + userScore);
+        Debug.Log("initialPPScore: " + initialPPScore);
+        Debug.Log("totalHighScore string: " + totalHighscore);
+        Debug.Log("totalHighScore value: " + PlayerPrefs.GetInt(totalHighscore));
         Debug.Log("{score: " + scorePostData.score + "}");
         var postUserScore = CreateRequest(url + "/api/score", RequestType.POST, scorePostData);
         AttachHeader(postUserScore, "secret", secretKey);
         AttachHeader(postUserScore, "session", sessionID);
         AttachHeader(postUserScore, "Content-Type", "application/json");
+        Debug.Log("sessionID: " + sessionID);
 
         yield return postUserScore.SendWebRequest();
 

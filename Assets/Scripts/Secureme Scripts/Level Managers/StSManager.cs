@@ -18,7 +18,7 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected string highScoreKey;
     [SerializeField] protected string browserProgression = "SMBProgression";
     [SerializeField] protected string sMTotalHighscore = "SMTotalHighscore";
-    //[SerializeField] protected GameObject sessionController;
+    [SerializeField] protected GameObject sessionController;
 
 
     //function to end the game if the timer runs out

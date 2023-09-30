@@ -5,6 +5,7 @@ using UnityEngine;
 public class SMLinkToServer : MonoBehaviour
 {
     [SerializeField] protected static bool GameStarted = false;
+    //[SerializeField] protected bool ResetPlayerPrefs = false;
     [SerializeField] protected SessionController sessionController;
      
 
@@ -17,6 +18,8 @@ public class SMLinkToServer : MonoBehaviour
             {
                 sessionController.GetComponent<SessionController>().RequestSession();
                 GameStarted = true;
+                //if (ResetPlayerPrefs) PlayerPrefs.DeleteAll();
+                //ResetPlayerPrefs = false;
             }
         }
     }

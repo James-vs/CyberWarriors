@@ -38,7 +38,7 @@ public class StSLevel2Manager : StSLevel1Manager
                 success.SetActive(true);
                 this.gameOver = true;
                 timer.StopTimer();
-                PlayerPrefs.SetInt(browserProgression, 3);
+                if (PlayerPrefs.GetInt(browserProgression) < 3) PlayerPrefs.SetInt(browserProgression, 3);
                 SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {

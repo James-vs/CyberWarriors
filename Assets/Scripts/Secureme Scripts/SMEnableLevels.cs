@@ -73,10 +73,4 @@ public class SMEnableLevels : MonoBehaviour
         //Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore));
         //sessionController.GetComponent<SessionController>().UploadScore();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

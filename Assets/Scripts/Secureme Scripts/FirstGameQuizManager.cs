@@ -136,7 +136,7 @@ public class FirstGameQuizManager : MonoBehaviour
     /// </summary>
     public void UnlockEmailsGame()
     {
-        PlayerPrefs.SetInt(gameProgression, 1);
+        if (PlayerPrefs.GetInt(gameProgression) < 1) PlayerPrefs.SetInt(gameProgression, 1);
     }
         
 }

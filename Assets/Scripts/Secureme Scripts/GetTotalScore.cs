@@ -12,6 +12,7 @@ public class GetTotalScore : MonoBehaviour
     [SerializeField] private string l3ScoreKey;
     [SerializeField] private string l4ScoreKey;
     [SerializeField] private string TotalScoreKey = "SMTotalHighscore";
+    [SerializeField] private GameObject sessionController;
     private string[] allScoresKeys;
 
     // Start is called before the first frame update
@@ -35,10 +36,13 @@ public class GetTotalScore : MonoBehaviour
 
         if (totalScore <= Convert.ToInt32(total))
         {
+            PlayerPrefs.SetInt(TotalScoreKey, Convert.ToInt32(total));
+            //sessionController.GetComponent<SessionController>().UploadScore();
             return total;
         }
         else
         {
+            //sessionController.GetComponent<SessionController>().UploadScore();
             return totalScore;
         }
         

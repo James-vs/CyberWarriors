@@ -46,7 +46,7 @@ public class StSTutorialManager : StSManager
                 success.SetActive(true);
                 gameOver = true;
                 timer.StopTimer();
-                PlayerPrefs.SetInt(browserProgression, 1);
+                if (PlayerPrefs.GetInt(browserProgression) < 1) PlayerPrefs.SetInt(browserProgression, 1);
                 SaveScore(scoreKey,highScoreKey,matches);
             }
         } else if (outOfTime) {
