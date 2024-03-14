@@ -22,7 +22,7 @@ public class SessionController : MonoBehaviour
     [SerializeField] protected string isUserDevString = "PBIsUserDev";
     [SerializeField] private string secretKey = "a19b9b6866c5422bd7a1753da27fd8afc8f5d139";
     [SerializeField] protected DevModeToggle toggle;
-    [SerializeField] private string url = "https://cybersec-web-app-backend-production.up.railway.app";
+    [SerializeField] private string url = "https://cyber-warriors.soton.ac.uk";
     //remove below code when publishing game to website / make sure it is false
     [SerializeField] protected bool editorDevMode = false;
     private int userScore = 0;
