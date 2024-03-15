@@ -178,7 +178,7 @@ public class StSLevel3Manager : StSLevel2Manager
             PlayerPrefs.SetFloat(highScoreKey, score);
             PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + score));
         }
-        //sessionController.GetComponent<SessionController>().UploadScore();
+        sessionController.GetComponent<SessionController>().UploadScore();
     }
 
 }

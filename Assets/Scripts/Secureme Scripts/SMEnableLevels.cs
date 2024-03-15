@@ -9,7 +9,7 @@ public class SMEnableLevels : MonoBehaviour
     [SerializeField] protected GameObject[] LevelUnlockList;
     [SerializeField] protected TextMeshProUGUI[] HighScoreTexts;
     [SerializeField] protected TextMeshProUGUI HighScoreLevel1;
-    //[SerializeField] protected GameObject sessionController;
+    [SerializeField] protected GameObject sessionController;
     [SerializeField] protected string pBDevMode = "SMDevMode";
     [SerializeField] protected string[] sMHighScoreStrings;
     [SerializeField] protected string sMTotalHighscore = "SMTotalHighscore";
@@ -71,6 +71,6 @@ public class SMEnableLevels : MonoBehaviour
         }
 
         //Debug.Log("Total Game score: " + PlayerPrefs.GetInt(pBTotalHighscore));
-        //sessionController.GetComponent<SessionController>().UploadScore();
+        sessionController.GetComponent<SessionController>().UploadScore();
     }
 }
