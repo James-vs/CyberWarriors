@@ -18,6 +18,7 @@ public class StSManager : MonoBehaviour
     [SerializeField] protected string highScoreKey;
     [SerializeField] protected string browserProgression = "SMBProgression";
     [SerializeField] protected string sMTotalHighscore = "SMTotalHighscore";
+    [SerializeField] protected GetTotalScore getTotalScore;
     [SerializeField] protected GameObject sessionController;
 
 
@@ -58,6 +59,7 @@ public class StSManager : MonoBehaviour
             if (originalHighscore < score) {
                 PlayerPrefs.SetFloat(highScoreKey,score);
                 PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + (score - originalHighscore)));
+                Debug.Log("New total high score: " + getTotalScore.TotalScore().ToString("0"));
             }
         }
         else

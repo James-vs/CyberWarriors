@@ -25,7 +25,7 @@ public class GetTotalScore : MonoBehaviour
         totalScoreText.text = TotalScore().ToString("0") + " POINTS";
     }
 
-    protected float TotalScore() {
+    public float TotalScore() {
         float total = 0f;
         foreach (string scoreKey in allScoresKeys)
         {
