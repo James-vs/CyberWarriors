@@ -1716,6 +1716,7 @@ GameObject:
   - component: {fileID: 1287230037}
   - component: {fileID: 1287230038}
   - component: {fileID: 1287230039}
+  - component: {fileID: 1287230040}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1808,6 +1809,7 @@ MonoBehaviour:
   highScoreKey: stslevel2highscore
   browserProgression: SMBProgression
   sMTotalHighscore: SMTotalHighscore
+  getTotalScore: {fileID: 1287230040}
   sessionController: {fileID: 108757389}
   m1First: 0
   m2First: 0
@@ -1846,6 +1848,28 @@ MonoBehaviour:
   originalColor2: {r: 0, g: 0, b: 0, a: 0}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   duration: 0
+--- !u!114 &1287230040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287230032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5db60752c3d7e24b8894f51ea03ce4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  totalScoreText: {fileID: 0}
+  tutorialScoreKey: ststutorialscore
+  l1ScoreKey: stslevel1score
+  l2ScoreKey: stslevel2score
+  l3ScoreKey: stslevel3score
+  l4ScoreKey: appPermL4score
+  TotalScoreKey: SMTotalHighscore
+  sessionController: {fileID: 108757389}
+  hasTextFields: 0
 --- !u!1001 &1412678394
 PrefabInstance:
   m_ObjectHideFlags: 0

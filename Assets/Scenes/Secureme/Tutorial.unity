@@ -1347,6 +1347,7 @@ MonoBehaviour:
   l4ScoreKey: appPermL4score
   TotalScoreKey: SMTotalHighscore
   sessionController: {fileID: 56179403}
+  hasTextFields: 0
 --- !u!114 &1308076434 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6758643076136916262, guid: fbe5faf069da4ec42b610d0b5d609dda, type: 3}

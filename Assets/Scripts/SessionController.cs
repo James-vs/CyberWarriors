@@ -137,12 +137,15 @@ public class SessionController : MonoBehaviour
     private IEnumerator MakeScorePostRequest()
     {
         // POST User Score
-        ScorePostData scorePostData = new ScorePostData() { score = (userScore - initialPPScore) + PlayerPrefs.GetInt(totalHighscore) };
+        ScorePostData scorePostData = new ScorePostData() { score = PlayerPrefs.GetInt(totalHighscore) };
+
+        // this is only showing the difference not the total score (need to change it to just the totalHighScore var)
+
         Debug.Log("userScore: " + userScore);
         Debug.Log("initialPPScore: " + initialPPScore);
         Debug.Log("totalHighScore string: " + totalHighscore);
-        Debug.Log("totalHighScore value: " + PlayerPrefs.GetInt(totalHighscore));
-        Debug.Log("{score: " + scorePostData.score + "}");
+        Debug.Log("totalHighScore value: " + scorePostData.score);
+        Debug.Log("{score difference: " + (userScore - initialPPScore) + PlayerPrefs.GetInt(totalHighscore) + "}");
         var postUserScore = CreateRequest(url + "/api/score", RequestType.POST, scorePostData);
         AttachHeader(postUserScore, "secret", secretKey);
         AttachHeader(postUserScore, "session", sessionID);

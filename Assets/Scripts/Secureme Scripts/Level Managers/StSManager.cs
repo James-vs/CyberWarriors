@@ -59,7 +59,7 @@ public class StSManager : MonoBehaviour
             if (originalHighscore < score) {
                 PlayerPrefs.SetFloat(highScoreKey,score);
                 PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + (score - originalHighscore)));
-                Debug.Log("New total high score: " + getTotalScore.TotalScore().ToString("0"));
+                
             }
         }
         else
@@ -67,6 +67,7 @@ public class StSManager : MonoBehaviour
             PlayerPrefs.SetFloat(highScoreKey, score);
             PlayerPrefs.SetInt(sMTotalHighscore, Convert.ToInt32(initialTotalHighScore + score));
         }
+        Debug.Log("Total high score: " + getTotalScore.TotalScore().ToString("0"));
         sessionController.GetComponent<SessionController>().UploadScore();
 
     }

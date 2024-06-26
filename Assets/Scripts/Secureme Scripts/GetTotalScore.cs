@@ -4,6 +4,7 @@ using System;
 
 public class GetTotalScore : MonoBehaviour
 {
+    [Header("Score Keys")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI totalScoreText;
     [SerializeField] private string tutorialScoreKey;
@@ -12,8 +13,11 @@ public class GetTotalScore : MonoBehaviour
     [SerializeField] private string l3ScoreKey;
     [SerializeField] private string l4ScoreKey;
     [SerializeField] private string TotalScoreKey = "SMTotalHighscore";
+
+    [Header("Session controller")]
     [SerializeField] private GameObject sessionController;
     private string[] allScoresKeys;
+    public bool hasTextFields = true;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +25,11 @@ public class GetTotalScore : MonoBehaviour
         // create a list of all game allScores
         allScoresKeys = new string[]{tutorialScoreKey,l1ScoreKey,l2ScoreKey,l3ScoreKey,l4ScoreKey};
         // assign the score values to the text fields to display them
-        scoreText.text = PlayerPrefs.GetFloat(l4ScoreKey).ToString("0") + " POINTS";
-        totalScoreText.text = TotalScore().ToString("0") + " POINTS";
+        if (hasTextFields)
+        {
+            scoreText.text = PlayerPrefs.GetFloat(l4ScoreKey).ToString("0") + " POINTS";
+            totalScoreText.text = TotalScore().ToString("0") + " POINTS";
+        }
     }
 
     public float TotalScore() {
@@ -31,6 +38,8 @@ public class GetTotalScore : MonoBehaviour
         {
             total += PlayerPrefs.GetFloat(scoreKey);
         }
+
+        Debug.Log("(From GetTotalScore) Total Score: " + total); //added for debugging
 
         int totalScore = PlayerPrefs.GetInt(TotalScoreKey);
 
